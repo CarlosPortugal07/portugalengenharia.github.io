@@ -193,7 +193,6 @@
     #essencia p.visible {
       opacity: 1; transform: translateY(0);
     }
-    /* MISSÃO, VISÃO, VALORES, PROPÓSITO */
     .mvvp-row {
       display: flex;
       justify-content: center;
@@ -333,62 +332,11 @@
     }
     #formulario-simulacao {
       margin: 40px auto 0 auto;
-      background: #222;
-      border-radius: 13px;
-      box-shadow: var(--shadow);
-      max-width: 410px;
-      padding: 32px 24px;
+      max-width: 850px;
+      padding: 0 8px;
       color: var(--white);
       transition: box-shadow .2s;
       animation: fadeUp .7s .3s backwards;
-    }
-    #formulario-simulacao label {
-      display: block;
-      margin: 16px 0 6px 0;
-      color: var(--green);
-      font-weight: 600;
-    }
-    #formulario-simulacao input, #formulario-simulacao select {
-      width: 100%;
-      padding: 10px;
-      border-radius: 7px;
-      border: none;
-      background: #181818;
-      color: var(--white);
-      font-size: 1em;
-      margin-bottom: 14px;
-      outline: none;
-      border: 1px solid #2fbbb188;
-      transition: border .2s;
-    }
-    #formulario-simulacao input:focus, #formulario-simulacao select:focus {
-      border: 1.5px solid var(--green);
-    }
-    #formulario-simulacao button {
-      background: var(--green);
-      color: var(--white);
-      font-weight: 700;
-      font-size: 1.08em;
-      border: none;
-      border-radius: 8px;
-      padding: 13px 0;
-      width: 100%;
-      margin-top: 10px;
-      box-shadow: var(--shadow);
-      cursor: pointer;
-      transition: background .2s, transform .2s;
-    }
-    #formulario-simulacao button:hover {
-      background: var(--green-hover);
-      transform: translateY(-2px) scale(1.04);
-    }
-    #formulario-simulacao .msg-sucesso {
-      color: #69f569;
-      margin-top: 14px;
-      font-weight: 600;
-      text-align: center;
-      font-size: 1.1em;
-      letter-spacing: .5px;
     }
     /* WHATSAPP FLOAT */
     .whatsapp-float {
@@ -504,6 +452,9 @@
         bottom: 14px;
         right: 12px;
       }
+      #formulario-simulacao iframe {
+        min-height: 520px;
+      }
     }
   </style>
 </head>
@@ -617,33 +568,25 @@
     </div>
   </section>
 
-  <!-- FORMULÁRIO DE SIMULAÇÃO -->
+  <!-- FORMULÁRIO DE SIMULAÇÃO EMBUTIDO -->
   <section id="formulario-simulacao">
-    <form id="simuladorForm" autocomplete="on">
-      <label for="nome">Nome completo</label>
-      <input type="text" id="nome" name="nome" required maxlength="60" placeholder="Seu nome">
-
-      <label for="email">E-mail</label>
-      <input type="email" id="email" name="email" required maxlength="80" placeholder="seu@email.com">
-
-      <label for="telefone">WhatsApp</label>
-      <input type="tel" id="telefone" name="telefone" required maxlength="15" pattern="[0-9()+\- ]+" placeholder="(XX) XXXXX-XXXX">
-
-      <label for="tipo">Tipo de imóvel</label>
-      <select id="tipo" name="tipo" required>
-        <option value="">Selecione</option>
-        <option>Residencial</option>
-        <option>Comercial</option>
-        <option>Industrial</option>
-        <option>Rural</option>
-      </select>
-
-      <label for="media">Consumo médio mensal (kWh)</label>
-      <input type="number" id="media" name="media" required min="50" max="200000" placeholder="Ex: 500">
-
-      <button type="submit">Solicitar Simulação</button>
-      <div class="msg-sucesso" style="display:none;"></div>
-    </form>
+    <h2 class="section-title">Simule Agora</h2>
+    <p style="text-align:center; color:#fff; font-size:1.18em;">
+      Preencha o formulário abaixo e receba seu orçamento personalizado de energia solar!
+    </p>
+    <iframe 
+      width="640px" 
+      height="480px" 
+      src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__W4YrEBUQTJDOTlRRTJORFFRUVFNTlpCVzQwV1hIQi4u&embed=true" 
+      frameborder="0" 
+      marginwidth="0" 
+      marginheight="0" 
+      style="border: none; max-width:100%; min-height:600px; border-radius:14px; box-shadow:0 4px 18px #0002; background:#fff;"
+      allowfullscreen 
+      webkitallowfullscreen 
+      mozallowfullscreen 
+      msallowfullscreen>
+    </iframe>
   </section>
 
   <!-- CONTATO -->
@@ -705,29 +648,6 @@
       });
     }, { threshold: 0.12 });
     document.querySelectorAll('.section-title, #essencia p').forEach(e=>observer.observe(e));
-
-    // Formulário de simulação (envio instantâneo para WhatsApp)
-    document.getElementById('simuladorForm').onsubmit = function(e) {
-      e.preventDefault();
-      let nome = document.getElementById('nome').value.trim();
-      let email = document.getElementById('email').value.trim();
-      let telefone = document.getElementById('telefone').value.trim();
-      let tipo = document.getElementById('tipo').value;
-      let media = document.getElementById('media').value.trim();
-      let msg = `Olá, me chamo ${nome}. Quero simular um sistema solar para um imóvel ${tipo}. Consumo médio mensal de ${media} kWh. Meu email é ${email} e WhatsApp ${telefone}.`;
-
-      let telWhats = "5551999999999"; // AJUSTE para o número oficial
-      let link = `https://wa.me/${telWhats}?text=${encodeURIComponent(msg)}`;
-
-      document.querySelector('#formulario-simulacao .msg-sucesso').style.display = "block";
-      document.querySelector('#formulario-simulacao .msg-sucesso').textContent = "Enviando sua simulação via WhatsApp...";
-
-      setTimeout(()=>{
-        window.open(link, "_blank");
-        document.querySelector('#formulario-simulacao .msg-sucesso').textContent = "Simulação enviada! Você será atendido em instantes.";
-        document.getElementById('simuladorForm').reset();
-      }, 1200);
-    };
   </script>
 </body>
 </html>
