@@ -30,17 +30,17 @@
       scroll-behavior: smooth;
     }
     /* HEADER */
- header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px 3vw 6px 3vw; /* Reduzi o padding */
-  background: #000;         /* Preto puro, igual ao logo */
-  box-shadow: 0 2px 12px #0002;
-  position: sticky;
-  top: 0;
-  z-index: 99;
-  animation: fadeDown 1s;
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 3vw 6px 3vw;
+      background: #000;
+      box-shadow: 0 2px 12px #0002;
+      position: sticky;
+      top: 0;
+      z-index: 99;
+      animation: fadeDown 1s;
     }
     @keyframes fadeDown {
       from { opacity: 0; transform: translateY(-40px);}
@@ -93,7 +93,6 @@
       background: var(--green-hover);
       transform: translateY(-2px) scale(1.10);
     }
-
     /* HERO */
     .hero-section {
       position: relative;
@@ -158,7 +157,6 @@
       background: #25a69c;
       transform: scale(1.04) translateY(-2px);
     }
-
     /* ANIMAÇÕES DE ENTRADA */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(40px);}
@@ -173,7 +171,6 @@
       opacity: 1;
       transform: translateY(0);
     }
-
     .section-title {
       color: var(--green);
       font-size: 2.1em;
@@ -352,22 +349,59 @@
       background: var(--green-hover);
       transform: scale(1.04) translateY(-2px);
     }
+    /* Formulário de simulação */
+    #formulario-simulacao-bg {
+      position:relative;
+      background:url('placa2.jpeg') center center/cover no-repeat;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:0;
+    }
+    #formulario-simulacao-bg .bg-overlay {
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.68);
+      z-index:1;
+    }
     #formulario-simulacao {
-      margin: 40px auto 0 auto;
-      max-width: 850px;
-      padding: 0 8px;
-      color: var(--white);
-      transition: box-shadow .2s;
-      animation: fadeUp .7s .3s backwards;
+      position:relative;
+      z-index:2;
+      width:100%;
+      max-width:565px;
+      margin:50px auto;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding:36px 28px 28px 28px;
+      border-radius:24px;
+      background:rgba(255,255,255,0.97);
+      box-shadow:0 6px 32px #0009;
+      min-height:600px;
+    }
+    #formulario-simulacao h2 {
+      margin-top:0;
+      margin-bottom:16px;
+      font-size:2em;
+      font-weight:800;
+      color:#2fbbb1;
+    }
+    #formulario-simulacao p {
+      margin-bottom:24px;
+      font-size:1.13em;
+      color:#222;
+      text-align:center;
     }
     #formulario-simulacao iframe {
-      border: none;
-      max-width: 100%;
-      min-height: 600px;
-      border-radius: 14px;
-      box-shadow: 0 4px 18px #0002;
-      background: #fff;
-      width: 100%;
+      border:none;
+      width:100%;
+      min-height:540px;
+      border-radius:12px;
+      background:#fff;
+      box-shadow:0 2px 18px #0001;
+      max-width:100%;
+      max-height:100vh;
     }
     /* WHATSAPP FLOAT */
     .whatsapp-float {
@@ -505,7 +539,7 @@
       <a href="#funciona">Como funciona</a>
       <a href="#contato">Contato</a>
       <a href="#loja">Loja</a>
-      <a href="#formulario-simulacao" class="btn-simule">Simule Agora</a>
+      <a href="#formulario-simulacao-bg" class="btn-simule">Simule Agora</a>
     </nav>
   </header>
 
@@ -515,7 +549,7 @@
     <div class="hero-content">
       <h1>Descubra como a energia inteligente pode transformar seu futuro</h1>
       <p>Soluções elétricas seguras, inovadoras e sob medida — Portugal Engenharia Elétrica.</p>
-      <a href="#formulario-simulacao" class="hero-btn">Simule Agora</a>
+      <a href="#formulario-simulacao-bg" class="hero-btn">Simule Agora</a>
     </div>
   </section>
 
@@ -597,32 +631,30 @@
   <section id="simule">
     <div class="container">
       <div class="simule-title fade-up">Descubra gratuitamente quanto pode economizar com energia solar</div>
-      <a href="#formulario-simulacao" class="simule-btn fade-up">Simule Agora</a>
+      <a href="#formulario-simulacao-bg" class="simule-btn fade-up">Simule Agora</a>
     </div>
   </section>
 
-    <!-- NOVA SEÇÃO DO FORMULÁRIO DE SIMULAÇÃO -->
-<section id="formulario-simulacao-bg" style="position:relative; background:url('placa2.jpeg') center center/cover no-repeat; min-height:100vh; display:flex; align-items:center; justify-content:center; padding:0;">
-  <div style="position:absolute; inset:0; background:rgba(0,0,0,0.68); z-index:1;"></div>
-  <div id="formulario-simulacao"
-       style="position:relative; z-index:2; width:100%; max-width:565px; margin:50px auto; display:flex; flex-direction:column; align-items:center; padding:36px 28px 28px 28px; border-radius:24px; background:rgba(255,255,255,0.97); box-shadow:0 6px 32px #0009; min-height:600px;">
-    <h2 style="margin-top:0; margin-bottom:16px; font-size:2em; font-weight:800; color:#2fbbb1;">Simule Agora</h2>
-    <p style="margin-bottom:24px; font-size:1.13em; color:#222; text-align:center;">
-      Preencha o formulário abaixo e receba seu orçamento personalizado de energia solar!
-    </p>
-    <iframe 
+  <!-- NOVA SEÇÃO DO FORMULÁRIO DE SIMULAÇÃO -->
+  <section id="formulario-simulacao-bg">
+    <div class="bg-overlay"></div>
+    <div id="formulario-simulacao">
+      <h2>Simule Agora</h2>
+      <p>
+        Preencha o formulário abaixo e receba seu orçamento personalizado de energia solar!
+      </p>
+      <iframe 
         src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAAZcvWthUREJQRkhMWlRaNjNVSlJWQUJaR1hLRkc1SC4u&embed=true"
-      frameborder="0"
-      marginwidth="0"
-      marginheight="0"
-      style="border:none; width:100%; min-height:540px; border-radius:12px; background:#fff; box-shadow:0 2px 18px #0001; max-width:100%; max-height:100vh;"
-      allowfullscreen
-      webkitallowfullscreen
-      mozallowfullscreen
-      msallowfullscreen>
-    </iframe>
-  </div>
-</section>
+        frameborder="0"
+        marginwidth="0"
+        marginheight="0"
+        allowfullscreen
+        webkitallowfullscreen
+        mozallowfullscreen
+        msallowfullscreen>
+      </iframe>
+    </div>
+  </section>
 
   <!-- CONTATO -->
   <section id="contato">
@@ -659,21 +691,23 @@
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <div class="social-links">
-    <a href="https://wa.me/5519995454370" target="_blank" title="WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    <a href="https://www.instagram.com/portugal_eng" target="_blank" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.facebook.com/profile.php?id=61561425598667#" target="_blank" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-    <a href="https://www.linkedin.com/company/portugal-engenharia-elétrica" target="_blank" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-  </div>
-  <div>
-    <a href="https://linkthread.com/portugalengenharia" target="_blank" style="color:var(--green);text-decoration:underline;">
-      Acesse nosso Linkthread
-    </a>
-  </div>
-  <div>
-    &copy; 2025 Portugal Engenharia Elétrica &mdash; Todos os direitos reservados.
-  </div>
-</footer>
+  <!-- FOOTER SOCIAL -->
+  <footer>
+    <div class="social-links">
+      <a href="https://wa.me/5519995454370" target="_blank" title="WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.instagram.com/portugal_eng" target="_blank" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61561425598667#" target="_blank" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.linkedin.com/company/portugal-engenharia-elétrica" target="_blank" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <div>
+      <a href="https://linkthread.com/portugalengenharia" target="_blank" style="color:var(--green);text-decoration:underline;">
+        Acesse nosso Linkthread
+      </a>
+    </div>
+    <div>
+      &copy; 2025 Portugal Engenharia Elétrica &mdash; Todos os direitos reservados.
+    </div>
+  </footer>
 
   <script>
     // Animação de títulos e elementos fade-up ao entrar na tela
@@ -688,4 +722,3 @@
   </script>
 </body>
 </html>
- 
