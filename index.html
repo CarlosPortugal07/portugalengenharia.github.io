@@ -636,37 +636,61 @@
   </section>
 
   <!-- NOVA SEÇÃO DO FORMULÁRIO DE SIMULAÇÃO -->
-  <section id="formulario-simulacao-bg">
-    <div class="bg-overlay"></div>
-    <div id="formulario-simulacao">
-      <h2>Simule Agora</h2>
-      <p>
-        Preencha o formulário abaixo e receba seu orçamento personalizado de energia solar!
-      </p>
-      <iframe 
-        src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAAZcvWthUREJQRkhMWlRaNjNVSlJWQUJaR1hLRkc1SC4u&embed=true"
-        frameborder="0"
-        marginwidth="0"
-        marginheight="0"
-        allowfullscreen
-        webkitallowfullscreen
-        mozallowfullscreen
-        msallowfullscreen>
-      </iframe>
-    </div>
-  </section>
+ <!-- NOVA SEÇÃO DO FORMULÁRIO DE SIMULAÇÃO -->
+<section id="formulario-simulacao-bg" style="position: relative;">
+  <div class="bg-overlay"></div>
+  <div id="formulario-simulacao">
+    <h2>Simule Agora</h2>
+    <p>
+      Preencha o formulário abaixo e receba seu orçamento personalizado de energia solar!
+    </p>
+    <iframe 
+      id="simulacao-iframe"
+      src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAAZcvWthUREJQRkhMWlRaNjNVSlJWQUJaR1hLRkc1SC4u&embed=true"
+      frameborder="0"
+      marginwidth="0"
+      marginheight="0"
+      allowfullscreen
+      webkitallowfullscreen
+      mozallowfullscreen
+      msallowfullscreen
+      style="width:100%; height:700px;">
+    </iframe>
+    <button 
+      id="btn-voltar-inicio" 
+      style="display:none; margin: 40px auto 0 auto; padding: 14px 30px; font-size: 1.1em; background: #009688; color: #fff; border: none; border-radius: 5px; cursor: pointer; display: block;">
+      Voltar ao Início
+    </button>
+  </div>
+</section>
 
-  <!-- CONTATO -->
-  <section id="contato">
-    <div class="container">
-      <h2 class="section-title fade-up">Contato</h2>
-      <p class="fade-up" style="text-align:center; color:var(--gray); font-size:1.13em">
-        Fale com nossos especialistas!<br>
-        Email: <a href="mailto:comercial@portugalengenharia.com.br" style="color:var(--green);">contato@portugalengenharia.com.br</a><br>
-        WhatsApp: <a href="https://wa.me/5519995454370" style="color:var(--green);" target="_blank">(19) 99545-4370</a>
-      </p>
-    </div>
-  </section>
+<script>
+  // Mostra o botão depois de um tempo (ex: 4 segundos) após o envio do formulário
+  // O tempo deve ser suficiente para que o usuário veja a mensagem de confirmação
+
+  // Função para mostrar o botão após o envio
+  function mostrarBotaoAposEnvio() {
+    // Esconde o botão caso o usuário navegue de novo até o formulário
+    document.getElementById('btn-voltar-inicio').style.display = 'none';
+
+    // Evento disparado sempre que o iframe é carregado (inclusive após o envio)
+    document.getElementById('simulacao-iframe').addEventListener('load', function() {
+      // Espera 4 segundos (ajuste se necessário)
+      setTimeout(function() {
+        document.getElementById('btn-voltar-inicio').style.display = 'block';
+      }, 4000);
+    });
+  }
+
+  mostrarBotaoAposEnvio();
+
+  // Ação do botão
+  document.getElementById('btn-voltar-inicio').onclick = function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Opcional: Redireciona para a home
+    // window.location.href = '/';
+  }
+</script>
 
   <!-- LOJA -->
   <section id="loja">
