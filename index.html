@@ -34,7 +34,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 8px 3vw 6px 3vw;
+      padding: 4px 3vw 3px 3vw;
       background: #000;
       box-shadow: 0 2px 12px #0002;
       position: sticky;
@@ -47,7 +47,7 @@
       to { opacity: 1; transform: translateY(0);}
     }
     header img {
-      height: 77px; width: auto;
+      height: 46px; width: auto;
       display: block;
       border-radius: 8px;
       background: #000;
@@ -118,7 +118,7 @@
       position: relative;
       z-index: 2;
       color: #fff;
-      max-width: 480px;
+      max-width: 780px;
       margin: auto;
       padding: 0 6vw;
       animation: fadeDown .95s;
@@ -349,59 +349,66 @@
       background: var(--green-hover);
       transform: scale(1.04) translateY(-2px);
     }
-    /* Formulário de simulação */
+    /* Formulário de simulação AJUSTADO */
     #formulario-simulacao-bg {
-      position:relative;
-      background:url('placa2.jpeg') center center/cover no-repeat;
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:0;
+      background: url('placa2.jpeg') center center/cover no-repeat;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 0;
+      position: relative;
     }
     #formulario-simulacao-bg .bg-overlay {
-      position:absolute;
-      inset:0;
-      background:rgba(0,0,0,0.68);
-      z-index:1;
+      position:absolute; inset:0; background:rgba(0,0,0,0.68); z-index:1;
     }
     #formulario-simulacao {
       position:relative;
       z-index:2;
       width:100%;
-      max-width:565px;
-      margin:50px auto;
+      max-width:600px;
+      margin:48px auto 32px auto;
       display:flex;
       flex-direction:column;
       align-items:center;
-      padding:36px 28px 28px 28px;
-      border-radius:24px;
-      background:rgba(255,255,255,0.97);
-      box-shadow:0 6px 32px #0009;
-      min-height:400px;
+      padding:18px 16px 18px 16px;
+      border-radius:18px;
+      background:rgba(255,255,255,0.98);
+      box-shadow:0 4px 24px #0003;
     }
     #formulario-simulacao h2 {
-      margin-top:0;
-      margin-bottom:16px;
-      font-size:2em;
-      font-weight:600;
+      margin-bottom:8px;
+      font-size:1.6em;
       color:#2fbbb1;
     }
     #formulario-simulacao p {
-      margin-bottom:24px;
-      font-size:1.13em;
+      margin-bottom:14px;
+      font-size:1.1em;
       color:#222;
       text-align:center;
     }
     #formulario-simulacao iframe {
       border:none;
       width:100%;
-      min-height:540px;
+      min-height:420px;
+      height:440px;
       border-radius:12px;
       background:#fff;
-      box-shadow:0 2px 18px #0001;
+      box-shadow:0 2px 14px #0001;
       max-width:100%;
-      max-height:100vh;
+      max-height:80vh;
+    }
+    #btn-voltar-inicio {
+      margin:28px auto 0 auto;
+      padding:13px 30px;
+      font-size:1.07em;
+      background:#009688;
+      color:#fff;
+      border:none;
+      border-radius:5px;
+      cursor:pointer;
+      display:block;
+      display:none;
     }
     /* WHATSAPP FLOAT */
     .whatsapp-float {
@@ -486,6 +493,9 @@
       nav {
         gap: 12px;
       }
+      #formulario-simulacao {
+        max-width: 98vw;
+      }
     }
     @media (max-width: 700px) {
       .hero-content h1 { font-size: 1.45em; }
@@ -494,6 +504,15 @@
       header img { height: 38px;}
       header { padding: 10px 4vw 8px 4vw; }
       nav { gap: 7px; }
+      #formulario-simulacao {
+        max-width: 99vw;
+        padding: 8px 3vw;
+        margin: 18px auto 18px auto;
+      }
+      #formulario-simulacao iframe {
+        min-height: 330px;
+        height: 320px;
+      }
     }
     @media (max-width: 600px) {
       .mvvp-card {
@@ -521,7 +540,8 @@
         right: 12px;
       }
       #formulario-simulacao iframe {
-        min-height: 520px;
+        min-height: 260px;
+        height: 260px;
       }
     }
   </style>
@@ -635,62 +655,47 @@
     </div>
   </section>
 
-  <!-- NOVA SEÇÃO DO FORMULÁRIO DE SIMULAÇÃO -->
- <!-- NOVA SEÇÃO DO FORMULÁRIO DE SIMULAÇÃO -->
-<section id="formulario-simulacao-bg" style="position: relative;">
-  <div class="bg-overlay"></div>
-  <div id="formulario-simulacao">
-    <h2>Simule Agora</h2>
-    <p>
-      Preencha o formulário abaixo e receba seu orçamento personalizado de energia solar!
-    </p>
-    <iframe 
-      id="simulacao-iframe"
-      src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAAZcvWthUREJQRkhMWlRaNjNVSlJWQUJaR1hLRkc1SC4u&embed=true"
-      frameborder="0"
-      marginwidth="0"
-      marginheight="0"
-      allowfullscreen
-      webkitallowfullscreen
-      mozallowfullscreen
-      msallowfullscreen
-      style="width:100%; height:700px;">
-    </iframe>
-    <button 
-      id="btn-voltar-inicio" 
-      style="display:none; margin: 40px auto 0 auto; padding: 14px 30px; font-size: 1.1em; background: #009688; color: #fff; border: none; border-radius: 5px; cursor: pointer; display: block;">
-      Voltar ao Início
-    </button>
-  </div>
-</section>
+  <!-- NOVA SEÇÃO DO FORMULÁRIO DE SIMULAÇÃO AJUSTADA -->
+  <section id="formulario-simulacao-bg">
+    <div class="bg-overlay"></div>
+    <div id="formulario-simulacao">
+      <h2>Simule Agora</h2>
+      <p>
+        Preencha o formulário abaixo e receba seu orçamento personalizado de energia solar!
+      </p>
+      <iframe 
+        id="simulacao-iframe"
+        src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAAZcvWthUREJQRkhMWlRaNjNVSlJWQUJaR1hLRkc1SC4u&embed=true"
+        frameborder="0"
+        marginwidth="0"
+        marginheight="0"
+        allowfullscreen
+        webkitallowfullscreen
+        mozallowfullscreen
+        msallowfullscreen>
+      </iframe>
+      <button 
+        id="btn-voltar-inicio">
+        Voltar ao Início
+      </button>
+    </div>
+  </section>
 
-<script>
-  // Mostra o botão depois de um tempo (ex: 4 segundos) após o envio do formulário
-  // O tempo deve ser suficiente para que o usuário veja a mensagem de confirmação
-
-  // Função para mostrar o botão após o envio
-  function mostrarBotaoAposEnvio() {
-    // Esconde o botão caso o usuário navegue de novo até o formulário
-    document.getElementById('btn-voltar-inicio').style.display = 'none';
-
-    // Evento disparado sempre que o iframe é carregado (inclusive após o envio)
-    document.getElementById('simulacao-iframe').addEventListener('load', function() {
-      // Espera 4 segundos (ajuste se necessário)
-      setTimeout(function() {
-        document.getElementById('btn-voltar-inicio').style.display = 'block';
-      }, 4000);
-    });
-  }
-
-  mostrarBotaoAposEnvio();
-
-  // Ação do botão
-  document.getElementById('btn-voltar-inicio').onclick = function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    // Opcional: Redireciona para a home
-    // window.location.href = '/';
-  }
-</script>
+  <script>
+    // Mostra o botão depois de um tempo (ex: 4 segundos) após o envio do formulário
+    function mostrarBotaoAposEnvio() {
+      document.getElementById('btn-voltar-inicio').style.display = 'none';
+      document.getElementById('simulacao-iframe').addEventListener('load', function() {
+        setTimeout(function() {
+          document.getElementById('btn-voltar-inicio').style.display = 'block';
+        }, 4000);
+      });
+    }
+    mostrarBotaoAposEnvio();
+    document.getElementById('btn-voltar-inicio').onclick = function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
 
   <!-- LOJA -->
   <section id="loja">
