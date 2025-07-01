@@ -371,7 +371,7 @@
       display:flex;
       flex-direction:column;
       align-items:center;
-      padding:0 12px 14px 12px;
+      padding:0 12px 4px 12px; /* padding-bottom reduzido para 4px */
       border-radius:18px;
       background:rgba(255,255,255,0.98);
       box-shadow:0 4px 24px #0003;
@@ -399,7 +399,7 @@
       max-height:80vh;
     }
     #btn-voltar-inicio {
-      margin:24px auto 0 auto;
+      margin: 8px auto 0 auto; /* margem superior bem pequena */
       padding:13px 30px;
       font-size:1.07em;
       background:#009688;
@@ -695,6 +695,18 @@
     document.getElementById('btn-voltar-inicio').onclick = function() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+
+    // Scroll customizado ao clicar em "Simule Agora" para mostrar o topo do formulário já com o título visível
+    document.querySelectorAll('a.btn-simule, .hero-btn, .simule-btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const alvo = document.getElementById('formulario-simulacao-bg');
+        if (alvo) {
+          const y = alvo.getBoundingClientRect().top + window.pageYOffset - 16; // padding para não colar demais
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      });
+    });
   </script>
 
   <!-- LOJA -->
