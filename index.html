@@ -426,50 +426,54 @@
       background: #25a69c;
       transform: scale(1.05);
     }
-    /* CONTATO - CARDS HORIZONTAIS */
-    #contato .cards-row {
-      display: flex;
-      flex-direction: row;
-      gap: 24px;
-      justify-content: center;
-      align-items: stretch;
-      flex-wrap: wrap;
-      margin-top: 16px;
-    }
-    #contato .servico-card {
-      min-width: 250px;
-      max-width: 900px;
-      word-break: break-all;
-      flex: 1 1 250px;
-      box-sizing: border-box;
-      opacity: 1;
-      transform: none;
-      animation: none;
-    }
-    /* Loja card especial */
-    .loja-card {
-      min-width: 250px;
-      max-width: 900px;
-      text-align: center;
-      word-break: break-all;
-      box-shadow: 0 2px 24px #2fbbb122;
-      border: 1.5px solid var(--green);
-      margin: 0 auto;
-      background: #222;
-      color: var(--white);
-      border-radius: 16px;
-      padding: 24px 24px 24px 24px;
-    }
-    .loja-card h4 {
-      color: var(--green);
-      font-size: 1.35em;
-      margin-bottom: 16px;
-    }
-    .loja-card p {
-      color: var(--gray);
-      font-size: 1.22em;
-      margin-bottom: 0;
-    }
+   /* CONTATO - CARDS HORIZONTAIS */
+#contato .cards-row {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+#contato .servico-card {
+  min-width: 340px;         /* aumenta o mínimo para caber email grande */
+  max-width: 600px;         /* aumenta o máximo mas mantém proporcional */
+  flex: 1 1 340px;          /* permite crescer conforme o espaço */
+  box-sizing: border-box;
+  opacity: 1;
+  transform: none;
+  animation: none;
+  word-break: break-word;   /* quebra apenas se necessário */
+  overflow-wrap: anywhere;  /* quebra links ou emails longos */
+}
+
+/* Loja card especial */
+.loja-card {
+  min-width: 340px;
+  max-width: 600px;
+  flex: 1 1 340px;
+  text-align: center;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  box-shadow: 0 2px 24px #2fbbb122;
+  border: 1.5px solid var(--green);
+  margin: 0 auto;
+  background: #222;
+  color: var(--white);
+  border-radius: 16px;
+  padding: 32px 24px 24px 24px;
+}
+.loja-card h4 {
+  color: var(--green);
+  font-size: 1.35em;
+  margin-bottom: 16px;
+}
+.loja-card p {
+  color: var(--gray);
+  font-size: 1.22em;
+  margin-bottom: 0;
+}
     #linktree-section {
       background: #111;
       text-align: center;
