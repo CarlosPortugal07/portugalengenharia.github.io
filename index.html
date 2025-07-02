@@ -1,766 +1,306 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Portugal Engenharia Elétrica</title>
-  <meta name="description" content="Excelência em soluções elétricas para residências, comércios e indústrias. Inovação, segurança e sustentabilidade.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <title>Portugal Engenharia Elétrica - Soluções Inteligentes</title>
+  <meta name="description" content="Orçamento e soluções inteligentes em energia solar e elétrica. Simule agora!">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --green: #2fbbb1;
-      --green-hover: #25a69c;
-      --black: #181818;
-      --dark: #222;
-      --white: #fff;
-      --gray: #bbb;
-      --radius: 13px;
-      --transition: 0.25s cubic-bezier(.4,0,.2,1);
-      --shadow: 0 4px 24px #0002;
-      --spacing: 7vw;
+      --cor-principal: #2fbbb1;
+      --cor-escura: #000;
+      --cor-branca: #fff;
+      --cor-botao: #22bfae;
+      --cor-hover: #19887e;
+      --cor-titulo: #2fbbb1;
+      --cor-botao-hover: #19887e;
+      --shadow: 0 4px 24px #0003;
+      --radius: 18px;
+      --font-principal: 'Montserrat', Arial, sans-serif;
     }
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
-      background: var(--black);
-      font-family: 'Montserrat', Arial, sans-serif;
-      color: var(--white);
+      padding: 0;
+    }
+    html, body {
+      font-family: var(--font-principal);
+      background: #f5f6fa;
+      color: #222;
+      min-height: 100vh;
       scroll-behavior: smooth;
     }
-    /* HEADER */
     header {
+      width: 100%;
+      background: var(--cor-escura);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 4px 3vw 3px 3vw;
-      background: #000;
-      box-shadow: 0 4px 10px #0002;
+      padding: 10px 32px;
       position: sticky;
       top: 0;
-      z-index: 99;
-      animation: fadeDown 1s;
+      z-index: 100;
+      box-shadow: var(--shadow);
     }
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-40px);}
-      to { opacity: 1; transform: translateY(0);}
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 15px;
     }
-    header img {
-      height: 66px; width: auto;
-      display: block;
+    .logo-area img {
+      height: 68px; /* Aumentada conforme solicitado */
+      width: auto;
       border-radius: 8px;
       background: #000;
-      padding: 0px 4px;
-      box-shadow: 0 2px 10px #0003;
+      padding: 2px 8px;
+      box-shadow: 0 2px 12px #0003;
       transition: transform .18s;
+      object-fit: contain;
     }
-    header img:hover { transform: scale(1.07);}
+    .logo-nome {
+      color: var(--cor-branca);
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: .03em;
+      line-height: 1.1;
+      display: flex;
+      flex-direction: column;
+    }
+    .logo-desc {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #ccc;
+      letter-spacing: .02em;
+      margin-top: 2px;
+    }
     nav {
       display: flex;
-      gap: 16px;
       align-items: center;
+      gap: 32px;
     }
-    nav a {
-      color: var(--green);
+    nav a, nav button {
+      font-size: 1.25rem;
+      color: var(--cor-principal);
       background: none;
       border: none;
-      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
       text-decoration: none;
-      font-size: 1em;
-      padding: 7px 13px;
-      border-radius: 8px;
-      transition: background var(--transition), color var(--transition), transform .18s;
-      position: relative;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: background .15s, color .15s;
+      font-weight: 700;
       outline: none;
     }
-    nav a:hover,
-    nav a:focus {
-      background: var(--green);
-      color: var(--white);
-      transform: scale(1.06);
+    nav a:hover, nav button:hover, nav a:focus, nav button:focus {
+      background: var(--cor-principal);
+      color: var(--cor-branca);
     }
-    nav a.btn-simule {
-      background: var(--green);
-      color: var(--white);
+    .nav-btn-simule {
+      background: var(--cor-principal);
+      color: var(--cor-branca);
+      font-size: 1.35rem;
+      margin-left: 16px;
+      border-radius: 12px;
+      padding: 8px 22px;
       font-weight: 700;
-      font-size: 1.09em;
-      margin-left: 10px;
-      box-shadow: var(--shadow);
-      transition: background var(--transition), color var(--transition), transform var(--transition);
-    }
-    nav a.btn-simule:hover {
-      background: var(--green-hover);
-      transform: translateY(-2px) scale(1.10);
-    }
-    /* HERO */
-    .hero-section {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      overflow: hidden;
-    }
-    .hero-bg {
-      background: url('placa.jpeg') center center/cover no-repeat;
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      filter: brightness(0.44);
-      transition: filter .4s;
-    }
-    .hero-section:hover .hero-bg {
-      filter: brightness(0.58);
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      color: #fff;
-      max-width: 780px;
-      margin: auto;
-      padding: 0 6vw;
-      animation: fadeDown .95s;
-    }
-    .hero-content h1 {
-      font-size: 2.5em;
-      font-weight: 800;
-      margin-bottom: 18px;
-      letter-spacing: 1px;
-      text-shadow: 0 4px 18px #000c;
-      animation: fadeUp .8s .2s backwards;
-    }
-    .hero-content p {
-      font-size: 1.18em;
-      font-weight: 500;
-      margin-bottom: 32px;
-      text-shadow: 0 2px 12px #000a;
-      animation: fadeUp .8s .4s backwards;
-    }
-    .hero-btn {
-      display: inline-block;
-      background: #2fbbb1;
-      color: #fff;
-      font-size: 1.16em;
-      font-weight: 700;
+      transition: background .16s;
       border: none;
-      border-radius: 13px;
-      padding: 18px 42px;
-      text-decoration: none;
-      box-shadow: 0 4px 20px #0006;
-      cursor: pointer;
-      transition: background .18s, transform .18s;
-      animation: fadeUp .8s .6s backwards;
+      outline: none;
     }
-    .hero-btn:hover {
-      background: #25a69c;
-      transform: scale(1.04) translateY(-2px);
+    .nav-btn-simule:hover, .nav-btn-simule:focus {
+      background: var(--cor-botao-hover);
+      color: var(--cor-branca);
     }
-    /* ANIMAÇÕES DE ENTRADA */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(40px);}
-      to { opacity: 1; transform: translateY(0);}
+    main {
+      width: 100%;
+      min-height: 80vh;
     }
-    .fade-up {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all .8s cubic-bezier(.4,0,.2,1);
-    }
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .section-title {
-      color: var(--green);
-      font-size: 2.1em;
-      font-weight: 800;
-      text-align: center;
-      margin-bottom: 28px;
-      letter-spacing: 1px;
-      margin-top: 0;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all .8s cubic-bezier(.4,0,.2,1);
-    }
-    .section-title.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    section {
-      padding: 46px 0 38px 0;
-    }
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 0 2vw;
-    }
-    #essencia p {
-      color: var(--white);
-      font-size: 1.15em;
-      line-height: 1.7;
-      text-align: center;
-      margin: 0 auto;
-      max-width: 820px;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all .8s;
-    }
-    #essencia p.visible {
-      opacity: 1; transform: translateY(0);
-    }
-    .mvvp-row {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      flex-wrap: wrap;
-      margin-bottom: 36px;
-      animation: fadeUp .7s .2s backwards;
-    }
-    .mvvp-card {
-      background: var(--dark);
-      color: var(--white);
-      border-radius: var(--radius);
-      padding: 28px 20px;
-      width: 320px;
-      min-width: 240px;
-      box-shadow: var(--shadow);
-      text-align: left;
-      transition: box-shadow .18s, transform .2s;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeUp .9s .15s forwards;
-    }
-    .mvvp-card.visible { opacity: 1; transform: translateY(0);}
-    .mvvp-card h3 {
-      color: var(--green);
-      margin-bottom: 14px;
-      font-size: 1.25em;
-    }
-    .mvvp-card ul {
-      padding-left: 18px;
-      margin: 0;
-      font-size: 1.04em;
-    }
-    .mvvp-proposito {
-      background: linear-gradient(90deg, #2fbbb1 75%, #181818 100%);
-      color: var(--white);
-      border-radius: 18px;
-      display: inline-block;
-      padding: 28px 36px;
-      margin-top: 12px;
-      box-shadow: var(--shadow);
-      font-size: 1.22em;
-      font-weight: 600;
-      text-align: center;
-      margin-left: 50%;
-      transform: translateX(-50%);
-      animation: fadeUp .8s .3s backwards;
-      opacity: 0;
-      transition: opacity .8s, transform .8s;
-    }
-    .mvvp-proposito.visible { opacity: 1; transform: translateX(-50%) scale(1);}
-    #servicos .cards-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 28px;
-      justify-content: center;
-      margin-top: 18px;
-    }
-    .servico-card {
-      background: var(--dark);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 24px 22px;
-      width: 260px;
-      min-width: 200px;
-      color: var(--white);
-      text-align: left;
-      transition: transform .18s, border .18s, box-shadow .2s;
-      opacity: 0;
-      transform: scale(.95) translateY(35px);
-      animation: fadeCard .8s .3s forwards;
-    }
-    @keyframes fadeCard {
-      to { opacity: 1; transform: scale(1) translateY(0);}
-    }
-    .servico-card:hover {
-      box-shadow: 0 8px 32px #2fbbb155;
-      transform: scale(1.04) translateY(-4px);
-      border: 1.5px solid var(--green);
-    }
-    .servico-card h4 {
-      color: var(--green);
-      margin-top: 0;
-    }
-    #funciona img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 14px;
-      box-shadow: var(--shadow);
-      margin: 24px 0 0 0;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      opacity: 0;
-      transform: scale(.96) translateY(35px);
-      animation: fadeCard .7s .25s forwards;
-    }
-    #funciona .legenda {
-      color: var(--gray);
-      font-size: 1em;
-      margin-top: 14px;
-      text-align: center;
-      opacity: 0;
-      animation: fadeUp .7s .4s forwards;
-      animation-delay: .6s;
-    }
-    #simule {
-      background: var(--dark);
-      text-align: center;
-      padding: 52px 0 48px 0;
-      animation: fadeUp .7s .25s backwards;
-    }
-    #simule .simule-title {
-      color: var(--green);
-      font-size: 2em;
-      font-weight: 700;
-      margin-bottom: 16px;
-      margin-top: 0;
-      animation: fadeUp .7s .36s backwards;
-    }
-    #simule .simule-btn {
-      display: inline-block;
-      background: var(--green);
-      color: var(--white);
-      font-size: 1.19em;
-      font-weight: 700;
-      border: none;
-      border-radius: 13px;
-      padding: 22px 52px;
-      margin-top: 12px;
-      text-decoration: none;
-      box-shadow: var(--shadow);
-      transition: background .2s, transform .2s;
-      cursor: pointer;
-      animation: fadeUp .7s .5s backwards;
-    }
-    #simule .simule-btn:hover {
-      background: var(--green-hover);
-      transform: scale(1.04) translateY(-2px);
-    }
-    /* Formulário de simulação AJUSTADO */
+    /* Banner/fundo do formulário */
     #formulario-simulacao-bg {
-      background: url('placa2.jpeg') center center/cover no-repeat;
+      width: 100vw;
       min-height: 100vh;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      padding: 0;
+      background: linear-gradient(130deg, #2fbbb190 0%, #000000de 100%), url('bg-energia.jpg') center center/cover no-repeat;
       position: relative;
+      padding-top: 36px;
+      padding-bottom: 36px;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    #formulario-simulacao-bg .bg-overlay {
-      position:absolute; inset:0; background:rgba(0,0,0,0.68); z-index:1;
+    .bg-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(180deg, #fff7 30%, #2fbbb130 100%);
+      z-index: 0;
+      pointer-events: none;
     }
     #formulario-simulacao {
-      position:relative;
-      z-index:2;
-      width:100%;
-      max-width:500px;
-      margin:24px auto 32px auto;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      padding:0 8px 4px 12px; /* padding-bottom reduzido para 4px */
-      border-radius:18px;
-      background:rgba(255,255,255,0.98);
-      box-shadow:0 4px 24px #0003;
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 600px;
+      margin: 54px auto 24px auto; /* Aumente o valor inicial para descer o quadro */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 28px 16px 20px 16px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.98);
+      box-shadow: var(--shadow);
+      box-sizing: border-box;
     }
     #formulario-simulacao h2 {
-      margin-bottom:2px;
-      font-size:1.4em;
-      color:#2fbbb1;
+      font-size: 2.15rem;
+      text-align: center;
+      color: var(--cor-titulo);
+      margin-bottom: 8px;
+      font-weight: 800;
+      letter-spacing: .01em;
     }
     #formulario-simulacao p {
-      margin-bottom:2px;
-      font-size:1em;
-      color:#222;
-      text-align:center;
+      font-size: 1.22rem;
+      color: #222;
+      text-align: center;
+      margin-bottom: 22px;
     }
     #formulario-simulacao iframe {
-      border:1px solid #e0e0e0;
-      width:100%;
-      min-height:300px;
-      height:490px;
-      border-radius:12px;
-      background:#fff;
-      box-shadow:0 2px 12px #0001;
-      max-width:100%;
-      max-height:90vh;
-      margin-top: 0px; /* <-- Adicione esta linha! */
+      border: 1.5px solid #e0e0e0;
+      width: 100%;
+      min-height: 380px;
+      height: 670px;   /* Aumente até eliminar rolagem interna */
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 2px 12px #0001;
+      max-width: 100%;
+      max-height: 90vh;
+      margin-top: 0px;
+      margin-bottom: 8px;
+      display: block;
     }
     #btn-voltar-inicio {
-      margin: 4px auto 0 auto; /* margem superior bem pequena */
-      padding: 8px 20px;
-      font-size:1.07em;
-      background:#009688;
-      color:#fff;
-      border:none;
-      border-radius:5px;
-      cursor:pointer;
-      display:block;
-      display:none;
-    }
-    /* WHATSAPP FLOAT */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      z-index: 120;
-      background: #25d366;
-      color: #fff;
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      box-shadow: 0 4px 18px #0006;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.45em;
-      transition: background .2s, transform .2s;
-      cursor: pointer;
-      animation: fadeUp .7s 1s backwards, pulse 1.5s infinite 2s;
-    }
-    .whatsapp-float:hover {
-      background: #128c7e;
-      transform: scale(1.07) translateY(-2px);
-    }
-    @keyframes pulse {
-      0%,100% { box-shadow: 0 0 0 0 #25d36699;}
-      50% { box-shadow: 0 0 0 14px #25d36633;}
-    }
-    footer {
-      background: #131313;
-      color: var(--gray);
-      padding: 32px 0 16px 0;
-      text-align: center;
-      font-size: 1.04em;
-      margin-top: 0;
-      letter-spacing: .2px;
-    }
-    .social-links {
-      margin-bottom: 18px;
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      align-items: center;
-    }
-    .social-links a {
-      color: var(--green);
-      font-size: 1.7em;
-      transition: color .2s, transform .18s;
-    }
-    .social-links a:hover {
-      color: var(--white);
-      transform: scale(1.18) translateY(-2px);
-    }
-    #linktree-btn {
-      background: var(--green);
-      color: var(--white);
-      font-size: 1.14em;
-      font-weight: bold;
-      padding: 13px 38px;
-      border-radius: 16px;
-      text-decoration: none;
-      box-shadow: var(--shadow);
-      transition: background .18s;
-      display: inline-block;
       margin: 18px auto 0 auto;
+      padding: 13px 30px;
+      font-size: 1.07em;
+      background: var(--cor-principal);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 2px 12px #0002;
+      transition: background .15s, transform .12s;
+      outline: none;
+      display: block;
     }
-    #linktree-btn:hover {
-      background: var(--green-hover);
+    #btn-voltar-inicio:hover, #btn-voltar-inicio:focus {
+      background: var(--cor-botao-hover);
+      transform: scale(1.03);
     }
+    /* Responsividade */
     @media (max-width: 900px) {
-      .mvvp-row,
-      #servicos .cards-row {
-        flex-direction: column;
-        align-items: center;
-      }
       header {
         flex-direction: column;
-        gap: 12px;
-        padding: 14px 3vw;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 10px 10px;
       }
       nav {
-        gap: 12px;
+        gap: 18px;
+        flex-wrap: wrap;
       }
-      #formulario-simulacao {
-        max-width: 98vw;
+      .logo-area img {
+        height: 54px;
       }
-    }
-    @media (max-width: 700px) {
-      .hero-content h1 { font-size: 1.45em; }
-      .hero-content p { font-size: 1em;}
-      .hero-btn { font-size: 1em; padding: 13px 18vw;}
-      header img { height: 38px;}
-      header { padding: 10px 4vw 8px 4vw; }
-      nav { gap: 7px; }
       #formulario-simulacao {
         max-width: 99vw;
-        padding: 2vw;
-        margin: 8px auto 8px auto;
-      }
-      #formulario-simulacao iframe {
-        min-height: 160px;
-        height: 220px;
+        padding: 12px 3vw 10px 3vw;
       }
     }
-    @media (max-width: 600px) {
-      .mvvp-card {
-        width: 98vw;
-        min-width: unset;
+    @media (max-width: 540px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        padding: 8px 2vw;
       }
-      .mvvp-proposito {
-        width: 95vw;
-        font-size: 1em;
-        padding: 20px 10px;
+      .logo-area img {
+        height: 38px;
       }
-      .servico-card {
-        width: 97vw;
-        padding: 12px 8px;
+      #formulario-simulacao {
+        padding: 8px 3vw 8px 3vw;
+        margin-top: 22px;
       }
-      #simule .simule-btn {
-        font-size: 1em;
-        padding: 15px 12vw;
-      }
-      .whatsapp-float {
-        width: 52px;
-        height: 52px;
-        font-size: 1.5em;
-        bottom: 14px;
-        right: 12px;
+      #formulario-simulacao h2 {
+        font-size: 1.25rem;
       }
       #formulario-simulacao iframe {
-        min-height: 120px;
-        height: 170px;
+        min-height: 220px;
+        height: 440px;
       }
+    }
+    /* Acessibilidade extra */
+    a:focus, button:focus {
+      outline: 2px solid var(--cor-principal);
+      outline-offset: 2px;
     }
   </style>
 </head>
 <body>
-  <!-- HEADER COM LOGO E BOTÕES -->
-  <header>
-    <a href="#home" style="display: flex; align-items: center;">
-      <img src="Logo.jpeg" alt="Portugal Engenharia Elétrica">
-    </a>
-    <nav>
-      <a href="#home">Página Inicial</a>
-      <a href="#essencia">Quem somos</a>
+  <header role="banner">
+    <div class="logo-area">
+      <a href="/" aria-label="Página inicial Portugal Engenharia Elétrica">
+        <img src="logo.png" alt="Logo Portugal Engenharia Elétrica" width="108" height="68" loading="eager" />
+      </a>
+      <span class="logo-nome">
+        Portugal Engenharia Elétrica
+        <span class="logo-desc">Soluções elétricas inteligentes</span>
+      </span>
+    </div>
+    <nav aria-label="Menu principal">
+      <a href="#inicio">Página Inicial</a>
+      <a href="#sobre">Quem somos</a>
       <a href="#servicos">Serviços</a>
       <a href="#funciona">Como funciona</a>
       <a href="#contato">Contato</a>
       <a href="#loja">Loja</a>
-      <a href="#formulario-simulacao-bg" class="btn-simule">Simule Agora</a>
+      <a href="#formulario-simulacao" class="nav-btn-simule">Simule Agora</a>
     </nav>
   </header>
-
-  <!-- HERO -->
-  <section id="home" class="hero-section">
-    <div class="hero-bg"></div>
-    <div class="hero-content">
-      <h1>Descubra como a energia inteligente pode transformar seu futuro</h1>
-      <p>Soluções elétricas seguras, inovadoras e sob medida — Portugal Engenharia Elétrica.</p>
-      <a href="#formulario-simulacao-bg" class="hero-btn">Simule Agora</a>
-    </div>
-  </section>
-
-  <!-- QUEM SOMOS -->
-  <section id="essencia">
-    <div class="container">
-      <h2 class="section-title fade-up">Quem somos</h2>
-      <p class="fade-up">
-        A Portugal Engenharia Elétrica é uma empresa dedicada à excelência em serviços elétricos, oferecendo soluções inovadoras e seguras para residências, comércios e indústrias.<br><br>
-        Nosso compromisso é garantir a satisfação total dos clientes por meio de um atendimento personalizado, transparente e de alta qualidade, sempre buscando superar expectativas e contribuir para um futuro mais eficiente e sustentável.
-      </p>
-    </div>
-    <div class="mvvp-row">
-      <div class="mvvp-card fade-up">
-        <h3>Missão</h3>
+  <main>
+    <section id="formulario-simulacao-bg">
+      <div class="bg-overlay"></div>
+      <div id="formulario-simulacao" role="region" aria-label="Formulário de orçamento solar">
+        <h2>Simule Agora</h2>
         <p>
-          Transformar a experiência dos nossos clientes com energia segura e eficiente, garantindo economia e sustentabilidade por meio de soluções elétricas de alta qualidade.
+          Preencha o formulário abaixo e receba seu orçamento personalizado de energia solar!
         </p>
+        <iframe 
+          id="simulacao-iframe"
+          src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAAZcvWthUREJQRkhMWlRaNjNVSlJWQUJaR1hLRkc1SC4u&embed=true"
+          title="Formulário de Orçamento Solar"
+          frameborder="0"
+          marginwidth="0"
+          marginheight="0"
+          allowfullscreen
+          loading="lazy"
+          aria-label="Formulário Microsoft Forms para orçamento solar">
+        </iframe>
+        <button id="btn-voltar-inicio" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+          Voltar ao Início
+        </button>
       </div>
-      <div class="mvvp-card fade-up">
-        <h3>Visão</h3>
-        <p>
-          Ser a escolha preferida em soluções de energia segura e sustentável no Brasil, reconhecida por transformar a maneira como nossos clientes usam e produzem energia.
-        </p>
-      </div>
-      <div class="mvvp-card fade-up">
-        <h3>Valores</h3>
-        <ul>
-          <li><b>Excelência:</b> Buscamos a perfeição em tudo o que fazemos, garantindo serviços de alta qualidade e segurança.</li>
-          <li><b>Inovação:</b> Valorizamos a criatividade e a busca constante por soluções tecnológicas avançadas.</li>
-          <li><b>Integridade:</b> Atuamos com honestidade, transparência e respeito em todas as nossas relações.</li>
-          <li><b>Sustentabilidade:</b> Comprometidos com práticas que promovem o uso responsável dos recursos e o bem-estar ambiental.</li>
-          <li><b>Compromisso com o Cliente:</b> O sucesso dos nossos clientes é o nosso sucesso. Trabalhamos para superar expectativas e construir relações de confiança duradouras.</li>
-          <li><b>Segurança:</b> Item inegociável, sendo o dever de todos os colaboradores zelar e realizar boas práticas para garantir a segurança de todos.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="mvvp-proposito fade-up">
-      <h2 style="margin-bottom: 12px; margin-top:0;">Propósito</h2>
-      Energizar pessoas e negócios através de soluções elétricas seguras e sustentáveis.
-    </div>
-  </section>
-
-  <!-- SERVIÇOS -->
-  <section id="servicos">
-    <div class="container">
-      <h2 class="section-title fade-up">Serviços</h2>
-      <div class="cards-row">
-        <div class="servico-card">
-          <h4>Projetos Elétricos Residenciais</h4>
-          <p>Planejamento e execução de instalações elétricas seguras e eficientes para residências.</p>
-        </div>
-        <div class="servico-card">
-          <h4>Projetos Comerciais e Industriais</h4>
-          <p>Desenvolvimento de soluções elétricas sob medida para empresas e indústrias.</p>
-        </div>
-        <div class="servico-card">
-          <h4>Energia Solar Fotovoltaica</h4>
-          <p>Implantação de sistemas solares completos para redução de custos e sustentabilidade.</p>
-        </div>
-        <div class="servico-card">
-          <h4>Manutenção e Laudos Técnicos</h4>
-          <p>Serviços de manutenção preventiva, corretiva e emissão de laudos técnicos especializados.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- COMO FUNCIONA -->
-  <section id="funciona">
-    <div class="container">
-      <h2 class="section-title fade-up">Como funciona um sistema fotovoltaico?</h2>
-      <img src="sistema_fv.png" alt="Fluxo do sistema fotovoltaico">
-      <div class="legenda">Exemplo de funcionamento de um sistema fotovoltaico.</div>
-    </div>
-  </section>
-
-  <!-- SIMULE AGORA -->
-  <section id="simule">
-    <div class="container">
-      <div class="simule-title fade-up">Descubra gratuitamente quanto pode economizar com energia solar</div>
-      <a href="#formulario-simulacao-bg" class="simule-btn fade-up">Simule Agora</a>
-    </div>
-  </section>
-
-  <!-- NOVA SEÇÃO DO FORMULÁRIO DE SIMULAÇÃO AJUSTADA -->
-  <section id="formulario-simulacao-bg">
-    <div class="bg-overlay"></div>
-    <div id="formulario-simulacao">
-      <h2>Simule Agora</h2>
-      <p>
-        Preencha o formulário abaixo e receba seu orçamento personalizado de energia solar!
-      </p>
-      <iframe 
-        id="simulacao-iframe"
-        src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAAZcvWthUREJQRkhMWlRaNjNVSlJWQUJaR1hLRkc1SC4u&embed=true"
-        frameborder="0"
-        marginwidth="0"
-        marginheight="0"
-        allowfullscreen
-        webkitallowfullscreen
-        mozallowfullscreen
-        msallowfullscreen>
-      </iframe>
-      <button 
-        id="btn-voltar-inicio">
-        Voltar ao Início
-      </button>
-    </div>
-  </section>
-
-  <script>
-    // Mostra o botão depois de um tempo (ex: 4 segundos) após o envio do formulário
-    function mostrarBotaoAposEnvio() {
-      document.getElementById('btn-voltar-inicio').style.display = 'none';
-      document.getElementById('simulacao-iframe').addEventListener('load', function() {
-        setTimeout(function() {
-          document.getElementById('btn-voltar-inicio').style.display = 'block';
-        }, 4000);
-      });
-    }
-    mostrarBotaoAposEnvio();
-    document.getElementById('btn-voltar-inicio').onclick = function() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // Scroll customizado ao clicar em "Simule Agora" para mostrar o topo do formulário já com o título visível
-    document.querySelectorAll('a.btn-simule, .hero-btn, .simule-btn').forEach(btn => {
-      btn.addEventListener('click', function(e) {
-        e.preventDefault();
-        const alvo = document.getElementById('formulario-simulacao-bg');
-        if (alvo) {
-          const y = alvo.getBoundingClientRect().top + window.pageYOffset - 16; // padding para não colar demais
-          window.scrollTo({ top: y, behavior: 'smooth' });
-        }
-      });
-    });
-  </script>
-
-  <!-- LOJA -->
-  <section id="loja">
-    <div class="container">
-      <h2 class="section-title fade-up">Loja</h2>
-      <p class="fade-up" style="text-align:center; color:var(--gray); font-size:1.13em">
-        Em breve, novidades na nossa loja online.<br>
-        Fique atento!
-      </p>
-    </div>
-  </section>
-
-  <!-- LINKTREE FINAL -->
-  <section id="linktree-section" style="background:#111;text-align:center;">
-    <a href="https://linktr.ee/Portugal_Engenharia" target="_blank" id="linktree-btn">
-      Siga nossas redes sociais
-    </a>
-  </section>
-
-  <!-- WHATSAPP FLOAT -->
-  <a class="whatsapp-float" href="https://wa.me/5519995454370" target="_blank" title="Fale com a gente no WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <!-- FOOTER SOCIAL -->
-  <footer>
-    <div class="social-links">
-      <a href="https://wa.me/5519995454370" target="_blank" title="WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://www.instagram.com/portugal_eng" target="_blank" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.facebook.com/profile.php?id=61561425598667#" target="_blank" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.linkedin.com/company/portugal-engenharia-elétrica" target="_blank" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    </div>
-    <div>
-      <a href="https://linkthread.com/portugalengenharia" target="_blank" style="color:var(--green);text-decoration:underline;">
-        Acesse nosso Linkthread
-      </a>
-    </div>
-    <div>
-      &copy; 2025 Portugal Engenharia Elétrica &mdash; Todos os direitos reservados.
-    </div>
+    </section>
+  </main>
+  <footer style="text-align:center; padding: 24px 0 10px 0; background: #111; color: #aaa; font-size: 1.05rem;">
+    &copy; 2025 Portugal Engenharia Elétrica. Todos os direitos reservados.
+    <br>
+    <a href="https://linktr.ee/Portugal_Engenharia" target="_blank" rel="noopener noreferrer" style="color:var(--cor-principal);margin-top:4px;display:inline-block;text-decoration:none;">Redes sociais</a>
   </footer>
-
-  <script>
-    // Animação de títulos e elementos fade-up ao entrar na tela
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.section-title, .fade-up, #essencia p, .mvvp-card, .mvvp-proposito').forEach(e=>observer.observe(e));
-  </script>
+  <!-- Scripts de acessibilidade/navigation aqui -->
 </body>
 </html>
