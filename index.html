@@ -241,9 +241,8 @@
       padding-left: 18px;
       margin: 0;
       font-size: 1.04em;
-    }
-    .mvvp-proposito {
-      background: linear-gradient(90deg, #2fbbb1 75%, #23242a 100%);
+.mvvp-proposito {
+  background: linear-gradient(90deg, #2fbbb1 75%, #23242a 100%);
   color: var(--white);
   border-radius: 18px;
   display: inline-block;
@@ -260,21 +259,44 @@
   opacity: 0;
   transition: opacity .8s, transform .8s;
 }
+.mvvp-proposito.visible {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
 .mvvp-proposito h2 {
   margin-bottom: 6px;
   margin-top: 0;
   font-size: 1.3em;        /* Menor título */
 }
-     
-    }
-    .mvvp-proposito.visible { opacity: 1; transform: translateX(-50%) scale(1);}
-    #servicos .cards-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 28px;
-      justify-content: center;
-      margin-top: 8px;
-    }
+
+/* Animações fade-up para todos elementos que usam */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.section-title {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s;
+}
+.section-title.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#servicos .cards-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  justify-content: center;
+  margin-top: 8px;
+}
+Principais correções:
     .servico-card {
       background: var(--dark);
       border-radius: var(--radius);
