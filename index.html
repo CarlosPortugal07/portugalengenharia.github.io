@@ -426,78 +426,29 @@
       background: #25a69c;
       transform: scale(1.05);
     }
-    .whatsapp-float {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      z-index: 120;
-      background: #25d366;
-      color: #fff;
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      box-shadow: 0 4px 18px #0006;
+    /* CONTATO - CARDS HORIZONTAIS */
+    #contato .cards-row {
       display: flex;
-      align-items: center;
+      flex-direction: row;
+      gap: 28px;
       justify-content: center;
-      font-size: 2.45em;
-      transition: background .2s, transform .2s;
-      cursor: pointer;
-      animation: fadeUp .7s 1s backwards, pulse 1.5s infinite 2s;
+      align-items: stretch;
+      flex-wrap: wrap;
+      margin-top: 16px;
     }
-    .whatsapp-float:hover {
-      background: #128c7e;
-      transform: scale(1.07) translateY(-2px);
+    #contato .servico-card {
+      min-width: 250px;
+      max-width: 350px;
+      flex: 1 1 250px;
+      box-sizing: border-box;
+      opacity: 1; /* garante visibilidade */
+      transform: none;
+      animation: none;
     }
-    @keyframes pulse {
-      0%,100% { box-shadow: 0 0 0 0 #25d36699;}
-      50% { box-shadow: 0 0 0 14px #25d36633;}
-    }
-    footer {
-      background: #131313;
-      color: var(--gray);
-      padding: 32px 0 16px 0;
-      text-align: center;
-      font-size: 1.04em;
-      margin-top: 0;
-      letter-spacing: .2px;
-    }
-    .social-links {
-      margin-bottom: 18px;
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      align-items: center;
-    }
-    .social-links a {
-      color: var(--green);
-      font-size: 1.7em;
-      transition: color .2s, transform .18s;
-    }
-    .social-links a:hover {
-      color: var(--white);
-      transform: scale(1.18) translateY(-2px);
-    }
-    #linktree-btn {
-      background: var(--green);
-      color: var(--white);
-      font-size: 1.14em;
-      font-weight: bold;
-      padding: 13px 38px;
-      border-radius: 16px;
-      text-decoration: none;
-      box-shadow: var(--shadow);
-      transition: background .18s;
-      display: inline-block;
-      margin: 18px auto 0 auto;
-    }
-    #linktree-btn:hover {
-      background: var(--green-hover);
-    }
-    /* RESPONSIVO */
     @media (max-width: 900px) {
       .mvvp-row,
-      #servicos .cards-row {
+      #servicos .cards-row,
+      #contato .cards-row {
         flex-direction: column;
         align-items: center;
       }
@@ -706,16 +657,24 @@
   <section id="contato">
     <div class="container">
       <h2 class="section-title fade-up">Contato</h2>
-      <div class="cards-row" style="justify-content:center;">
-        <div class="servico-card" style="min-width:250px;max-width:350px;">
+      <div class="cards-row">
+        <div class="servico-card">
           <h4>Email</h4>
-          <p><a href="mailto:contato@portugalengenharia.com.br" style="color:var(--green);text-decoration:underline;">contato@portugalengenharia.com.br</a></p>
+          <p>
+            <a href="mailto:contato@portugalengenharia.com.br" style="color:var(--green);text-decoration:underline;">
+              contato@portugalengenharia.com.br
+            </a>
+          </p>
         </div>
-        <div class="servico-card" style="min-width:250px;max-width:350px;">
+        <div class="servico-card">
           <h4>WhatsApp</h4>
-          <p><a href="https://wa.me/5519995454370" target="_blank" style="color:var(--green);text-decoration:underline;"><i class="fab fa-whatsapp"></i> (19) 99545-4370</a></p>
+          <p>
+            <a href="https://wa.me/5519995454370" target="_blank" style="color:var(--green);text-decoration:underline;">
+              <i class="fab fa-whatsapp"></i> (19) 99545-4370
+            </a>
+          </p>
         </div>
-        <div class="servico-card" style="min-width:250px;max-width:350px;">
+        <div class="servico-card">
           <h4>Endereço</h4>
           <p>Rua Exemplo, 123 - Campinas/SP<br>CEP: 13000-000</p>
         </div>
