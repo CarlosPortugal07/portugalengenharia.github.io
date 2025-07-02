@@ -157,6 +157,7 @@
       background: #25a69c;
       transform: scale(1.04) translateY(-2px);
     }
+    /* ANIMAÇÕES DE ENTRADA */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(40px);}
       to { opacity: 1; transform: translateY(0);}
@@ -352,64 +353,77 @@
     #formulario-simulacao-bg {
       background: url('placa2.jpeg') center center/cover no-repeat;
       min-height: 100vh;
+      position: relative;
       display: flex;
       align-items: flex-start;
       justify-content: center;
-      padding: 0;
-      position: relative;
     }
     #formulario-simulacao-bg .bg-overlay {
       position:absolute; inset:0; background:rgba(0,0,0,0.68); z-index:1;
     }
     #formulario-simulacao {
-      position:relative;
-      z-index:2;
-      width:100%;
-      max-width:500px;
-      margin:24px auto 32px auto;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      padding:0 8px 4px 12px;
-      border-radius:18px;
-      background:rgba(255,255,255,0.98);
-      box-shadow:0 4px 24px #0003;
+      background: rgba(255,255,255,0.98);
+      border-radius: 22px;
+      box-shadow: 0 4px 24px #0003;
+      width: 90vw;
+      max-width: 480px;
+      margin: 40px auto 40px auto;
+      padding: 28px 18px 18px 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 2;
+      max-height: 90vh;
+      overflow: auto;
     }
     #formulario-simulacao h2 {
-      margin-bottom:2px;
-      font-size:1.4em;
-      color:#2fbbb1;
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 2em;
+      color: #2fbbb1;
+      font-weight: 900;
+      text-align: center;
     }
     #formulario-simulacao p {
-      margin-bottom:2px;
-      font-size:1em;
-      color:#222;
-      text-align:center;
+      margin-bottom: 18px;
+      font-size: 1.08em;
+      color: #222;
+      text-align: center;
+      font-weight: 500;
     }
     #formulario-simulacao iframe {
-      border:1px solid #e0e0e0;
-      width:100%;
-      min-height:300px;
-      height:490px;
-      border-radius:12px;
-      background:#fff;
-      box-shadow:0 2px 12px #0001;
-      max-width:100%;
-      max-height:90vh;
-      margin-top: 0px;
+      border: 1px solid #e0e0e0;
+      width: 100%;
+      min-height: 340px;
+      height: 520px;
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: 0 2px 12px #0001;
+      max-width: 100%;
+      margin-top: 0;
+      margin-bottom: 16px;
+      display: block;
     }
     #btn-voltar-inicio {
-      margin: 4px auto 0 auto;
-      padding: 8px 20px;
-      font-size:1.07em;
-      background:#009688;
-      color:#fff;
-      border:none;
-      border-radius:5px;
-      cursor:pointer;
-      display:block;
-      display:none;
+      margin: 14px auto 0 auto;
+      padding: 13px 34px;
+      font-size: 1.07em;
+      background: #009688;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      display: block;
+      font-weight: 700;
+      box-shadow: 0 2px 10px #0002;
+      transition: background .18s, transform .12s;
     }
+    #btn-voltar-inicio:hover,
+    #btn-voltar-inicio:focus {
+      background: #25a69c;
+      transform: scale(1.05);
+    }
+    /* WHATSAPP FLOAT */
     .whatsapp-float {
       position: fixed;
       bottom: 24px;
@@ -549,7 +563,7 @@
   <!-- HEADER COM LOGO E BOTÕES -->
   <header>
     <a href="#home" style="display: flex; align-items: center;">
-      <img src="Logo.jpeg" alt="Portugal Engenharia Elétrica" width="160" height="66">
+      <img src="Logo.jpeg" alt="Portugal Engenharia Elétrica">
     </a>
     <nav>
       <a href="#home">Página Inicial</a>
@@ -641,7 +655,7 @@
   <section id="funciona">
     <div class="container">
       <h2 class="section-title fade-up">Como funciona um sistema fotovoltaico?</h2>
-      <img src="sistema_fv.png" alt="Fluxo do sistema fotovoltaico" loading="lazy">
+      <img src="sistema_fv.png" alt="Fluxo do sistema fotovoltaico">
       <div class="legenda">Exemplo de funcionamento de um sistema fotovoltaico.</div>
     </div>
   </section>
@@ -654,7 +668,7 @@
     </div>
   </section>
 
-  <!-- FORMULÁRIO DE SIMULAÇÃO -->
+  <!-- FORMULÁRIO AJUSTADO -->
   <section id="formulario-simulacao-bg">
     <div class="bg-overlay"></div>
     <div id="formulario-simulacao">
@@ -669,10 +683,7 @@
         marginwidth="0"
         marginheight="0"
         allowfullscreen
-        loading="lazy"
-        webkitallowfullscreen
-        mozallowfullscreen
-        msallowfullscreen>
+        loading="lazy">
       </iframe>
       <button 
         id="btn-voltar-inicio">
@@ -696,17 +707,30 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Scroll customizado ao clicar em "Simule Agora" para mostrar o topo do formulário já com o título visível
+    // Scroll customizado ao clicar em "Simule Agora" para mostrar o topo do quadro branco já com o título visível
     document.querySelectorAll('a.btn-simule, .hero-btn, .simule-btn').forEach(btn => {
       btn.addEventListener('click', function(e) {
         e.preventDefault();
         const alvo = document.getElementById('formulario-simulacao-bg');
         if (alvo) {
-          const y = alvo.getBoundingClientRect().top + window.pageYOffset - 16;
+          const header = document.querySelector('header');
+          const headerHeight = header ? header.offsetHeight : 0;
+          // Ajuste para que o topo do quadro fique visível, logo abaixo do header fixo
+          const y = alvo.getBoundingClientRect().top + window.pageYOffset - headerHeight - 16;
           window.scrollTo({ top: y, behavior: 'smooth' });
         }
       });
     });
+
+    // Animação de títulos e elementos fade-up ao entrar na tela
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.section-title, .fade-up, #essencia p, .mvvp-card, .mvvp-proposito').forEach(e=>observer.observe(e));
   </script>
 
   <!-- LOJA -->
@@ -722,26 +746,26 @@
 
   <!-- LINKTREE FINAL -->
   <section id="linktree-section" style="background:#111;text-align:center;">
-    <a href="https://linktr.ee/Portugal_Engenharia" target="_blank" id="linktree-btn" rel="noopener noreferrer">
+    <a href="https://linktr.ee/Portugal_Engenharia" target="_blank" id="linktree-btn">
       Siga nossas redes sociais
     </a>
   </section>
 
   <!-- WHATSAPP FLOAT -->
-  <a class="whatsapp-float" href="https://wa.me/5519995454370" target="_blank" title="Fale com a gente no WhatsApp" rel="noopener noreferrer">
+  <a class="whatsapp-float" href="https://wa.me/5519995454370" target="_blank" title="Fale com a gente no WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
   <!-- FOOTER SOCIAL -->
   <footer>
     <div class="social-links">
-      <a href="https://wa.me/5519995454370" target="_blank" title="WhatsApp" aria-label="WhatsApp" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://www.instagram.com/portugal_eng" target="_blank" title="Instagram" aria-label="Instagram" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.facebook.com/profile.php?id=61561425598667#" target="_blank" title="Facebook" aria-label="Facebook" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.linkedin.com/company/portugal-engenharia-elétrica" target="_blank" title="LinkedIn" aria-label="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+      <a href="https://wa.me/5519995454370" target="_blank" title="WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.instagram.com/portugal_eng" target="_blank" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61561425598667#" target="_blank" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.linkedin.com/company/portugal-engenharia-elétrica" target="_blank" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
     </div>
     <div>
-      <a href="https://linkthread.com/portugalengenharia" target="_blank" style="color:var(--green);text-decoration:underline;" rel="noopener noreferrer">
+      <a href="https://linkthread.com/portugalengenharia" target="_blank" style="color:var(--green);text-decoration:underline;">
         Acesse nosso Linkthread
       </a>
     </div>
@@ -749,17 +773,5 @@
       &copy; 2025 Portugal Engenharia Elétrica &mdash; Todos os direitos reservados.
     </div>
   </footer>
-
-  <script>
-    // Animação de títulos e elementos fade-up ao entrar na tela
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.section-title, .fade-up, #essencia p, .mvvp-card, .mvvp-proposito').forEach(e=>observer.observe(e));
-  </script>
 </body>
 </html>
