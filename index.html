@@ -243,21 +243,29 @@
       font-size: 1.04em;
     }
     .mvvp-proposito {
-      background: linear-gradient(90deg, #2fbbb1 75%, #181818 100%);
-      color: var(--white);
-      border-radius: 18px;
-      display: inline-block;
-      padding: 28px 36px;
-      margin-top: 8px;
-      box-shadow: var(--shadow);
-      font-size: 1.22em;
-      font-weight: 600;
-      text-align: center;
-      margin-left: 50%;
-      transform: translateX(-50%);
-      animation: fadeUp .8s .3s backwards;
-      opacity: 0;
-      transition: opacity .8s, transform .8s;
+      background: linear-gradient(90deg, #2fbbb1 75%, #23242a 100%);
+  color: var(--white);
+  border-radius: 18px;
+  display: inline-block;
+  padding: 18px 22px;      /* Reduzido */
+  margin-top: 18px;
+  box-shadow: 0 4px 18px #0003;
+  font-size: 1.12em;       /* Levemente menor */
+  font-weight: 700;
+  text-align: center;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  max-width: 540px;        /* Limita largura em telas grandes */
+  animation: fadeUp .8s .3s backwards;
+  opacity: 0;
+  transition: opacity .8s, transform .8s;
+}
+.mvvp-proposito h2 {
+  margin-bottom: 6px;
+  margin-top: 0;
+  font-size: 1.3em;        /* Menor título */
+}
+     
     }
     .mvvp-proposito.visible { opacity: 1; transform: translateX(-50%) scale(1);}
     #servicos .cards-row {
