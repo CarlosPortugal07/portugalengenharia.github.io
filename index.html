@@ -22,12 +22,14 @@
       --shadow: 0 4px 24px #0002;
       --spacing: 7vw;
     }
+    html, body { min-height: 100vh; }
     body {
       margin: 0;
       background: var(--black);
       font-family: 'Montserrat', Arial, sans-serif;
       color: var(--white);
       scroll-behavior: smooth;
+      min-height: 100vh;
     }
     header {
       display: flex;
@@ -180,7 +182,9 @@
     }
     section {
       padding: 60px 0 38px 0;
-
+    }
+    #essencia {
+      padding-top: 100px;
     }
     .container {
       max-width: 1000px;
@@ -197,10 +201,8 @@
       opacity: 0;
       transform: translateY(30px);
       transition: all .8s;
-    
-}
     }
-     #essencia p.visible {
+    #essencia p.visible {
       opacity: 1; transform: translateY(0);
     }
     #essencia .mvvp-row {
@@ -492,6 +494,7 @@
     #linktree-btn:hover {
       background: var(--green-hover);
     }
+    /* RESPONSIVO */
     @media (max-width: 900px) {
       .mvvp-row,
       #servicos .cards-row {
@@ -509,6 +512,9 @@
       #formulario-simulacao {
         max-width: 98vw;
       }
+      #essencia .mvvp-row {
+        flex-direction: column;
+      }
     }
     @media (max-width: 700px) {
       .hero-content h1 { font-size: 1.45em; }
@@ -525,6 +531,11 @@
       #formulario-simulacao iframe {
         min-height: 160px;
         height: 220px;
+      }
+      #essencia .mvvp-card {
+        max-width: 100vw;
+        width: 98vw;
+        min-width: unset;
       }
     }
     @media (max-width: 600px) {
@@ -614,7 +625,7 @@
         <h3 style="font-size:1.12em;">Valores</h3>
         <ul style="font-size:0.95em; padding-left:16px; margin:0;">
           <li><b>Segurança:</b> Práticas rigorosas para garantir segurança de todos.</li>
-          <li><b>Excelência:</b> Sucesso dos clientes é prioridade</li>
+          <li><b>Excelência:</b> Sucesso dos clientes é prioridade.</li>
           <li><b>Integridade:</b> Honestidade e respeito em todas as relações.</li>
         </ul>
       </div>
@@ -691,6 +702,71 @@
     </div>
   </section>
 
+  <!-- CONTATO -->
+  <section id="contato">
+    <div class="container">
+      <h2 class="section-title fade-up">Contato</h2>
+      <div class="cards-row" style="justify-content:center;">
+        <div class="servico-card" style="min-width:250px;max-width:350px;">
+          <h4>Email</h4>
+          <p><a href="mailto:contato@portugalengenharia.com.br" style="color:var(--green);text-decoration:underline;">contato@portugalengenharia.com.br</a></p>
+        </div>
+        <div class="servico-card" style="min-width:250px;max-width:350px;">
+          <h4>WhatsApp</h4>
+          <p><a href="https://wa.me/5519995454370" target="_blank" style="color:var(--green);text-decoration:underline;"><i class="fab fa-whatsapp"></i> (19) 99545-4370</a></p>
+        </div>
+        <div class="servico-card" style="min-width:250px;max-width:350px;">
+          <h4>Endereço</h4>
+          <p>Rua Exemplo, 123 - Campinas/SP<br>CEP: 13000-000</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOJA -->
+  <section id="loja">
+    <div class="container">
+      <h2 class="section-title fade-up">Loja</h2>
+      <div class="cards-row" style="justify-content:center;">
+        <div class="servico-card" style="min-width:250px;max-width:350px;">
+          <h4>Em breve!</h4>
+          <p style="text-align:center; color:var(--gray); font-size:1.13em">
+            Novidades na nossa loja online.<br>Fique atento!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LINKTREE FINAL -->
+  <section id="linktree-section" style="background:#111;text-align:center;">
+    <a href="https://linktr.ee/Portugal_Engenharia" target="_blank" id="linktree-btn">
+      Siga nossas redes sociais
+    </a>
+  </section>
+
+  <!-- WHATSAPP FLOAT -->
+  <a class="whatsapp-float" href="https://wa.me/5519995454370" target="_blank" title="Fale com a gente no WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- FOOTER SOCIAL -->
+  <footer>
+    <div class="social-links">
+      <a href="https://wa.me/5519995454370" target="_blank" title="WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.instagram.com/portugal_eng" target="_blank" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61561425598667#" target="_blank" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.linkedin.com/company/portugal-engenharia-elétrica" target="_blank" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <div>
+      <a href="https://linkthread.com/portugalengenharia" target="_blank" style="color:var(--green);text-decoration:underline;">
+        Acesse nosso Linkthread
+      </a>
+    </div>
+    <div>
+      &copy; 2025 Portugal Engenharia Elétrica &mdash; Todos os direitos reservados.
+    </div>
+  </footer>
   <script>
     function mostrarBotaoAposEnvio() {
       document.getElementById('btn-voltar-inicio').style.display = 'none';
@@ -727,46 +803,5 @@
     }, { threshold: 0.12 });
     document.querySelectorAll('.section-title, .fade-up, #essencia p, .mvvp-card, .mvvp-proposito').forEach(e=>observer.observe(e));
   </script>
-
-  <!-- LOJA -->
-  <section id="loja">
-    <div class="container">
-      <h2 class="section-title fade-up">Loja</h2>
-      <p class="fade-up" style="text-align:center; color:var(--gray); font-size:1.13em">
-        Em breve, novidades na nossa loja online.<br>
-        Fique atento!
-      </p>
-    </div>
-  </section>
-
-  <!-- LINKTREE FINAL -->
-  <section id="linktree-section" style="background:#111;text-align:center;">
-    <a href="https://linktr.ee/Portugal_Engenharia" target="_blank" id="linktree-btn">
-      Siga nossas redes sociais
-    </a>
-  </section>
-
-  <!-- WHATSAPP FLOAT -->
-  <a class="whatsapp-float" href="https://wa.me/5519995454370" target="_blank" title="Fale com a gente no WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <!-- FOOTER SOCIAL -->
-  <footer>
-    <div class="social-links">
-      <a href="https://wa.me/5519995454370" target="_blank" title="WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://www.instagram.com/portugal_eng" target="_blank" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.facebook.com/profile.php?id=61561425598667#" target="_blank" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.linkedin.com/company/portugal-engenharia-elétrica" target="_blank" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    </div>
-    <div>
-      <a href="https://linkthread.com/portugalengenharia" target="_blank" style="color:var(--green);text-decoration:underline;">
-        Acesse nosso Linkthread
-      </a>
-    </div>
-    <div>
-      &copy; 2025 Portugal Engenharia Elétrica &mdash; Todos os direitos reservados.
-    </div>
-  </footer>
 </body>
 </html>
