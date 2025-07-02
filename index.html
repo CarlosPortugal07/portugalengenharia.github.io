@@ -687,9 +687,9 @@
   <div class="container">
     <h2 class="section-title fade-up">Loja</h2>
     <div class="cards-row" style="justify-content:center;">
-      <div class="servico-card" style="min-width:280px;max-width:400px;text-align:center;box-shadow:0 2px 24px #2fbbb122;">
-        <h4 style="color:var(--green);font-size:1.35em;margin-bottom:16px;">Em breve!</h4>
-        <p style="color:var(--gray);font-size:1.25em;margin-bottom:0;">
+      <div class="servico-card loja-card">
+        <h4>Em breve!</h4>
+        <p>
           Novidades na nossa loja online.<br>
           Fique atento!
         </p>
@@ -699,20 +699,8 @@
 </section>
 
 <!-- LINKTREE FINAL -->
-<section id="linktree-section" style="background:#111;text-align:center;padding:35px 0 20px 0;">
-  <a href="https://linktr.ee/Portugal_Engenharia" target="_blank" id="linktree-btn" style="
-    background: var(--green);
-    color: var(--white);
-    font-size: 1.14em;
-    font-weight: bold;
-    padding: 16px 42px;
-    border-radius: 16px;
-    text-decoration: none;
-    box-shadow: var(--shadow);
-    transition: background .18s;
-    display: inline-block;
-    margin: 0 auto;
-  ">
+<section id="linktree-section">
+  <a href="https://linktr.ee/Portugal_Engenharia" target="_blank" id="linktree-btn">
     Siga nossas redes sociais
   </a>
 </section>
@@ -724,56 +712,100 @@
 
 <!-- FOOTER SOCIAL -->
 <footer>
-  <div class="social-links" style="justify-content:center;margin-bottom:14px;">
+  <div class="social-links">
     <a href="https://wa.me/5519995454370" target="_blank" title="WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
     <a href="https://www.instagram.com/portugal_eng" target="_blank" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
     <a href="https://www.facebook.com/profile.php?id=61561425598667#" target="_blank" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
     <a href="https://www.linkedin.com/company/portugal-engenharia-elétrica" target="_blank" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
   </div>
-  <div style="margin-bottom:8px;">
-    <a href="https://linkthread.com/portugalengenharia" target="_blank" style="color:var(--green);text-decoration:underline;font-size:1em;">
+  <div>
+    <a href="https://linkthread.com/portugalengenharia" target="_blank" class="linkthread">
       Acesse nosso Linkthread
     </a>
   </div>
-  <div style="margin-bottom:0;">
+  <div>
     &copy; 2025 Portugal Engenharia Elétrica &mdash; Todos os direitos reservados.
   </div>
 </footer>
-  <script>
-    function mostrarBotaoAposEnvio() {
-      document.getElementById('btn-voltar-inicio').style.display = 'none';
-      document.getElementById('simulacao-iframe').addEventListener('load', function() {
-        setTimeout(function() {
-          document.getElementById('btn-voltar-inicio').style.display = 'block';
-        }, 4000);
-      });
-    }
-    mostrarBotaoAposEnvio();
-    document.getElementById('btn-voltar-inicio').onclick = function() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+<style>
+/* Loja card especial */
+.loja-card {
+  min-width: 280px;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 2px 24px #2fbbb122;
+  border: 1.5px solid var(--green);
+  margin: 0 auto;
+  background: #222;
+  color: var(--white);
+  border-radius: 16px;
+  padding: 32px 24px 24px 24px;
+}
+.loja-card h4 {
+  color: var(--green);
+  font-size: 1.35em;
+  margin-bottom: 16px;
+}
+.loja-card p {
+  color: var(--gray);
+  font-size: 1.22em;
+  margin-bottom: 0;
+}
 
-    document.querySelectorAll('a.btn-simule, .hero-btn, .simule-btn').forEach(btn => {
-      btn.addEventListener('click', function(e) {
-        e.preventDefault();
-        const alvo = document.getElementById('formulario-simulacao-bg');
-        if (alvo) {
-          const header = document.querySelector('header');
-          const headerHeight = header ? header.offsetHeight : 0;
-          const y = alvo.getBoundingClientRect().top + window.pageYOffset - headerHeight - 16;
-          window.scrollTo({ top: y, behavior: 'smooth' });
-        }
-      });
-    });
+#linktree-section {
+  background: #111;
+  text-align: center;
+  padding: 35px 0 20px 0;
+}
+#linktree-btn {
+  background: var(--green);
+  color: var(--white);
+  font-size: 1.14em;
+  font-weight: bold;
+  padding: 16px 42px;
+  border-radius: 16px;
+  text-decoration: none;
+  box-shadow: var(--shadow);
+  transition: background .18s;
+  display: inline-block;
+  margin: 0 auto;
+}
+#linktree-btn:hover {
+  background: var(--green-hover);
+  color: var(--white);
+}
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.section-title, .fade-up, #essencia p, .mvvp-card, .mvvp-proposito').forEach(e=>observer.observe(e));
-  </script>
-</body>
-</html>
+footer {
+  background: #131313;
+  color: var(--gray);
+  padding: 32px 0 16px 0;
+  text-align: center;
+  font-size: 1.04em;
+  margin-top: 0;
+  letter-spacing: .2px;
+}
+.social-links {
+  margin-bottom: 18px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.social-links a {
+  color: var(--green);
+  font-size: 1.7em;
+  transition: color .2s, transform .18s;
+}
+.social-links a:hover {
+  color: var(--white);
+  transform: scale(1.18) translateY(-2px);
+}
+.linkthread {
+  color: var(--green);
+  text-decoration: underline;
+  font-size: 1em;
+}
+.linkthread:hover {
+  color: var(--white);
+}
+</style>
