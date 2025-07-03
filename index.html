@@ -32,19 +32,21 @@
       min-height: 100vh;
       width: 100vw;
       overflow-x: hidden;
+      padding-top: 78px; /* Altura do header fixo no desktop */
     }
     header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      z-index: 9999;
+      background: #000;
+      box-shadow: 0 4px 10px #0002;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 4px 3vw 3px 3vw;
-      background: #000;
-      box-shadow: 0 4px 10px #0002;
-      position: sticky;
-      top: 0;
-      z-index: 99;
       animation: fadeDown 1s;
-      width: 100vw;
       box-sizing: border-box;
     }
     @keyframes fadeDown {
@@ -282,197 +284,32 @@
       justify-content: center;
       margin-top: 20px;
     }
-    .servico-card {
-      background: var(--dark);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 24px 22px;
-      width: 260px;
-      min-width: 200px;
-      color: var(--white);
-      text-align: left;
-      transition: transform .18s, border .18s, box-shadow .2s;
-      opacity: 0;
-      transform: scale(.95) translateY(35px);
-      animation: fadeCard .8s .3s forwards;
-    }
-    @keyframes fadeCard {
-      to { opacity: 1; transform: scale(1) translateY(0);}
-    }
-    .servico-card:hover {
-      box-shadow: 0 8px 32px #2fbbb155;
-      transform: scale(1.04) translateY(-4px);
-      border: 1.5px solid var(--green);
-    }
-    .servico-card h4 {
-      color: var(--green);
-      margin-top: 0;
-    }
-    #funciona img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 14px;
-      box-shadow: var(--shadow);
-      margin: 24px 0 0 0;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      opacity: 0;
-      transform: scale(.96) translateY(35px);
-      animation: fadeCard .7s .25s forwards;
-    }
-    #funciona .legenda {
-      color: var(--gray);
-      font-size: 1em;
-      margin-top: 14px;
-      text-align: center;
-      opacity: 0;
-      animation: fadeUp .7s .4s forwards;
-      animation-delay: .6s;
-    }
-    #simule {
-      background: var(--dark);
-      text-align: center;
-      padding: 52px 0 48px 0;
-      animation: fadeUp .7s .25s backwards;
-      width: 100vw;
-      box-sizing: border-box;
-    }
-    #simule .simule-title {
-      color: var(--green);
-      font-size: 2em;
-      font-weight: 700;
-      margin-bottom: 16px;
-      margin-top: 0;
-      animation: fadeUp .7s .36s backwards;
-    }
-    #simule .simule-btn {
-      display: inline-block;
-      background: var(--green);
-      color: var(--white);
-      font-size: 1.19em;
-      font-weight: 700;
-      border: none;
-      border-radius: 13px;
-      padding: 22px 52px;
-      margin-top: 12px;
-      text-decoration: none;
-      box-shadow: var(--shadow);
-      transition: background .2s, transform .2s;
-      cursor: pointer;
-      animation: fadeUp .7s .5s backwards;
-    }
-    #simule .simule-btn:hover {
-      background: var(--green-hover);
-      transform: scale(1.04) translateY(-2px);
-    }
-    /* FORMULÁRIO RESPONSIVO */
-    #formulario-simulacao-bg {
-      padding-top: 0;
-      width: 100vw;
-    }
-    #formulario-simulacao {
-      background: rgba(255,255,255,0.98);
-      border-radius: 22px;
-      box-shadow: 0 4px 24px #2fbbb133;
-      width: 95vw;
-      max-width: 700px;
-      margin: 8px auto 24px auto;
-      padding: 24px 18px 21px 18px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      z-index: 2;
-      max-height: calc(100vh - 40px);
-      overflow: auto;
-    }
-    #formulario-simulacao h2 {
-      margin-top: 0;
-      margin-bottom: 8px;
-      font-size: 2.2em;
-      color: #2fbbb1;
-      font-weight: 900;
-      text-align: center;
-    }
-    #formulario-simulacao p {
-      margin-bottom: 16px;
-      font-size: 1.12em;
-      color: #222;
-      text-align: center;
-      font-weight: 500;
-    }
-    #formulario-simulacao iframe {
-      border: 1px solid #e0e0e0;
-      width: 100%;
-      min-height: 340px;
-      height: 55vh;
-      max-height: 60vh;
-      border-radius: 14px;
-      background: #fff;
-      box-sizing: border-box;
-      overflow-x: hidden;
-      display: block;
-      box-shadow: 0 2px 12px #0001;
-      margin-top: 0;
-      margin-bottom: 8px;
-    }
-    #btn-voltar-inicio {
-      margin-top: 18px;
-      font-size: 1.13em;
-      padding: 12px 30px;
-      background: #009688;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      display: block;
-      font-weight: 700;
-      box-shadow: 0 2px 10px #0002;
-      transition: background .18s, transform .12s;
-    }
-    #btn-voltar-inicio:hover,
-    #btn-voltar-inicio:focus {
-      background: #25a69c;
-      transform: scale(1.05);
-    }
-    /* CONTATO - CARDS HORIZONTAIS */
-    #contato .cards-row {
-      display: flex;
-      flex-direction: row;
-      gap: 24px;
-      justify-content: center;
-      align-items: stretch;
-      flex-wrap: wrap;
-      margin-top: 16px;
-    }
-    #contato .servico-card {
-      min-width: 340px;
+    .servico-card,
+    .loja-card {
+      width: 97vw;
       max-width: 600px;
-      flex: 1 1 340px;
+      min-width: 0;
       box-sizing: border-box;
       opacity: 1;
       transform: none;
       animation: none;
       word-break: break-word;
       overflow-wrap: anywhere;
-    }
-    .loja-card {
-      min-width: 340px;
-      max-width: 600px;
-      flex: 1 1 340px;
-      text-align: center;
-      word-break: break-word;
-      overflow-wrap: anywhere;
-      box-shadow: 0 2px 24px #2fbbb122;
-      border: 1.5px solid var(--green);
-      margin: 0 auto;
-      background: #222;
-      color: var(--white);
       border-radius: 16px;
       padding: 32px 24px 24px 24px;
+      margin: 0 auto 18px auto;
+      background: #222;
+      color: var(--white);
+      box-shadow: 0 2px 24px #2fbbb122;
+      border: 1.5px solid #232323;
+      height: auto;
     }
+    .servico-card h4,
     .loja-card h4 {
       color: var(--green);
+      margin-top: 0;
+    }
+    .loja-card h4 {
       font-size: 1.35em;
       margin-bottom: 16px;
     }
@@ -603,6 +440,9 @@
         padding: 6px 1vw 6px 1vw;
         width: 100vw;
         box-sizing: border-box;
+      }
+      body {
+        padding-top: 56px !important;
       }
       nav {
         flex-direction: column;
