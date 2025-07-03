@@ -353,79 +353,81 @@
       background: var(--green-hover);
       transform: scale(1.04) translateY(-2px);
     }
-   #formulario-simulacao-bg {
+  #formulario-simulacao-bg {
   background: url('placa2.jpeg') center center/cover no-repeat;
   min-height: 100vh;
   position: relative;
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding-top: 2px;
+  padding-top: 0 !important;
+}
+#formulario-simulacao-bg .bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.68);
+  z-index: 1;
 }
 #formulario-simulacao {
-  /* ... outros estilos ... */
-  margin: 0 auto 4px auto;
+  background: rgba(255,255,255,0.98);
+  border-radius: 22px;
+  box-shadow: 0 4px 24px #0003;
+  width: 90vw;
+  max-width: 480px;
+  margin: 4px auto 25px auto;
+  padding: 20px 18px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  max-height: 90vh;
+  overflow: auto;
+  overflow-x: hidden; /* Esconde barra horizontal */
 }
-    }
-    #formulario-simulacao-bg .bg-overlay {
-      position:absolute; inset:0; background:rgba(0,0,0,0.68); z-index:1;
-    }
-    #formulario-simulacao {
-      background: rgba(255,255,255,0.98);
-      border-radius: 22px;
-      box-shadow: 0 4px 24px #0003;
-      width: 90vw;
-      max-width: 480px;
-      margin: 4px auto 25px auto;
-      padding: 20px 18px 18px 18px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      z-index: 2;
-      max-height: 90vh;
-      overflow: auto;
-    }
-    #formulario-simulacao h2 {
-      margin-top: 0;
-      margin-bottom: 0px;
-      font-size: 2em;
-      color: #2fbbb1;
-      font-weight: 900;
-      text-align: center;
-    }
-    #formulario-simulacao p {
-      margin-bottom: 2px;
-      font-size: 1.08em;
-      color: #222;
-      text-align: center;
-      font-weight: 500;
-    }
-    #formulario-simulacao iframe {
-      border: 1px solid #e0e0e0;
-      width: 100%;
-      min-height: 340px;
-      height: 500px;
-      border-radius: 14px;
-      background: #fff;
-      box-shadow: 0 2px 12px #0001;
-      max-width: 100%;
-      margin-top: 0;
-      margin-bottom: 2px;
-      display: block;
-    }
-    #btn-voltar-inicio {
-      margin: 1px auto 0 auto;
-      padding: 4px 16px;
-      font-size: 1.07em;
-      background: #009688;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      display: block;
-      font-weight: 700;
-      box-shadow: 0 2px 10px #0002;
-      transition: background .18s, transform .12s;
+#formulario-simulacao h2 {
+  margin-top: 0;
+  margin-bottom: 0px;
+  font-size: 2em;
+  color: #2fbbb1;
+  font-weight: 900;
+  text-align: center;
+}
+#formulario-simulacao p {
+  margin-bottom: 2px;
+  font-size: 1.08em;
+  color: #222;
+  text-align: center;
+  font-weight: 500;
+}
+#formulario-simulacao iframe {
+  border: 1px solid #e0e0e0;
+  width: 100%;
+  min-height: 340px;
+  height: 500px;
+  border-radius: 14px;
+  background: #fff;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  display: block;
+  box-shadow: 0 2px 12px #0001;
+  max-width: 100%;
+  margin-top: 0;
+  margin-bottom: 2px;
+}
+#btn-voltar-inicio {
+  margin: 1px auto 0 auto;
+  padding: 4px 16px;
+  font-size: 1.07em;
+  background: #009688;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: block;
+  font-weight: 700;
+  box-shadow: 0 2px 10px #0002;
+  transition: background .18s, transform .12s;
+}
     }
     #btn-voltar-inicio:hover,
     #btn-voltar-inicio:focus {
