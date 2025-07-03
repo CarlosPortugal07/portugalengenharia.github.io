@@ -354,47 +354,34 @@
       transform: scale(1.04) translateY(-2px);
     }
   #formulario-simulacao-bg {
-  background: url('placa2.jpeg') center center/cover no-repeat;
-  min-height: 100vh;
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 0 !important;
-}
-#formulario-simulacao-bg .bg-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.68);
-  z-index: 1;
+  padding-top: 0;
 }
 #formulario-simulacao {
   background: rgba(255,255,255,0.98);
   border-radius: 22px;
-  box-shadow: 0 4px 20px #0003;
-  width: 90vw;
-  max-width: 460px;
-  margin: 1px auto 10px auto;
-  padding: 2px 10px 10px 10px;
+  box-shadow: 0 4px 24px #2fbbb133;
+  width: 95vw;
+  max-width: 700px;
+  margin: 8px auto 24px auto;
+  padding: 24px 18px 21px 18px;
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 2;
-  max-height: 90vh;
+  max-height: calc(100vh - 40px);
   overflow: auto;
-  overflow-x: hidden; /* Esconde barra horizontal */
 }
 #formulario-simulacao h2 {
   margin-top: 0;
-  margin-bottom: 0px;
-  font-size: 2em;
+  margin-bottom: 8px;
+  font-size: 2.2em;
   color: #2fbbb1;
-  font-weight: 800;
+  font-weight: 900;
   text-align: center;
 }
 #formulario-simulacao p {
-  margin-bottom: 0px;
-  font-size: 1.07em;
+  margin-bottom: 16px;
+  font-size: 1.12em;
   color: #222;
   text-align: center;
   font-weight: 500;
@@ -403,21 +390,21 @@
   border: 1px solid #e0e0e0;
   width: 100%;
   min-height: 340px;
-  height:480px;
+  height: 55vh;
+  max-height: 60vh;
   border-radius: 14px;
   background: #fff;
   box-sizing: border-box;
   overflow-x: hidden;
   display: block;
-  box-shadow: 0 2px 6px #0001;
-  max-width: 100%;
+  box-shadow: 0 2px 12px #0001;
   margin-top: 0;
-  margin-bottom: 1px;
+  margin-bottom: 8px;
 }
 #btn-voltar-inicio {
-  margin: 1px auto 0 auto;
-  padding: 1px 6px;
-  font-size: 1.07em;
+  margin-top: 18px;
+  font-size: 1.13em;
+  padding: 12px 30px;
   background: #009688;
   color: #fff;
   border: none;
@@ -425,7 +412,7 @@
   cursor: pointer;
   display: block;
   font-weight: 700;
-  box-shadow: 0 1px 2px #0002;
+  box-shadow: 0 2px 10px #0002;
   transition: background .18s, transform .12s;
 }
     }
