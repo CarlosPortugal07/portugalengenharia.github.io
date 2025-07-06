@@ -12,120 +12,71 @@
       --green: #2fbbb1;
       --green-hover: #25a69c;
       --black: #181818;
-      --dark: #222;
+      --dark: #232323;
       --white: #fff;
       --gray: #bbb;
       --radius: 13px;
-      --transition: 0.25s cubic-bezier(.4,0,.2,1);
       --shadow: 0 4px 24px #0002;
+      --transition: 0.23s cubic-bezier(.4,0,.2,1);
     }
-    html, body { min-height: 100vh; width: 100vw; overflow-x: hidden; }
-    body {
-      margin: 0;
-      background: var(--black);
-      font-family: 'Montserrat', Arial, sans-serif;
-      color: var(--white);
-      scroll-behavior: smooth;
+    html, body {
       min-height: 100vh;
       width: 100vw;
+      margin: 0;
+      padding: 0;
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Montserrat', Arial, sans-serif;
       overflow-x: hidden;
-      padding-top: 78px;
+      scroll-behavior: smooth;
     }
-    /* HEADER FIXO */
+    body { padding-top: 76px; }
+
+    /* LOGO FIXO */
     .topbar {
       position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      z-index: 9999;
+      top: 0; left: 0; width: 100vw;
       background: #000;
       box-shadow: 0 4px 10px #0002;
+      z-index: 9999;
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      padding: 0 0 0 0;
-      height: 78px;
-      box-sizing: border-box;
+      height: 76px;
     }
     .logo-header {
       display: flex;
       align-items: center;
-      padding: 6px 16px 6px 3vw;
-      height: 78px;
-      min-width: 0;
+      height: 76px;
+      padding-left: 2vw;
     }
     .logo-header img {
-      height: 60px;
+      height: 62px;
       width: auto;
       border-radius: 8px;
       background: #000;
-      padding: 0 4px;
       box-shadow: 0 2px 10px #0003;
-      transition: transform .18s;
+      padding: 0 4px;
       max-width: 96vw;
-      display: block;
+      transition: transform .18s;
     }
     .logo-header img:hover { transform: scale(1.07);}
-    /* MENU HORIZONTAL DESKTOP */
-    nav.menu-desktop {
-      display: flex;
-      gap: 16px;
-      align-items: center;
-      flex: 1 1 auto;
-      justify-content: flex-end;
-      padding-right: 2vw;
-    }
-    nav.menu-desktop a {
-      color: var(--green);
-      background: none;
-      border: none;
-      font-weight: 600;
-      text-decoration: none;
-      font-size: 1em;
-      padding: 7px 13px;
-      border-radius: 8px;
-      transition: background var(--transition), color var(--transition), transform .18s;
-      position: relative;
-      outline: none;
-      white-space: nowrap;
-    }
-    nav.menu-desktop a:hover,
-    nav.menu-desktop a:focus {
-      background: var(--green);
-      color: var(--white);
-      transform: scale(1.06);
-    }
-    nav.menu-desktop a.btn-simule {
-      background: var(--green);
-      color: var(--white);
-      font-weight: 700;
-      font-size: 1.09em;
-      margin-left: 10px;
-      box-shadow: var(--shadow);
-      transition: background var(--transition), color var(--transition), transform var(--transition);
-    }
-    nav.menu-desktop a.btn-simule:hover {
-      background: var(--green-hover);
-      transform: translateY(-2px) scale(1.10);
-    }
-    /* MENU MOBILE */
+    /* MENU HAMBURGUER (MOBILE) */
     .menu-mobile-trigger {
       display: none;
-      position: absolute;
-      top: 18px;
-      right: 18px;
       background: var(--green);
       color: #fff;
       border: none;
       border-radius: 8px;
-      font-size: 1.8em;
-      width: 44px;
-      height: 44px;
+      font-size: 2em;
+      width: 46px; height: 46px;
+      margin-left: auto;
+      margin-right: 18px;
       align-items: center;
       justify-content: center;
-      z-index: 10001;
-      transition: background .2s;
-      box-shadow: 0 2px 8px #0003;
       cursor: pointer;
+      transition: background .18s;
+      z-index: 10001;
     }
     .menu-mobile-trigger:active,
     .menu-mobile-trigger:focus {
@@ -134,21 +85,16 @@
     .menu-mobile {
       display: none;
       position: fixed;
-      top: 78px;
-      left: 0;
-      width: 100vw;
+      top: 76px; left: 0; width: 100vw;
       background: #000;
       z-index: 9998;
-      box-shadow: 0 8px 32px #0008;
+      box-shadow: 0 6px 24px #0008;
       animation: fadeDown .32s;
     }
-    .menu-mobile.open {
-      display: block;
-    }
+    .menu-mobile.open { display: block; }
     .menu-mobile nav {
       display: flex;
       flex-direction: column;
-      gap: 0;
       align-items: stretch;
       width: 100%;
     }
@@ -162,10 +108,10 @@
       padding: 20px 8vw 18px 8vw;
       border-bottom: 1px solid #232323;
       transition: background var(--transition), color var(--transition);
-      outline: none;
       text-align: left;
       width: 100%;
       box-sizing: border-box;
+      letter-spacing: 0.5px;
     }
     .menu-mobile nav a.btn-simule {
       background: var(--green);
@@ -184,10 +130,50 @@
       background: var(--green);
       color: var(--white);
     }
+    /* MENU DESKTOP */
+    nav.menu-desktop {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex: 1 1 auto;
+      justify-content: flex-end;
+      margin-left: auto;
+      padding-right: 2vw;
+    }
+    nav.menu-desktop a {
+      color: var(--green);
+      background: none;
+      border: none;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1em;
+      padding: 7px 13px;
+      border-radius: 8px;
+      transition: background var(--transition), color var(--transition), transform .18s;
+      white-space: nowrap;
+    }
+    nav.menu-desktop a:hover,
+    nav.menu-desktop a:focus {
+      background: var(--green);
+      color: var(--white);
+      transform: scale(1.06);
+    }
+    nav.menu-desktop a.btn-simule {
+      background: var(--green);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1.09em;
+      margin-left: 10px;
+      box-shadow: var(--shadow);
+    }
+    nav.menu-desktop a.btn-simule:hover {
+      background: var(--green-hover);
+      transform: translateY(-2px) scale(1.10);
+    }
     /* HERO */
     .hero-section {
       position: relative;
-      min-height: 100vh;
+      min-height: 60vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -217,7 +203,7 @@
       animation: fadeDown .95s;
     }
     .hero-content h1 {
-      font-size: 2.1em;
+      font-size: 2.25em;
       font-weight: 800;
       margin-bottom: 18px;
       letter-spacing: 1px;
@@ -225,7 +211,7 @@
       animation: fadeUp .8s .2s backwards;
     }
     .hero-content p {
-      font-size: 1.13em;
+      font-size: 1.16em;
       font-weight: 500;
       margin-bottom: 32px;
       text-shadow: 0 2px 12px #000a;
@@ -250,50 +236,56 @@
       background: #25a69c;
       transform: scale(1.04) translateY(-2px);
     }
-    /* FORMULÁRIO DESTAQUE */
+    /* SEÇÃO PRINCIPAL DESTAQUE: FORMULÁRIO */
     #formulario-simulacao-bg {
-      padding-top: 0;
+      padding: 0;
       background: #181818;
       width: 100vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 60vh;
     }
     #formulario-simulacao {
-      background: rgba(255,255,255,0.98);
+      background: #fff;
       border-radius: 22px;
-      box-shadow: 0 4px 24px #2fbbb133;
-      width: 98vw;
-      max-width: 430px;
-      margin: 18px auto 24px auto;
-      padding: 24px 12px 21px 12px;
+      box-shadow: 0 6px 32px #2fbbb133;
+      width: 100%;
+      max-width: 410px;
+      margin: 38px auto 32px auto;
+      padding: 26px 18px 24px 18px;
       display: flex;
       flex-direction: column;
       align-items: center;
       z-index: 2;
-      max-height: 99vh;
-      overflow: auto;
+      overflow: visible;
       border: 1.5px solid #2fbbb1;
       position: relative;
+      min-width: 0;
     }
     #formulario-simulacao h2 {
       margin-top: 0;
       margin-bottom: 8px;
-      font-size: 2.0em;
+      font-size: 2em;
       color: #2fbbb1;
       font-weight: 900;
       text-align: center;
+      letter-spacing: 1px;
     }
     #formulario-simulacao p {
       margin-bottom: 16px;
-      font-size: 1.09em;
+      font-size: 1.12em;
       color: #222;
       text-align: center;
       font-weight: 500;
     }
     #formulario-simulacao iframe {
-      border: 1px solid #e0e0e0;
+      border: 1.5px solid #e0e0e0;
       width: 100%;
       min-height: 340px;
-      height: 48vw;
-      max-height: 360px;
+      height: 390px;
+      max-height: 430px;
       border-radius: 14px;
       background: #fff;
       box-sizing: border-box;
@@ -301,7 +293,7 @@
       display: block;
       box-shadow: 0 2px 12px #0001;
       margin-top: 0;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
     #btn-voltar-inicio {
       margin-top: 18px;
@@ -322,7 +314,252 @@
       background: #25a69c;
       transform: scale(1.05);
     }
-    /* FLUTUANTE WHATSAPP */
+    /* SEÇÕES INSTITUCIONAIS */
+    section {
+      padding: 60px 0 38px 0;
+      width: 100vw;
+      box-sizing: border-box;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 0 2vw;
+      width: 100vw;
+      box-sizing: border-box;
+    }
+    .section-title {
+      font-size: 1.55em;
+      color: var(--green);
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 30px;
+      margin-top: 0;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 12px #0008;
+    }
+    /* QUEM SOMOS */
+    #essencia p {
+      color: var(--white);
+      font-size: 1.08em;
+      line-height: 1.5;
+      text-align: center;
+      margin: 0 auto 10px auto;
+      max-width: 700px;
+    }
+    #essencia .mvvp-row {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    #essencia .mvvp-card {
+      background: var(--dark);
+      color: #fff;
+      border-radius: 13px;
+      box-shadow: 0 4px 16px #0002;
+      min-width: 200px;
+      max-width: 250px;
+      flex: 1 1 210px;
+      padding: 16px 16px;
+      margin: 0 8px 10px 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    #essencia .mvvp-card h3 {
+      color: #2fbbb1;
+      margin-bottom: 10px;
+      font-size: 1.13em;
+    }
+    #essencia .mvvp-card ul {
+      padding-left: 18px;
+      margin: 0;
+      font-size: 0.97em;
+    }
+    .mvvp-proposito {
+      background: linear-gradient(90deg, #2fbbb1 75%, #23242a 100%);
+      color: var(--white);
+      border-radius: 18px;
+      display: inline-block;
+      padding: 18px 22px;
+      margin-top: 18px;
+      box-shadow: 0 3px 16px #0003;
+      font-size: 1.13em;
+      font-weight: 700;
+      text-align: center;
+      margin-left: 50%;
+      transform: translateX(-50%);
+      max-width: 540px;
+    }
+    .mvvp-proposito h2 {
+      margin-bottom: 6px;
+      margin-top: 0;
+      font-size: 1.3em;
+    }
+    /* SERVIÇOS */
+    #servicos .cards-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .servico-card {
+      background: var(--dark);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px 22px;
+      width: 260px;
+      min-width: 200px;
+      color: var(--white);
+      text-align: left;
+      transition: transform .18s, border .18s, box-shadow .2s;
+      opacity: 1;
+      transform: scale(1) translateY(0);
+      box-sizing: border-box;
+      margin-bottom: 12px;
+    }
+    .servico-card h4 {
+      color: var(--green);
+      margin-top: 0;
+      font-size: 1.13em;
+    }
+    .servico-card p {
+      margin-top: 6px;
+      font-size: 1em;
+      line-height: 1.4;
+      color: #eee;
+    }
+    /* COMO FUNCIONA */
+    #funciona img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      margin: 24px 0 0 0;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #funciona .legenda {
+      color: var(--gray);
+      font-size: 1em;
+      margin-top: 14px;
+      text-align: center;
+    }
+    /* CONTATO */
+    #contato .cards-row {
+      display: flex;
+      flex-direction: row;
+      gap: 22px;
+      justify-content: center;
+      align-items: stretch;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    #contato .servico-card {
+      min-width: 210px;
+      max-width: 350px;
+      width: 95vw;
+      box-sizing: border-box;
+      margin: 0 auto 18px auto;
+      padding: 24px 18px;
+      border-radius: 16px;
+      height: auto;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+      background: #222;
+      color: var(--white);
+      box-shadow: 0 2px 24px #2fbbb122;
+      border: 1.5px solid #232323;
+    }
+    /* LOJA */
+    .loja-card {
+      width: 95vw;
+      max-width: 350px;
+      min-width: 0;
+      margin: 0 auto 18px auto;
+      padding: 28px 18px;
+      border-radius: 16px;
+      background: #222;
+      color: var(--white);
+      box-shadow: 0 2px 24px #2fbbb122;
+      border: 1.5px solid var(--green);
+      text-align: center;
+    }
+    .loja-card h4 {
+      color: var(--green);
+      font-size: 1.22em;
+      margin-bottom: 16px;
+    }
+    .loja-card p {
+      color: var(--gray);
+      font-size: 1.12em;
+      margin-bottom: 0;
+    }
+    /* LINKTREE FINAL */
+    #linktree-section {
+      background: #111;
+      text-align: center;
+      padding: 35px 0 20px 0;
+      width: 100vw;
+      box-sizing: border-box;
+    }
+    #linktree-btn {
+      background: var(--green);
+      color: var(--white);
+      font-size: 1.14em;
+      font-weight: bold;
+      padding: 16px 42px;
+      border-radius: 16px;
+      text-decoration: none;
+      box-shadow: var(--shadow);
+      transition: background .18s;
+      display: inline-block;
+      margin: 0 auto;
+    }
+    #linktree-btn:hover {
+      background: var(--green-hover);
+      color: var(--white);
+    }
+    /* FOOTER SOCIAL */
+    footer {
+      background: #131313;
+      color: var(--gray);
+      padding: 32px 0 16px 0;
+      text-align: center;
+      font-size: 1.04em;
+      margin-top: 0;
+      letter-spacing: .2px;
+      width: 100vw;
+      box-sizing: border-box;
+    }
+    .social-links {
+      margin-bottom: 18px;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+    }
+    .social-links a {
+      color: var(--green);
+      font-size: 1.7em;
+      transition: color .2s, transform .18s;
+    }
+    .social-links a:hover {
+      color: var(--white);
+      transform: scale(1.18) translateY(-2px);
+    }
+    .linkthread {
+      color: var(--green);
+      text-decoration: underline;
+      font-size: 1em;
+    }
+    .linkthread:hover {
+      color: var(--white);
+    }
+    /* WHATSAPP FLUTUANTE */
     .whatsapp-float {
       position: fixed;
       bottom: 24px;
@@ -350,19 +587,7 @@
       0%,100% { box-shadow: 0 0 0 0 #25d36699;}
       50% { box-shadow: 0 0 0 14px #25d36633;}
     }
-    /* OUTROS AJUSTES E RESPONSIVO */
-    section {
-      padding: 60px 0 38px 0;
-      width: 100vw;
-      box-sizing: border-box;
-    }
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 0 2vw;
-      width: 100vw;
-      box-sizing: border-box;
-    }
+    /* RESPONSIVO */
     @media (max-width: 900px) {
       .mvvp-row,
       #servicos .cards-row,
@@ -378,44 +603,30 @@
       }
     }
     @media (max-width: 700px) {
-      body {
-        padding-top: 64px !important;
-      }
-      .topbar {
-        height: 64px;
-      }
-      .logo-header {
-        height: 64px;
-        padding: 6px 10px 6px 3vw;
-      }
-      .logo-header img {
-        height: 43px;
-      }
-      nav.menu-desktop {
-        display: none !important;
-      }
-      .menu-mobile-trigger {
-        display: flex !important;
-      }
-      .menu-mobile {
-        top: 64px;
-      }
-      .hero-content h1 { font-size: 1.32em; }
+      body { padding-top: 60px; }
+      .topbar { height: 60px; }
+      .logo-header { height: 60px; padding-left: 3vw; }
+      .logo-header img { height: 38px; }
+      nav.menu-desktop { display: none !important; }
+      .menu-mobile-trigger { display: flex !important; }
+      .menu-mobile { top: 60px; }
+      .hero-content h1 { font-size: 1.08em; }
       .hero-content p { font-size: 1em;}
-      .hero-btn { font-size: 1em; padding: 12px 10vw;}
+      .hero-btn { font-size: 1em; padding: 12px 12vw;}
       #formulario-simulacao {
         max-width: 99vw;
         width: 99vw;
+        min-width: 0;
         padding: 4vw 2vw 4vw 2vw;
-        margin: 12px auto 16px auto;
+        margin: 12px auto 18px auto;
         border-radius: 14px;
       }
-      #formulario-simulacao h2 { font-size: 1.3em; }
+      #formulario-simulacao h2 { font-size: 1.24em; }
       #formulario-simulacao p { font-size: 1em; }
       #formulario-simulacao iframe {
-        min-height: 180px;
-        height: 48vw;
-        max-height: 320px;
+        min-height: 160px;
+        height: 220px;
+        max-height: 280px;
       }
       .whatsapp-float {
         right: 10px !important;
@@ -423,6 +634,12 @@
         width: 46px !important;
         height: 46px !important;
         font-size: 1.4em !important;
+      }
+      .servico-card, .loja-card {
+        width: 97vw;
+        min-width: unset;
+        max-width: 99vw;
+        padding: 12px 8px;
       }
     }
     @media (min-width: 701px) {
@@ -442,7 +659,7 @@
   </style>
 </head>
 <body>
-  <!-- HEADER FIXO COM LOGO E MENU -->
+  <!-- LOGO FIXO NO TOPO -->
   <div class="topbar">
     <a href="#home" class="logo-header">
       <img src="Logo.jpeg" alt="Portugal Engenharia Elétrica">
@@ -501,14 +718,153 @@
     </div>
   </section>
 
-  <!-- WHATSAPP FLOAT -->
+  <!-- QUEM SOMOS -->
+  <section id="essencia">
+    <div class="container">
+      <h2 class="section-title">Quem somos</h2>
+      <p>
+        A Portugal Engenharia Elétrica é uma empresa dedicada à excelência em serviços elétricos, oferecendo soluções inovadoras e seguras para residências, comércios e indústrias.
+      </p>
+      <p style="margin-bottom: 30px;">
+        Nosso compromisso é garantir a satisfação total dos clientes por meio de um atendimento personalizado, transparente e de alta qualidade, sempre buscando superar expectativas e contribuir para um futuro mais eficiente e sustentável.
+      </p>
+      <div class="mvvp-row">
+        <div class="mvvp-card">
+          <h3>Missão</h3>
+          <p>
+            Transformar a experiência dos nossos clientes com energia segura e eficiente, garantindo economia e sustentabilidade por meio de soluções elétricas de alta qualidade.
+          </p>
+        </div>
+        <div class="mvvp-card">
+          <h3>Visão</h3>
+          <p>
+            Ser a escolha preferida em soluções de energia segura e sustentável no Brasil, reconhecida por transformar a maneira como nossos clientes usam e produzem energia.
+          </p>
+        </div>
+        <div class="mvvp-card">
+          <h3>Valores</h3>
+          <ul>
+            <li><b>Segurança:</b> Práticas rigorosas para garantir segurança de todos.</li>
+            <li><b>Excelência:</b> Sucesso dos clientes é prioridade.</li>
+            <li><b>Integridade:</b> Honestidade e respeito em todas as relações.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mvvp-proposito">
+        <h2>Propósito</h2>
+        Energizar pessoas e negócios através de soluções elétricas seguras e sustentáveis.
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos">
+    <div class="container">
+      <h2 class="section-title">Serviços</h2>
+      <div class="cards-row">
+        <div class="servico-card">
+          <h4>Projetos Elétricos Residenciais</h4>
+          <p>Planejamento e execução de instalações elétricas seguras e eficientes para residências.</p>
+        </div>
+        <div class="servico-card">
+          <h4>Projetos Comerciais e Industriais</h4>
+          <p>Desenvolvimento de soluções elétricas sob medida para empresas e indústrias.</p>
+        </div>
+        <div class="servico-card">
+          <h4>Energia Solar Fotovoltaica</h4>
+          <p>Implantação de sistemas solares completos para redução de custos e sustentabilidade.</p>
+        </div>
+        <div class="servico-card">
+          <h4>Manutenção e Laudos Técnicos</h4>
+          <p>Serviços de manutenção preventiva, corretiva e emissão de laudos técnicos especializados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section id="funciona">
+    <div class="container">
+      <h2 class="section-title">Como funciona um sistema fotovoltaico?</h2>
+      <img src="sistema_fv.png" alt="Fluxo do sistema fotovoltaico">
+      <div class="legenda">Exemplo de funcionamento de um sistema fotovoltaico.</div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato">
+    <div class="container">
+      <h2 class="section-title">Contato</h2>
+      <div class="cards-row">
+        <div class="servico-card">
+          <h4>Email</h4>
+          <p>
+            <a href="mailto:comercial@portugalengenharia.com.br" style="color:var(--green);text-decoration:underline;">
+             comercial@portugalengenharia.com.br
+            </a>
+          </p>
+        </div>
+        <div class="servico-card">
+          <h4>WhatsApp</h4>
+          <p>
+            <a href="https://wa.me/5519995454370" target="_blank" style="color:var(--green);text-decoration:underline;">
+              <i class="fab fa-whatsapp"></i> (19) 99545-4370
+            </a>
+          </p>
+        </div>
+        <div class="servico-card">
+          <h4>Endereço</h4>
+          <p>Rua Louenço Ferrari, 614 - Valinhos/SP<br>CEP: 13273-071</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOJA -->
+  <section id="loja">
+    <div class="container">
+      <h2 class="section-title">Loja</h2>
+      <div class="cards-row" style="justify-content:center;">
+        <div class="loja-card">
+          <h4>Em breve!</h4>
+          <p>
+            Novidades na nossa loja online.<br>
+            Fique atento!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LINKTREE FINAL -->
+  <section id="linktree-section">
+    <a href="https://linktr.ee/Portugal_Engenharia" target="_blank" id="linktree-btn">
+      Siga nossas redes sociais
+    </a>
+  </section>
+
+  <!-- WHATSAPP FLUTUANTE -->
   <a class="whatsapp-float" href="https://wa.me/5519995454370" target="_blank" title="Fale com a gente no WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- RESTANTE DO SITE (exemplo) -->
-  <!-- ...outras seções, rodapé, etc... -->
-
+  <!-- FOOTER SOCIAL -->
+  <footer>
+    <div class="social-links">
+      <a href="https://wa.me/5519995454370" target="_blank" title="WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.instagram.com/portugal_eng" target="_blank" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61561425598667#" target="_blank" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.linkedin.com/company/portugal-engenharia-elétrica" target="_blank" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <div>
+      <a href="https://linkthread.com/portugalengenharia" target="_blank" class="linkthread">
+        Acesse nosso Linkthread
+      </a>
+    </div>
+    <div>
+      &copy; 2025 Portugal Engenharia Elétrica &mdash; Todos os direitos reservados.
+    </div>
+  </footer>
   <script>
     // MENU MOBILE
     const btnMenuMobile = document.getElementById('btnMenuMobile');
@@ -523,7 +879,7 @@
         document.body.style.overflow = "";
       }
     });
-    // Fecha menu ao clicar em qualquer link
+    // Fecha menu ao clicar em qualquer link do menu mobile
     document.querySelectorAll('.menu-mobile nav a').forEach(link => {
       link.addEventListener('click', () => {
         menuMobile.classList.remove('open');
@@ -531,7 +887,7 @@
         document.body.style.overflow = "";
       });
     });
-    // SCROLL PARA FORMULÁRIO
+    // SCROLL SUAVE PARA FORMULÁRIO
     document.querySelectorAll('a.btn-simule, .hero-btn, .simule-btn').forEach(btn => {
       btn.addEventListener('click', function(e) {
         e.preventDefault();
