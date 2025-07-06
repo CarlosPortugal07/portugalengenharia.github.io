@@ -327,7 +327,6 @@
       opacity: 1;
       overflow: hidden;
     }
-    /* Accordion escondido no mobile */
     @media (max-width: 700px) {
       #essencia .mvvp-row {
         flex-direction: column;
@@ -367,7 +366,6 @@
         color: var(--green-hover);
       }
     }
-    /* Desktop: cards sempre abertos */
     @media (min-width: 701px) {
       #essencia .mvvp-card .accordion-btn { display: none; }
       #essencia .mvvp-card .card-content {
@@ -406,9 +404,246 @@
       font-size: 1.3em;
     }
 
-    /* ...restante dos estilos igual ao anterior (serviços, formulário, contato, etc.)... */
-    /* Adicione os estilos dos cards de serviços, formulário, contato, loja, footer e responsividade aqui */
-
+    /* SERVIÇOS */
+    #servicos .cards-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .servico-card {
+      background: var(--dark);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px 22px;
+      width: 260px;
+      min-width: 200px;
+      color: var(--white);
+      text-align: left;
+      transition: transform .18s, border .18s, box-shadow .2s;
+      opacity: 1;
+      transform: scale(1) translateY(0);
+      box-sizing: border-box;
+      margin-bottom: 12px;
+    }
+    .servico-card h4 {
+      color: var(--green);
+      margin-top: 0;
+      font-size: 1.13em;
+    }
+    .servico-card p {
+      margin-top: 6px;
+      font-size: 1em;
+      line-height: 1.4;
+      color: #eee;
+    }
+    /* COMO FUNCIONA */
+    #funciona img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      margin: 24px 0 0 0;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #funciona .legenda {
+      color: var(--gray);
+      font-size: 1em;
+      margin-top: 14px;
+      text-align: center;
+    }
+    /* FORMULÁRIO DESTAQUE */
+    #formulario-simulacao-bg {
+      padding: 0;
+      background: #181818;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 60vh;
+    }
+    #formulario-simulacao {
+      background: #fff;
+      border-radius: 22px;
+      box-shadow: 0 6px 32px #2fbbb133;
+      width: 100%;
+      max-width: 410px;
+      margin: 38px auto 32px auto;
+      padding: 26px 18px 24px 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 2;
+      overflow: visible;
+      border: 1.5px solid #2fbbb1;
+      position: relative;
+      min-width: 0;
+    }
+    #formulario-simulacao h2 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 2em;
+      color: #2fbbb1;
+      font-weight: 900;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+    #formulario-simulacao p {
+      margin-bottom: 16px;
+      font-size: 1.12em;
+      color: #222;
+      text-align: center;
+      font-weight: 500;
+    }
+    #formulario-simulacao iframe {
+      border: 1.5px solid #e0e0e0;
+      width: 100%;
+      min-height: 340px;
+      height: 390px;
+      max-height: 430px;
+      border-radius: 14px;
+      background: #fff;
+      box-sizing: border-box;
+      overflow-x: hidden;
+      display: block;
+      box-shadow: 0 2px 12px #0001;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    #btn-voltar-inicio {
+      margin-top: 18px;
+      font-size: 1.13em;
+      padding: 12px 30px;
+      background: #009688;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      display: block;
+      font-weight: 700;
+      box-shadow: 0 2px 10px #0002;
+      transition: background .18s, transform .12s;
+    }
+    #btn-voltar-inicio:hover,
+    #btn-voltar-inicio:focus {
+      background: #25a69c;
+      transform: scale(1.05);
+    }
+    /* CONTATO */
+    #contato .cards-row {
+      display: flex;
+      flex-direction: row;
+      gap: 22px;
+      justify-content: center;
+      align-items: stretch;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    #contato .servico-card {
+      min-width: 210px;
+      max-width: 350px;
+      width: 95vw;
+      box-sizing: border-box;
+      margin: 0 auto 18px auto;
+      padding: 24px 18px;
+      border-radius: 16px;
+      height: auto;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+      background: #222;
+      color: var(--white);
+      box-shadow: 0 2px 24px #2fbbb122;
+      border: 1.5px solid #232323;
+    }
+    /* LOJA */
+    .loja-card {
+      width: 95vw;
+      max-width: 350px;
+      min-width: 0;
+      margin: 0 auto 18px auto;
+      padding: 28px 18px;
+      border-radius: 16px;
+      background: #222;
+      color: var(--white);
+      box-shadow: 0 2px 24px #2fbbb122;
+      border: 1.5px solid var(--green);
+      text-align: center;
+    }
+    .loja-card h4 {
+      color: var(--green);
+      font-size: 1.22em;
+      margin-bottom: 16px;
+    }
+    .loja-card p {
+      color: var(--gray);
+      font-size: 1.12em;
+      margin-bottom: 0;
+    }
+    /* LINKTREE FINAL */
+    #linktree-section {
+      background: #111;
+      text-align: center;
+      padding: 35px 0 20px 0;
+      width: 100vw;
+      box-sizing: border-box;
+    }
+    #linktree-btn {
+      background: var(--green);
+      color: var(--white);
+      font-size: 1.14em;
+      font-weight: bold;
+      padding: 16px 42px;
+      border-radius: 16px;
+      text-decoration: none;
+      box-shadow: var(--shadow);
+      transition: background .18s;
+      display: inline-block;
+      margin: 0 auto;
+    }
+    #linktree-btn:hover {
+      background: var(--green-hover);
+      color: var(--white);
+    }
+    /* FOOTER SOCIAL */
+    footer {
+      background: #131313;
+      color: var(--gray);
+      padding: 32px 0 16px 0;
+      text-align: center;
+      font-size: 1.04em;
+      margin-top: 0;
+      letter-spacing: .2px;
+      width: 100vw;
+      box-sizing: border-box;
+    }
+    .social-links {
+      margin-bottom: 18px;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+    }
+    .social-links a {
+      color: var(--green);
+      font-size: 1.7em;
+      transition: color .2s, transform .18s;
+    }
+    .social-links a:hover {
+      color: var(--white);
+      transform: scale(1.18) translateY(-2px);
+    }
+    .linkthread {
+      color: var(--green);
+      text-decoration: underline;
+      font-size: 1em;
+    }
+    .linkthread:hover {
+      color: var(--white);
+    }
     /* WHATSAPP FLUTUANTE */
     .whatsapp-float {
       position: fixed;
@@ -437,7 +672,73 @@
       0%,100% { box-shadow: 0 0 0 0 #25d36699;}
       50% { box-shadow: 0 0 0 14px #25d36633;}
     }
-    /* Adapte o restante do CSS conforme seu projeto */
+    @media (max-width: 900px) {
+      .mvvp-row,
+      #servicos .cards-row,
+      #contato .cards-row {
+        flex-direction: column;
+        align-items: center;
+      }
+      #formulario-simulacao {
+        max-width: 98vw;
+      }
+      #essencia .mvvp-row {
+        flex-direction: column;
+      }
+    }
+    @media (max-width: 700px) {
+      body { padding-top: 60px; }
+      .topbar { height: 60px; }
+      .logo-header { height: 60px; padding-left: 3vw; }
+      .logo-header img { height: 38px; }
+      nav.menu-desktop { display: none !important; }
+      .menu-mobile-trigger { display: flex !important; }
+      .menu-mobile { top: 60px; }
+      .hero-content h1 { font-size: 1.08em; }
+      .hero-content p { font-size: 1em;}
+      .hero-btn { font-size: 1em; padding: 12px 12vw;}
+      #formulario-simulacao {
+        max-width: 99vw;
+        width: 99vw;
+        min-width: 0;
+        padding: 4vw 2vw 4vw 2vw;
+        margin: 12px auto 18px auto;
+        border-radius: 14px;
+      }
+      #formulario-simulacao h2 { font-size: 1.24em; }
+      #formulario-simulacao p { font-size: 1em; }
+      #formulario-simulacao iframe {
+        min-height: 160px;
+        height: 220px;
+        max-height: 280px;
+      }
+      .whatsapp-float {
+        right: 10px !important;
+        bottom: 10px !important;
+        width: 46px !important;
+        height: 46px !important;
+        font-size: 1.4em !important;
+      }
+      .servico-card, .loja-card {
+        width: 97vw;
+        min-width: unset;
+        max-width: 99vw;
+        padding: 12px 8px;
+      }
+    }
+    @media (min-width: 701px) {
+      .menu-mobile-trigger,
+      .menu-mobile { display: none !important; }
+      nav.menu-desktop { display: flex !important; }
+    }
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-40px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
   </style>
 </head>
 <body>
@@ -459,7 +760,6 @@
       <i class="fas fa-bars"></i>
     </button>
   </div>
-  <!-- MENU MOBILE -->
   <div class="menu-mobile" id="menuMobile">
     <nav>
       <a href="#home">Página Inicial</a>
@@ -536,17 +836,132 @@
     </div>
   </section>
 
-  <!-- ...demais seções do seu site (serviços, como funciona, formulário, contato, loja, etc.)... -->
-  <!-- Adicione aqui as outras seções conforme seu projeto -->
+  <!-- SERVIÇOS -->
+  <section id="servicos">
+    <div class="container">
+      <h2 class="section-title">Serviços</h2>
+      <div class="cards-row">
+        <div class="servico-card">
+          <h4>Projetos Elétricos Residenciais</h4>
+          <p>Planejamento e execução de instalações elétricas seguras e eficientes para residências.</p>
+        </div>
+        <div class="servico-card">
+          <h4>Projetos Comerciais e Industriais</h4>
+          <p>Desenvolvimento de soluções elétricas sob medida para empresas e indústrias.</p>
+        </div>
+        <div class="servico-card">
+          <h4>Energia Solar Fotovoltaica</h4>
+          <p>Implantação de sistemas solares completos para redução de custos e sustentabilidade.</p>
+        </div>
+        <div class="servico-card">
+          <h4>Manutenção e Laudos Técnicos</h4>
+          <p>Serviços de manutenção preventiva, corretiva e emissão de laudos técnicos especializados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section id="funciona">
+    <div class="container">
+      <h2 class="section-title">Como funciona um sistema fotovoltaico?</h2>
+      <img src="sistema_fv.png" alt="Fluxo do sistema fotovoltaico">
+      <div class="legenda">Exemplo de funcionamento de um sistema fotovoltaico.</div>
+    </div>
+  </section>
+
+  <!-- FORMULÁRIO EM DESTAQUE -->
+  <section id="formulario-simulacao-bg">
+    <div id="formulario-simulacao">
+      <h2>Simule Agora</h2>
+      <p>
+        Descubra agora o investimento necessário para transformar sol em economia!
+      </p>
+      <iframe 
+        id="simulacao-iframe"
+        src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__W4YrEBUQTJDOTlRRTJORFFRUVFNTlpCVzQwV1hIQi4u&embed=true" 
+        frameborder="0"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+      <button id="btn-voltar-inicio">Voltar ao Início</button>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato">
+    <div class="container">
+      <h2 class="section-title">Contato</h2>
+      <div class="cards-row">
+        <div class="servico-card">
+          <h4>Email</h4>
+          <p>
+            <a href="mailto:comercial@portugalengenharia.com.br" style="color:var(--green);text-decoration:underline;">
+             comercial@portugalengenharia.com.br
+            </a>
+          </p>
+        </div>
+        <div class="servico-card">
+          <h4>WhatsApp</h4>
+          <p>
+            <a href="https://wa.me/5519995454370" target="_blank" style="color:var(--green);text-decoration:underline;">
+              <i class="fab fa-whatsapp"></i> (19) 99545-4370
+            </a>
+          </p>
+        </div>
+        <div class="servico-card">
+          <h4>Endereço</h4>
+          <p>Rua Louenço Ferrari, 614 - Valinhos/SP<br>CEP: 13273-071</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOJA -->
+  <section id="loja">
+    <div class="container">
+      <h2 class="section-title">Loja</h2>
+      <div class="cards-row" style="justify-content:center;">
+        <div class="loja-card">
+          <h4>Em breve!</h4>
+          <p>
+            Novidades na nossa loja online.<br>
+            Fique atento!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LINKTREE FINAL -->
+  <section id="linktree-section">
+    <a href="https://linktr.ee/Portugal_Engenharia" target="_blank" id="linktree-btn">
+      Siga nossas redes sociais
+    </a>
+  </section>
 
   <!-- WHATSAPP FLUTUANTE -->
   <a class="whatsapp-float" href="https://wa.me/5519995454370" target="_blank" title="Fale com a gente no WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- RODAPÉ -->
-  <!-- ...footer igual ao seu projeto... -->
-
+  <!-- FOOTER SOCIAL -->
+  <footer>
+    <div class="social-links">
+      <a href="https://wa.me/5519995454370" target="_blank" title="WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.instagram.com/portugal_eng" target="_blank" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61561425598667#" target="_blank" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.linkedin.com/company/portugal-engenharia-elétrica" target="_blank" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <div>
+      <a href="https://linkthread.com/portugalengenharia" target="_blank" class="linkthread">
+        Acesse nosso Linkthread
+      </a>
+    </div>
+    <div>
+      &copy; 2025 Portugal Engenharia Elétrica &mdash; Todos os direitos reservados.
+    </div>
+  </footer>
   <script>
     // MENU MOBILE
     const btnMenuMobile = document.getElementById('btnMenuMobile');
@@ -571,22 +986,17 @@
 
     // ACCORDION MOBILE PARA CARDS "QUEM SOMOS"
     function setupAccordion() {
-      // Só ativa no mobile
       if (window.innerWidth <= 700) {
         document.querySelectorAll('#essencia .mvvp-card').forEach(card => {
           const btn = card.querySelector('.accordion-btn');
-          const content = card.querySelector('.card-content');
-          card.classList.remove('expanded'); // Fecha todos ao iniciar
           if (btn) {
             btn.onclick = function(e) {
               e.preventDefault();
               const isOpen = card.classList.contains('expanded');
-              // Fecha todos
               document.querySelectorAll('#essencia .mvvp-card').forEach(c => {
                 c.classList.remove('expanded');
                 c.querySelector('.accordion-btn i').className = "fas fa-plus";
               });
-              // Abre se não estava aberto
               if (!isOpen) {
                 card.classList.add('expanded');
                 btn.querySelector('i').className = "fas fa-minus";
@@ -595,7 +1005,6 @@
           }
         });
       } else {
-        // Desktop: cards sempre abertos
         document.querySelectorAll('#essencia .mvvp-card').forEach(card => {
           card.classList.add('expanded');
           const btn = card.querySelector('.accordion-btn');
@@ -606,9 +1015,22 @@
     window.addEventListener('DOMContentLoaded', setupAccordion);
     window.addEventListener('resize', setupAccordion);
 
-    // SCROLL SUAVE PARA FORMULÁRIO E VOLTAR AO INÍCIO (adicione se necessário)
-
-    // ...outros scripts do seu projeto...
+    // SCROLL SUAVE PARA FORMULÁRIO E VOLTAR AO INÍCIO
+    document.querySelectorAll('a.btn-simule, .hero-btn, .simule-btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const alvo = document.getElementById('formulario-simulacao-bg');
+        if (alvo) {
+          const header = document.querySelector('.topbar');
+          const headerHeight = header ? header.offsetHeight : 0;
+          const y = alvo.getBoundingClientRect().top + window.pageYOffset - headerHeight - 8;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      });
+    });
+    document.getElementById('btn-voltar-inicio').onclick = function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   </script>
 </body>
 </html>
