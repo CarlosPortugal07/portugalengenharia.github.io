@@ -32,7 +32,7 @@
     }
     body { padding-top: 76px; }
 
-    /* LOGO FIXO */
+    /* HEADER E MENU */
     .topbar {
       position: fixed;
       top: 0; left: 0; width: 100vw;
@@ -61,7 +61,6 @@
       transition: transform .18s;
     }
     .logo-header img:hover { transform: scale(1.07);}
-    /* MENU HAMBURGUER (MOBILE) */
     .menu-mobile-trigger {
       display: none;
       background: var(--green);
@@ -130,7 +129,6 @@
       background: var(--green);
       color: var(--white);
     }
-    /* MENU DESKTOP */
     nav.menu-desktop {
       display: flex;
       gap: 16px;
@@ -170,6 +168,7 @@
       background: var(--green-hover);
       transform: translateY(-2px) scale(1.10);
     }
+
     /* HERO */
     .hero-section {
       position: relative;
@@ -236,6 +235,7 @@
       background: #25a69c;
       transform: scale(1.04) translateY(-2px);
     }
+
     section {
       padding: 60px 0 38px 0;
       width: 100vw;
@@ -258,86 +258,158 @@
       letter-spacing: 1px;
       text-shadow: 0 2px 12px #0008;
     }
-    /* ...demais estilos iguais ao código anterior... */
-    /* FORMULÁRIO DESTAQUE */
-    #formulario-simulacao-bg {
-      padding: 0;
-      background: #181818;
-      width: 100vw;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 60vh;
-    }
-    #formulario-simulacao {
-      background: #fff;
-      border-radius: 22px;
-      box-shadow: 0 6px 32px #2fbbb133;
-      width: 100%;
-      max-width: 410px;
-      margin: 38px auto 32px auto;
-      padding: 26px 18px 24px 18px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      z-index: 2;
-      overflow: visible;
-      border: 1.5px solid #2fbbb1;
-      position: relative;
-      min-width: 0;
-    }
-    #formulario-simulacao h2 {
-      margin-top: 0;
-      margin-bottom: 8px;
-      font-size: 2em;
-      color: #2fbbb1;
-      font-weight: 900;
+
+    /* QUEM SOMOS - CARDS E ACCORDION MOBILE */
+    #essencia p {
+      color: var(--white);
+      font-size: 1.08em;
+      line-height: 1.5;
       text-align: center;
-      letter-spacing: 1px;
+      margin: 0 auto 10px auto;
+      max-width: 700px;
     }
-    #formulario-simulacao p {
-      margin-bottom: 16px;
-      font-size: 1.12em;
-      color: #222;
-      text-align: center;
-      font-weight: 500;
+    #essencia .mvvp-row {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 16px;
+      flex-wrap: wrap;
     }
-    #formulario-simulacao iframe {
-      border: 1.5px solid #e0e0e0;
-      width: 100%;
-      min-height: 340px;
-      height: 390px;
-      max-height: 430px;
-      border-radius: 14px;
-      background: #fff;
-      box-sizing: border-box;
-      overflow-x: hidden;
-      display: block;
-      box-shadow: 0 2px 12px #0001;
-      margin-top: 0;
-      margin-bottom: 10px;
-    }
-    #btn-voltar-inicio {
-      margin-top: 18px;
-      font-size: 1.13em;
-      padding: 12px 30px;
-      background: #009688;
+    #essencia .mvvp-card {
+      background: var(--dark);
       color: #fff;
-      border: none;
-      border-radius: 8px;
+      border-radius: 13px;
+      box-shadow: 0 4px 16px #0002;
+      min-width: 200px;
+      max-width: 250px;
+      flex: 1 1 210px;
+      padding: 16px 16px;
+      margin: 0 8px 10px 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      transition: box-shadow .18s;
+      position: relative;
+      overflow: hidden;
+    }
+    #essencia .mvvp-card h3 {
+      color: #2fbbb1;
+      margin-bottom: 10px;
+      font-size: 1.13em;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       cursor: pointer;
+      transition: color .2s;
+      z-index: 2;
+    }
+    #essencia .mvvp-card .accordion-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--green);
+      font-size: 1.18em;
+      margin-left: 8px;
+      cursor: pointer;
+      transition: color .2s, transform .2s;
+      outline: none;
+      z-index: 10;
+    }
+    #essencia .mvvp-card .accordion-btn.open {
+      color: var(--green-hover);
+      transform: rotate(45deg) scale(1.2);
+    }
+    #essencia .mvvp-card .card-content {
       display: block;
+      transition: max-height .32s cubic-bezier(.4,0,.2,1), opacity .25s;
+      max-height: 1000px;
+      opacity: 1;
+      overflow: hidden;
+    }
+    /* Accordion escondido no mobile */
+    @media (max-width: 700px) {
+      #essencia .mvvp-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      #essencia .mvvp-card {
+        max-width: 99vw;
+        width: 97vw;
+        margin: 0 auto 12px auto;
+        padding: 0;
+        border-radius: 11px;
+      }
+      #essencia .mvvp-card h3 {
+        font-size: 1.13em;
+        padding: 18px 16px 18px 16px;
+        margin: 0;
+        border-bottom: 1px solid #2fbbb155;
+        background: #25262a;
+        border-radius: 11px 11px 0 0;
+        cursor: pointer;
+      }
+      #essencia .mvvp-card .accordion-btn {
+        display: inline-block;
+      }
+      #essencia .mvvp-card .card-content {
+        max-height: 0;
+        opacity: 0;
+        padding: 0 16px;
+        transition: max-height .32s, opacity .23s, padding .18s;
+      }
+      #essencia .mvvp-card.expanded .card-content {
+        max-height: 500px;
+        opacity: 1;
+        padding: 16px 16px 18px 16px;
+      }
+      #essencia .mvvp-card.expanded h3 {
+        color: var(--green-hover);
+      }
+    }
+    /* Desktop: cards sempre abertos */
+    @media (min-width: 701px) {
+      #essencia .mvvp-card .accordion-btn { display: none; }
+      #essencia .mvvp-card .card-content {
+        max-height: 1000px !important;
+        opacity: 1 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+      #essencia .mvvp-card {
+        padding: 16px 16px;
+      }
+    }
+    #essencia .mvvp-card ul {
+      padding-left: 18px;
+      margin: 0;
+      font-size: 0.97em;
+    }
+    .mvvp-proposito {
+      background: linear-gradient(90deg, #2fbbb1 75%, #23242a 100%);
+      color: var(--white);
+      border-radius: 18px;
+      display: inline-block;
+      padding: 10px 16px;
+      margin-top: 18px;
+      box-shadow: 0 3px 16px #0003;
+      font-size: 1.13em;
       font-weight: 700;
-      box-shadow: 0 2px 10px #0002;
-      transition: background .18s, transform .12s;
+      text-align: center;
+      margin-left: 50%;
+      transform: translateX(-50%);
+      max-width: 540px;
     }
-    #btn-voltar-inicio:hover,
-    #btn-voltar-inicio:focus {
-      background: #25a69c;
-      transform: scale(1.05);
+    .mvvp-proposito h2 {
+      margin-bottom: 6px;
+      margin-top: 0;
+      font-size: 1.3em;
     }
-    /* ...restante dos estilos... */
+
+    /* ...restante dos estilos igual ao anterior (serviços, formulário, contato, etc.)... */
+    /* Adicione os estilos dos cards de serviços, formulário, contato, loja, footer e responsividade aqui */
+
+    /* WHATSAPP FLUTUANTE */
     .whatsapp-float {
       position: fixed;
       bottom: 24px;
@@ -365,65 +437,11 @@
       0%,100% { box-shadow: 0 0 0 0 #25d36699;}
       50% { box-shadow: 0 0 0 14px #25d36633;}
     }
-    /* RESPONSIVO ... igual ao código anterior ... */
-    @media (max-width: 700px) {
-      body { padding-top: 60px; }
-      .topbar { height: 60px; }
-      .logo-header { height: 60px; padding-left: 3vw; }
-      .logo-header img { height: 38px; }
-      nav.menu-desktop { display: none !important; }
-      .menu-mobile-trigger { display: flex !important; }
-      .menu-mobile { top: 60px; }
-      .hero-content h1 { font-size: 1.08em; }
-      .hero-content p { font-size: 1em;}
-      .hero-btn { font-size: 1em; padding: 12px 12vw;}
-      #formulario-simulacao {
-        max-width: 99vw;
-        width: 99vw;
-        min-width: 0;
-        padding: 4vw 2vw 4vw 2vw;
-        margin: 12px auto 18px auto;
-        border-radius: 14px;
-      }
-      #formulario-simulacao h2 { font-size: 1.24em; }
-      #formulario-simulacao p { font-size: 1em; }
-      #formulario-simulacao iframe {
-        min-height: 160px;
-        height: 220px;
-        max-height: 280px;
-      }
-      .whatsapp-float {
-        right: 10px !important;
-        bottom: 10px !important;
-        width: 46px !important;
-        height: 46px !important;
-        font-size: 1.4em !important;
-      }
-      .servico-card, .loja-card {
-        width: 97vw;
-        min-width: unset;
-        max-width: 99vw;
-        padding: 12px 8px;
-      }
-    }
-    @media (min-width: 701px) {
-      .menu-mobile-trigger,
-      .menu-mobile { display: none !important; }
-      nav.menu-desktop { display: flex !important; }
-    }
-    /* ...restante das animações... */
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-40px);}
-      to { opacity: 1; transform: translateY(0);}
-    }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(40px);}
-      to { opacity: 1; transform: translateY(0);}
-    }
+    /* Adapte o restante do CSS conforme seu projeto */
   </style>
 </head>
 <body>
-  <!-- LOGO FIXO NO TOPO -->
+  <!-- HEADER E MENU -->
   <div class="topbar">
     <a href="#home" class="logo-header">
       <img src="Logo.jpeg" alt="Portugal Engenharia Elétrica">
@@ -441,7 +459,7 @@
       <i class="fas fa-bars"></i>
     </button>
   </div>
-  <!-- MENU MOBILE EXPANSÍVEL -->
+  <!-- MENU MOBILE -->
   <div class="menu-mobile" id="menuMobile">
     <nav>
       <a href="#home">Página Inicial</a>
@@ -464,7 +482,7 @@
     </div>
   </section>
 
-  <!-- QUEM SOMOS -->
+  <!-- QUEM SOMOS COM ACCORDION MOBILE -->
   <section id="essencia">
     <div class="container">
       <h2 class="section-title">Quem somos</h2>
@@ -476,24 +494,39 @@
       </p>
       <div class="mvvp-row">
         <div class="mvvp-card">
-          <h3>Missão</h3>
-          <p>
-            Transformar a experiência dos nossos clientes com energia segura e eficiente, garantindo economia e sustentabilidade por meio de soluções elétricas de alta qualidade.
-          </p>
+          <h3>
+            Missão
+            <button class="accordion-btn" aria-label="Expandir Missão"><i class="fas fa-plus"></i></button>
+          </h3>
+          <div class="card-content">
+            <p>
+              Transformar a experiência dos nossos clientes com energia segura e eficiente, garantindo economia e sustentabilidade por meio de soluções elétricas de alta qualidade.
+            </p>
+          </div>
         </div>
         <div class="mvvp-card">
-          <h3>Visão</h3>
-          <p>
-            Ser a escolha preferida em soluções de energia segura e sustentável no Brasil, reconhecida por transformar a maneira como nossos clientes usam e produzem energia.
-          </p>
+          <h3>
+            Visão
+            <button class="accordion-btn" aria-label="Expandir Visão"><i class="fas fa-plus"></i></button>
+          </h3>
+          <div class="card-content">
+            <p>
+              Ser a escolha preferida em soluções de energia segura e sustentável no Brasil, reconhecida por transformar a maneira como nossos clientes usam e produzem energia.
+            </p>
+          </div>
         </div>
         <div class="mvvp-card">
-          <h3>Valores</h3>
-          <ul>
-            <li><b>Segurança:</b> Práticas rigorosas para garantir segurança de todos.</li>
-            <li><b>Excelência:</b> Sucesso dos clientes é prioridade.</li>
-            <li><b>Integridade:</b> Honestidade e respeito em todas as relações.</li>
-          </ul>
+          <h3>
+            Valores
+            <button class="accordion-btn" aria-label="Expandir Valores"><i class="fas fa-plus"></i></button>
+          </h3>
+          <div class="card-content">
+            <ul>
+              <li><b>Segurança:</b> Práticas rigorosas para garantir segurança de todos.</li>
+              <li><b>Excelência:</b> Sucesso dos clientes é prioridade.</li>
+              <li><b>Integridade:</b> Honestidade e respeito em todas as relações.</li>
+            </ul>
+          </div>
         </div>
       </div>
       <div class="mvvp-proposito">
@@ -503,132 +536,17 @@
     </div>
   </section>
 
-  <!-- SERVIÇOS -->
-  <section id="servicos">
-    <div class="container">
-      <h2 class="section-title">Serviços</h2>
-      <div class="cards-row">
-        <div class="servico-card">
-          <h4>Projetos Elétricos Residenciais</h4>
-          <p>Planejamento e execução de instalações elétricas seguras e eficientes para residências.</p>
-        </div>
-        <div class="servico-card">
-          <h4>Projetos Comerciais e Industriais</h4>
-          <p>Desenvolvimento de soluções elétricas sob medida para empresas e indústrias.</p>
-        </div>
-        <div class="servico-card">
-          <h4>Energia Solar Fotovoltaica</h4>
-          <p>Implantação de sistemas solares completos para redução de custos e sustentabilidade.</p>
-        </div>
-        <div class="servico-card">
-          <h4>Manutenção e Laudos Técnicos</h4>
-          <p>Serviços de manutenção preventiva, corretiva e emissão de laudos técnicos especializados.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- COMO FUNCIONA -->
-  <section id="funciona">
-    <div class="container">
-      <h2 class="section-title">Como funciona um sistema fotovoltaico?</h2>
-      <img src="sistema_fv.png" alt="Fluxo do sistema fotovoltaico">
-      <div class="legenda">Exemplo de funcionamento de um sistema fotovoltaico.</div>
-    </div>
-  </section>
-
-  <!-- FORMULÁRIO EM DESTAQUE (AGORA LOGO DEPOIS DE COMO FUNCIONA) -->
-  <section id="formulario-simulacao-bg">
-    <div id="formulario-simulacao">
-      <h2>Simule Agora</h2>
-      <p>
-        Descubra agora o investimento necessário para transformar sol em economia!
-      </p>
-      <iframe 
-        id="simulacao-iframe"
-        src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__W4YrEBUQTJDOTlRRTJORFFRUVFNTlpCVzQwV1hIQi4u&embed=true" 
-        frameborder="0"
-        allowfullscreen
-        loading="lazy">
-      </iframe>
-      <button id="btn-voltar-inicio">Voltar ao Início</button>
-    </div>
-  </section>
-
-  <!-- CONTATO -->
-  <section id="contato">
-    <div class="container">
-      <h2 class="section-title">Contato</h2>
-      <div class="cards-row">
-        <div class="servico-card">
-          <h4>Email</h4>
-          <p>
-            <a href="mailto:comercial@portugalengenharia.com.br" style="color:var(--green);text-decoration:underline;">
-             comercial@portugalengenharia.com.br
-            </a>
-          </p>
-        </div>
-        <div class="servico-card">
-          <h4>WhatsApp</h4>
-          <p>
-            <a href="https://wa.me/5519995454370" target="_blank" style="color:var(--green);text-decoration:underline;">
-              <i class="fab fa-whatsapp"></i> (19) 99545-4370
-            </a>
-          </p>
-        </div>
-        <div class="servico-card">
-          <h4>Endereço</h4>
-          <p>Rua Louenço Ferrari, 614 - Valinhos/SP<br>CEP: 13273-071</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LOJA -->
-  <section id="loja">
-    <div class="container">
-      <h2 class="section-title">Loja</h2>
-      <div class="cards-row" style="justify-content:center;">
-        <div class="loja-card">
-          <h4>Em breve!</h4>
-          <p>
-            Novidades na nossa loja online.<br>
-            Fique atento!
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LINKTREE FINAL -->
-  <section id="linktree-section">
-    <a href="https://linktr.ee/Portugal_Engenharia" target="_blank" id="linktree-btn">
-      Siga nossas redes sociais
-    </a>
-  </section>
+  <!-- ...demais seções do seu site (serviços, como funciona, formulário, contato, loja, etc.)... -->
+  <!-- Adicione aqui as outras seções conforme seu projeto -->
 
   <!-- WHATSAPP FLUTUANTE -->
   <a class="whatsapp-float" href="https://wa.me/5519995454370" target="_blank" title="Fale com a gente no WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- FOOTER SOCIAL -->
-  <footer>
-    <div class="social-links">
-      <a href="https://wa.me/5519995454370" target="_blank" title="WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://www.instagram.com/portugal_eng" target="_blank" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.facebook.com/profile.php?id=61561425598667#" target="_blank" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.linkedin.com/company/portugal-engenharia-elétrica" target="_blank" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    </div>
-    <div>
-      <a href="https://linkthread.com/portugalengenharia" target="_blank" class="linkthread">
-        Acesse nosso Linkthread
-      </a>
-    </div>
-    <div>
-      &copy; 2025 Portugal Engenharia Elétrica &mdash; Todos os direitos reservados.
-    </div>
-  </footer>
+  <!-- RODAPÉ -->
+  <!-- ...footer igual ao seu projeto... -->
+
   <script>
     // MENU MOBILE
     const btnMenuMobile = document.getElementById('btnMenuMobile');
@@ -643,7 +561,6 @@
         document.body.style.overflow = "";
       }
     });
-    // Fecha menu ao clicar em qualquer link do menu mobile
     document.querySelectorAll('.menu-mobile nav a').forEach(link => {
       link.addEventListener('click', () => {
         menuMobile.classList.remove('open');
@@ -651,23 +568,47 @@
         document.body.style.overflow = "";
       });
     });
-    // SCROLL SUAVE PARA FORMULÁRIO
-    document.querySelectorAll('a.btn-simule, .hero-btn, .simule-btn').forEach(btn => {
-      btn.addEventListener('click', function(e) {
-        e.preventDefault();
-        const alvo = document.getElementById('formulario-simulacao-bg');
-        if (alvo) {
-          const header = document.querySelector('.topbar');
-          const headerHeight = header ? header.offsetHeight : 0;
-          const y = alvo.getBoundingClientRect().top + window.pageYOffset - headerHeight - 8;
-          window.scrollTo({ top: y, behavior: 'smooth' });
-        }
-      });
-    });
-    // VOLTAR AO INICIO
-    document.getElementById('btn-voltar-inicio').onclick = function() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // ACCORDION MOBILE PARA CARDS "QUEM SOMOS"
+    function setupAccordion() {
+      // Só ativa no mobile
+      if (window.innerWidth <= 700) {
+        document.querySelectorAll('#essencia .mvvp-card').forEach(card => {
+          const btn = card.querySelector('.accordion-btn');
+          const content = card.querySelector('.card-content');
+          card.classList.remove('expanded'); // Fecha todos ao iniciar
+          if (btn) {
+            btn.onclick = function(e) {
+              e.preventDefault();
+              const isOpen = card.classList.contains('expanded');
+              // Fecha todos
+              document.querySelectorAll('#essencia .mvvp-card').forEach(c => {
+                c.classList.remove('expanded');
+                c.querySelector('.accordion-btn i').className = "fas fa-plus";
+              });
+              // Abre se não estava aberto
+              if (!isOpen) {
+                card.classList.add('expanded');
+                btn.querySelector('i').className = "fas fa-minus";
+              }
+            };
+          }
+        });
+      } else {
+        // Desktop: cards sempre abertos
+        document.querySelectorAll('#essencia .mvvp-card').forEach(card => {
+          card.classList.add('expanded');
+          const btn = card.querySelector('.accordion-btn');
+          if (btn) btn.querySelector('i').className = "fas fa-minus";
+        });
+      }
     }
+    window.addEventListener('DOMContentLoaded', setupAccordion);
+    window.addEventListener('resize', setupAccordion);
+
+    // SCROLL SUAVE PARA FORMULÁRIO E VOLTAR AO INÍCIO (adicione se necessário)
+
+    // ...outros scripts do seu projeto...
   </script>
 </body>
 </html>
