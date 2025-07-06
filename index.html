@@ -31,8 +31,6 @@
       scroll-behavior: smooth;
     }
     body { padding-top: 76px; }
-
-    /* HEADER E MENU */
     .topbar {
       position: fixed;
       top: 0; left: 0; width: 100vw;
@@ -168,8 +166,6 @@
       background: var(--green-hover);
       transform: translateY(-2px) scale(1.10);
     }
-
-    /* HERO */
     .hero-section {
       position: relative;
       min-height: 60vh;
@@ -235,7 +231,6 @@
       background: #25a69c;
       transform: scale(1.04) translateY(-2px);
     }
-
     section {
       padding: 60px 0 38px 0;
       width: 100vw;
@@ -259,7 +254,7 @@
       text-shadow: 0 2px 12px #0008;
     }
 
-    /* QUEM SOMOS - CARDS E ACCORDION MOBILE */
+    /* QUEM SOMOS - CARDS E ACCORDION MOBILE MELHORADO */
     #essencia p {
       color: var(--white);
       font-size: 1.08em;
@@ -288,7 +283,7 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      transition: box-shadow .18s;
+      transition: box-shadow .18s, background .15s;
       position: relative;
       overflow: hidden;
     }
@@ -322,31 +317,39 @@
     }
     #essencia .mvvp-card .card-content {
       display: block;
-      transition: max-height .32s cubic-bezier(.4,0,.2,1), opacity .25s;
+      transition: max-height .32s cubic-bezier(.4,0,.2,1), opacity .25s, padding .18s;
       max-height: 1000px;
       opacity: 1;
       overflow: hidden;
+      padding: 0;
+      background: transparent;
     }
     @media (max-width: 700px) {
       #essencia .mvvp-row {
         flex-direction: column;
         align-items: stretch;
+        gap: 12px;
       }
       #essencia .mvvp-card {
         max-width: 99vw;
         width: 97vw;
-        margin: 0 auto 12px auto;
+        margin: 0 auto 8px auto;
         padding: 0;
         border-radius: 11px;
+        box-shadow: 0 2px 10px #0003;
+        background: #212123;
+        min-height: unset;
       }
       #essencia .mvvp-card h3 {
         font-size: 1.13em;
-        padding: 18px 16px 18px 16px;
+        padding: 12px 16px 12px 16px;
         margin: 0;
         border-bottom: 1px solid #2fbbb155;
-        background: #25262a;
+        background: #23242a;
         border-radius: 11px 11px 0 0;
         cursor: pointer;
+        min-height: 0;
+        line-height: 1.2;
       }
       #essencia .mvvp-card .accordion-btn {
         display: inline-block;
@@ -356,14 +359,35 @@
         opacity: 0;
         padding: 0 16px;
         transition: max-height .32s, opacity .23s, padding .18s;
+        overflow: hidden;
+        background: transparent;
       }
       #essencia .mvvp-card.expanded .card-content {
         max-height: 500px;
         opacity: 1;
-        padding: 16px 16px 18px 16px;
+        padding: 10px 16px 12px 16px;
+        background: #212123;
+      }
+      #essencia .mvvp-card:not(.expanded) {
+        box-shadow: 0 1px 3px #0001;
+        background: #23242a;
       }
       #essencia .mvvp-card.expanded h3 {
         color: var(--green-hover);
+      }
+      .mvvp-proposito {
+        margin-top: 12px;
+        padding: 12px 10px;
+        font-size: 1em;
+        border-radius: 13px;
+        max-width: 96vw;
+        box-shadow: 0 2px 8px #0002;
+        margin-left: 0;
+        transform: none;
+      }
+      .mvvp-proposito h2 {
+        font-size: 1.08em;
+        margin-bottom: 5px;
       }
     }
     @media (min-width: 701px) {
@@ -403,8 +427,7 @@
       margin-top: 0;
       font-size: 1.3em;
     }
-
-    /* SERVIÇOS */
+    /* RESTANTE DO CSS DAS OUTRAS SEÇÕES ABAIXO (serviços, formulário, contato, loja, etc.) */
     #servicos .cards-row {
       display: flex;
       flex-wrap: wrap;
@@ -438,7 +461,6 @@
       line-height: 1.4;
       color: #eee;
     }
-    /* COMO FUNCIONA */
     #funciona img {
       max-width: 100%;
       height: auto;
@@ -455,7 +477,6 @@
       margin-top: 14px;
       text-align: center;
     }
-    /* FORMULÁRIO DESTAQUE */
     #formulario-simulacao-bg {
       padding: 0;
       background: #181818;
@@ -533,7 +554,6 @@
       background: #25a69c;
       transform: scale(1.05);
     }
-    /* CONTATO */
     #contato .cards-row {
       display: flex;
       flex-direction: row;
@@ -559,7 +579,6 @@
       box-shadow: 0 2px 24px #2fbbb122;
       border: 1.5px solid #232323;
     }
-    /* LOJA */
     .loja-card {
       width: 95vw;
       max-width: 350px;
@@ -583,7 +602,6 @@
       font-size: 1.12em;
       margin-bottom: 0;
     }
-    /* LINKTREE FINAL */
     #linktree-section {
       background: #111;
       text-align: center;
@@ -608,7 +626,6 @@
       background: var(--green-hover);
       color: var(--white);
     }
-    /* FOOTER SOCIAL */
     footer {
       background: #131313;
       color: var(--gray);
@@ -644,7 +661,6 @@
     .linkthread:hover {
       color: var(--white);
     }
-    /* WHATSAPP FLUTUANTE */
     .whatsapp-float {
       position: fixed;
       bottom: 24px;
@@ -671,65 +687,6 @@
     @keyframes pulse {
       0%,100% { box-shadow: 0 0 0 0 #25d36699;}
       50% { box-shadow: 0 0 0 14px #25d36633;}
-    }
-    @media (max-width: 900px) {
-      .mvvp-row,
-      #servicos .cards-row,
-      #contato .cards-row {
-        flex-direction: column;
-        align-items: center;
-      }
-      #formulario-simulacao {
-        max-width: 98vw;
-      }
-      #essencia .mvvp-row {
-        flex-direction: column;
-      }
-    }
-    @media (max-width: 700px) {
-      body { padding-top: 60px; }
-      .topbar { height: 60px; }
-      .logo-header { height: 60px; padding-left: 3vw; }
-      .logo-header img { height: 38px; }
-      nav.menu-desktop { display: none !important; }
-      .menu-mobile-trigger { display: flex !important; }
-      .menu-mobile { top: 60px; }
-      .hero-content h1 { font-size: 1.08em; }
-      .hero-content p { font-size: 1em;}
-      .hero-btn { font-size: 1em; padding: 12px 12vw;}
-      #formulario-simulacao {
-        max-width: 99vw;
-        width: 99vw;
-        min-width: 0;
-        padding: 4vw 2vw 4vw 2vw;
-        margin: 12px auto 18px auto;
-        border-radius: 14px;
-      }
-      #formulario-simulacao h2 { font-size: 1.24em; }
-      #formulario-simulacao p { font-size: 1em; }
-      #formulario-simulacao iframe {
-        min-height: 160px;
-        height: 220px;
-        max-height: 280px;
-      }
-      .whatsapp-float {
-        right: 10px !important;
-        bottom: 10px !important;
-        width: 46px !important;
-        height: 46px !important;
-        font-size: 1.4em !important;
-      }
-      .servico-card, .loja-card {
-        width: 97vw;
-        min-width: unset;
-        max-width: 99vw;
-        padding: 12px 8px;
-      }
-    }
-    @media (min-width: 701px) {
-      .menu-mobile-trigger,
-      .menu-mobile { display: none !important; }
-      nav.menu-desktop { display: flex !important; }
     }
     @keyframes fadeDown {
       from { opacity: 0; transform: translateY(-40px);}
@@ -782,7 +739,7 @@
     </div>
   </section>
 
-  <!-- QUEM SOMOS COM ACCORDION MOBILE -->
+  <!-- QUEM SOMOS COM ACCORDION MOBILE MELHORADO -->
   <section id="essencia">
     <div class="container">
       <h2 class="section-title">Quem somos</h2>
