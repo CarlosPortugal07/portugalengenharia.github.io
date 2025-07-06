@@ -507,7 +507,40 @@
       line-height: 1.4;
       color: #eee;
     }
-    #funciona img {
+    beneficios-section {
+  background: #121212;
+  padding: 60px 20px;
+  text-align: center;
+}
+.beneficios-section h2 {
+  color: #2fbbb1;
+  font-size: 1.8em;
+  margin-bottom: 32px;
+}
+.beneficios-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.beneficio-card {
+  background: #1f1f1f;
+  color: #f3f3f3;
+  padding: 18px 24px;
+  border-radius: 16px;
+  font-size: 1.12em;
+  font-weight: 500;
+  min-width: 240px;
+  flex: 1 1 280px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+.beneficio-card:hover {
+  transform: translateY(-4px);
+  background: #2fbbb1;
+  color: #fff;
+}
+      #funciona img {
       max-width: 100%;
       height: auto;
       border-radius: 14px;
@@ -863,6 +896,16 @@
       </div>
     </div>
   </section>
+  
+ <section class="beneficios-section">
+  <h2>Por que escolher energia solar?</h2>
+  <div class="beneficios-cards">
+    <div class="beneficio-card">💰 Economia na conta de luz</div>
+    <div class="beneficio-card">🌱 Energia limpa e renovável</div>
+    <div class="beneficio-card">🏡 Valorização do imóvel</div>
+    <div class="beneficio-card">⚡ Independência energética</div>
+  </div>
+</section>
 
   <!-- COMO FUNCIONA -->
   <section id="funciona">
