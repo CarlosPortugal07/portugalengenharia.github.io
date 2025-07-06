@@ -236,7 +236,141 @@
       background: #25a69c;
       transform: scale(1.04) translateY(-2px);
     }
-    /* SEÇÃO PRINCIPAL DESTAQUE: FORMULÁRIO */
+      /* SEÇÕES INSTITUCIONAIS */
+    section {
+      padding: 60px 0 38px 0;
+      width: 100vw;
+      box-sizing: border-box;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 0 2vw;
+      width: 100vw;
+      box-sizing: border-box;
+    }
+    .section-title {
+      font-size: 1.55em;
+      color: var(--green);
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 30px;
+      margin-top: 0;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 12px #0008;
+    }
+    /* QUEM SOMOS */
+    #essencia p {
+      color: var(--white);
+      font-size: 1.08em;
+      line-height: 1.5;
+      text-align: center;
+      margin: 0 auto 10px auto;
+      max-width: 700px;
+    }
+    #essencia .mvvp-row {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    #essencia .mvvp-card {
+      background: var(--dark);
+      color: #fff;
+      border-radius: 13px;
+      box-shadow: 0 4px 16px #0002;
+      min-width: 200px;
+      max-width: 250px;
+      flex: 1 1 210px;
+      padding: 16px 16px;
+      margin: 0 8px 10px 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    #essencia .mvvp-card h3 {
+      color: #2fbbb1;
+      margin-bottom: 10px;
+      font-size: 1.13em;
+    }
+    #essencia .mvvp-card ul {
+      padding-left: 18px;
+      margin: 0;
+      font-size: 0.97em;
+    }
+    .mvvp-proposito {
+      background: linear-gradient(90deg, #2fbbb1 75%, #23242a 100%);
+      color: var(--white);
+      border-radius: 18px;
+      display: inline-block;
+      padding: 10px 16px;
+      margin-top: 18px;
+      box-shadow: 0 3px 16px #0003;
+      font-size: 1.13em;
+      font-weight: 700;
+      text-align: center;
+      margin-left: 50%;
+      transform: translateX(-50%);
+      max-width: 540px;
+    }
+    .mvvp-proposito h2 {
+      margin-bottom: 6px;
+      margin-top: 0;
+      font-size: 1.3em;
+    }
+    /* SERVIÇOS */
+    #servicos .cards-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .servico-card {
+      background: var(--dark);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px 22px;
+      width: 260px;
+      min-width: 200px;
+      color: var(--white);
+      text-align: left;
+      transition: transform .18s, border .18s, box-shadow .2s;
+      opacity: 1;
+      transform: scale(1) translateY(0);
+      box-sizing: border-box;
+      margin-bottom: 12px;
+    }
+    .servico-card h4 {
+      color: var(--green);
+      margin-top: 0;
+      font-size: 1.13em;
+    }
+    .servico-card p {
+      margin-top: 6px;
+      font-size: 1em;
+      line-height: 1.4;
+      color: #eee;
+    }
+    /* COMO FUNCIONA */
+    #funciona img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      margin: 24px 0 0 0;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #funciona .legenda {
+      color: var(--gray);
+      font-size: 1em;
+      margin-top: 14px;
+      text-align: center;
+    }
+      /* SEÇÃO PRINCIPAL DESTAQUE: FORMULÁRIO */
     #formulario-simulacao-bg {
       padding: 0;
       background: #181818;
@@ -313,140 +447,6 @@
     #btn-voltar-inicio:focus {
       background: #25a69c;
       transform: scale(1.05);
-    }
-    /* SEÇÕES INSTITUCIONAIS */
-    section {
-      padding: 60px 0 38px 0;
-      width: 100vw;
-      box-sizing: border-box;
-    }
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 0 2vw;
-      width: 100vw;
-      box-sizing: border-box;
-    }
-    .section-title {
-      font-size: 1.55em;
-      color: var(--green);
-      font-weight: 800;
-      text-align: center;
-      margin-bottom: 30px;
-      margin-top: 0;
-      letter-spacing: 1px;
-      text-shadow: 0 2px 12px #0008;
-    }
-    /* QUEM SOMOS */
-    #essencia p {
-      color: var(--white);
-      font-size: 1.08em;
-      line-height: 1.5;
-      text-align: center;
-      margin: 0 auto 10px auto;
-      max-width: 700px;
-    }
-    #essencia .mvvp-row {
-      display: flex;
-      justify-content: center;
-      align-items: stretch;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    #essencia .mvvp-card {
-      background: var(--dark);
-      color: #fff;
-      border-radius: 13px;
-      box-shadow: 0 4px 16px #0002;
-      min-width: 200px;
-      max-width: 250px;
-      flex: 1 1 210px;
-      padding: 16px 16px;
-      margin: 0 8px 10px 8px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-    }
-    #essencia .mvvp-card h3 {
-      color: #2fbbb1;
-      margin-bottom: 10px;
-      font-size: 1.13em;
-    }
-    #essencia .mvvp-card ul {
-      padding-left: 18px;
-      margin: 0;
-      font-size: 0.97em;
-    }
-    .mvvp-proposito {
-      background: linear-gradient(90deg, #2fbbb1 75%, #23242a 100%);
-      color: var(--white);
-      border-radius: 18px;
-      display: inline-block;
-      padding: 18px 22px;
-      margin-top: 18px;
-      box-shadow: 0 3px 16px #0003;
-      font-size: 1.13em;
-      font-weight: 700;
-      text-align: center;
-      margin-left: 50%;
-      transform: translateX(-50%);
-      max-width: 540px;
-    }
-    .mvvp-proposito h2 {
-      margin-bottom: 6px;
-      margin-top: 0;
-      font-size: 1.3em;
-    }
-    /* SERVIÇOS */
-    #servicos .cards-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 32px;
-      justify-content: center;
-      margin-top: 20px;
-    }
-    .servico-card {
-      background: var(--dark);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 24px 22px;
-      width: 260px;
-      min-width: 200px;
-      color: var(--white);
-      text-align: left;
-      transition: transform .18s, border .18s, box-shadow .2s;
-      opacity: 1;
-      transform: scale(1) translateY(0);
-      box-sizing: border-box;
-      margin-bottom: 12px;
-    }
-    .servico-card h4 {
-      color: var(--green);
-      margin-top: 0;
-      font-size: 1.13em;
-    }
-    .servico-card p {
-      margin-top: 6px;
-      font-size: 1em;
-      line-height: 1.4;
-      color: #eee;
-    }
-    /* COMO FUNCIONA */
-    #funciona img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 14px;
-      box-shadow: var(--shadow);
-      margin: 24px 0 0 0;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    #funciona .legenda {
-      color: var(--gray);
-      font-size: 1em;
-      margin-top: 14px;
-      text-align: center;
     }
     /* CONTATO */
     #contato .cards-row {
