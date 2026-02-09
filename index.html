@@ -126,11 +126,10 @@
       height: 100%;
       flex-shrink: 0;
     }
-
-    /* Logo responsiva */
+/* Logo padrão para desktop */
 .logo-header img {
-  max-width: 100%;   /* nunca ultrapassa a largura do container */
-  height: auto;      /* mantém proporção */
+  height: 54px;      /* altura original do desktop */
+  width: auto;       /* mantém proporção */
   border-radius: 8px;
   transition: transform var(--transition);
 }
@@ -139,16 +138,17 @@
   transform: scale(1.08);
 }
 
-/* Ajuste específico para telas pequenas */
+/* Ajuste para telas menores que 768px */
 @media (max-width: 768px) {
   .logo-header img {
-    max-height: 42px; /* diminui a altura no celular */
+    height: 42px;    /* diminui a logo em tablets e celulares grandes */
   }
 }
 
+/* Ajuste para telas menores que 480px */
 @media (max-width: 480px) {
   .logo-header img {
-    max-height: 36px; /* ainda menor em celulares muito pequenos */
+    height: 36px;    /* diminui ainda mais em celulares pequenos */
   }
 }
     nav.menu-desktop {
