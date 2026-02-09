@@ -238,18 +238,26 @@
     }
 
     /* ========== HERO ========== */
-    .hero-section {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 80px 20px;
-      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-      position: relative;
-      overflow: hidden;
-    }
+    hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px;
 
+  /* 🔥 IMAGEM DE FUNDO DO HERO */
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.85)
+    ),
+    url("placa2.jpeg") center/cover no-repeat;
+
+  position: relative;
+  overflow: hidden;
+}
+    
     .hero-section::before {
       content: '';
       position: absolute;
