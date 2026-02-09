@@ -346,42 +346,154 @@ footer{
 <!-- CONTATO -->
 <section id="contato">
   <div class="container">
-    <h2 class="section-title">Contato</h2>
+    <h2 class="section-title">Contato:</h2>
     <div class="cards-row">
-      <div class="servico-card">📧 vendas@portugalengenharia.com.br</div>
-      <div class="servico-card">📱 (19) 99545-4370</div>
+      <div class="servico-card">
+        <h4>E-mail:</h4>
+        <p>
+          <a href="mailto:comercial@portugalengenharia.com.br" style="color:var(--green);text-decoration:underline;">
+            vendas@portugalengenharia.com.br
+          </a>
+        </p>
+      </div>
+      <div class="servico-card">
+        <h4>WhatsApp:</h4>
+        <p>
+          <a href="https://wa.me/5519995454370" target="_blank" style="color:var(--green);text-decoration:underline;">
+            <i class="fab fa-whatsapp"></i> (19) 99545-4370
+          </a>
+        </p>
+      </div>
+    </div>
+    <div class="cards-row">
+      <div class="servico-card">
+        <h4>Endereço:</h4>
+        <p>Rua: Lourenço Ferrari, 614 - Valinhos/SP<br>CEP: 13273-071</p>
+      </div>
+      <div class="servico-card">
+        <h4>Razão Social:</h4>
+        <strong>Razão Social:</strong> Carlos Eduardo Silva Portugal Ltda<br>
+        <strong>Nome Fantasia:</strong> Portugal Engenharia Elétrica<br>
+        <strong>CNPJ:</strong> 53.142.037/0001-10<br>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- LOJA -->
-<section id="loja">
-  <div class="container">
-    <h2 class="section-title">Loja</h2>
-    <div class="loja-card">Em breve: produtos e soluções elétricas</div>
-  </div>
-</section>
+  <!-- LOJA -->
+  <section id="loja">
+    <div class="container">
+      <h2 class="section-title">Loja:</h2>
+      <div class="cards-row" style="justify-content:center;">
+        <div class="loja-card">
+          <h4>Em breve!</h4>
+          <p>
+            Novidades na nossa loja online.<br>
+            Fique atento!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- WHATS -->
-<a class="whatsapp-float" href="https://wa.me/5519995454370" target="_blank">
-  <i class="fab fa-whatsapp"></i>
-</a>
+  <!-- LINKTREE FINAL -->
+  <section id="linktree-section">
+    <a href="https://linktr.ee/Portugal_Engenharia" target="_blank" id="linktree-btn">
+      Siga nossas redes sociais!
+    </a>
+  </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="social-links">
-    <a href="https://www.instagram.com/portugal_eng"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.facebook.com/profile.php?id=61561425598667#"><i class="fab fa-facebook"></i></a>
-    <a href="https://www.linkedin.com/company/portugal-engenharia-elétrica"><i class="fab fa-linkedin"></i></a>
-  </div>
-  © 2025 Portugal Engenharia Elétrica
-</footer>
+  <!-- WHATSAPP FLUTUANTE -->
+  <a class="whatsapp-float" href="https://wa.me/5519995454370" target="_blank" title="Fale com a gente no WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
-<script>
-const btn=document.getElementById('btnMenuMobile');
-const menu=document.getElementById('menuMobile');
-btn.onclick=()=>menu.classList.toggle('open');
-</script>
+  <!-- FOOTER SOCIAL -->
+  <footer>
+    <div class="social-links">
+      <a href="https://wa.me/5519995454370" target="_blank" title="WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.instagram.com/portugal_eng" target="_blank" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61561425598667#" target="_blank" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.linkedin.com/company/portugal-engenharia-elétrica" target="_blank" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <div>
+      <a href="https://linktr.ee/Portugal_Engenharia?utm_source=linktree_profile_share&ltsid=7e87619c-fd97-4115-9694-0c1dad06af65" target="_blank" class="linkthread">
+         Acesse nosso Linktree!
+      </a>
+    </div>
+    <div>
+      &copy; 2025 Portugal Engenharia Elétrica &mdash; Todos os direitos reservados.
+    </div>
+  </footer>
+  <script>
+    // MENU MOBILE
+    const btnMenuMobile = document.getElementById('btnMenuMobile');
+    const menuMobile = document.getElementById('menuMobile');
+    btnMenuMobile.addEventListener('click', function() {
+      menuMobile.classList.toggle('open');
+      if(menuMobile.classList.contains('open')) {
+        btnMenuMobile.innerHTML = '<i class="fas fa-times"></i>';
+        document.body.style.overflow = "hidden";
+      } else {
+        btnMenuMobile.innerHTML = '<i class="fas fa-bars"></i>';
+        document.body.style.overflow = "";
+      }
+    });
+    document.querySelectorAll('.menu-mobile nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuMobile.classList.remove('open');
+        btnMenuMobile.innerHTML = '<i class="fas fa-bars"></i>';
+        document.body.style.overflow = "";
+      });
+    });
 
+    // ACCORDION MOBILE PARA CARDS "QUEM SOMOS"
+    function setupAccordion() {
+      if (window.innerWidth <= 700) {
+        document.querySelectorAll('#essencia .mvvp-card').forEach(card => {
+          const btn = card.querySelector('.accordion-btn');
+          if (btn) {
+            btn.onclick = function(e) {
+              e.preventDefault();
+              const isOpen = card.classList.contains('expanded');
+              document.querySelectorAll('#essencia .mvvp-card').forEach(c => {
+                c.classList.remove('expanded');
+                c.querySelector('.accordion-btn i').className = "fas fa-plus";
+              });
+              if (!isOpen) {
+                card.classList.add('expanded');
+                btn.querySelector('i').className = "fas fa-minus";
+              }
+            };
+          }
+        });
+      } else {
+        document.querySelectorAll('#essencia .mvvp-card').forEach(card => {
+          card.classList.add('expanded');
+          const btn = card.querySelector('.accordion-btn');
+          if (btn) btn.querySelector('i').className = "fas fa-minus";
+        });
+      }
+    }
+    window.addEventListener('DOMContentLoaded', setupAccordion);
+    window.addEventListener('resize', setupAccordion);
+
+    // SCROLL SUAVE PARA FORMULÁRIO E VOLTAR AO INÍCIO
+    document.querySelectorAll('a.btn-simule, .hero-btn, .simule-btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const alvo = document.getElementById('formulario-simulacao-bg');
+        if (alvo) {
+          const header = document.querySelector('.topbar');
+          const headerHeight = header ? header.offsetHeight : 0;
+          const y = alvo.getBoundingClientRect().top + window.pageYOffset - headerHeight - 8;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      });
+    });
+    document.getElementById('btn-voltar-inicio').onclick = function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
