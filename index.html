@@ -1,43 +1,73 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <Código HTML com favicon, schema e Open Graph>
-<!-- ✅ Favicon -->
-<link rel="icon" href="/favicon.ico" type="image/x-icon">
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
 
-<!-- ✅ Schema da Organização -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Portugal Engenharia Elétrica",
-  "url": "https://www.portugalengenharia.com.br",
-  "logo": "https://www.portugalengenharia.com.br/Logo.png"
-}
-</script>
+  <!-- ✅ Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
-<!-- ✅ Open Graph (Facebook, LinkedIn etc.) -->
-<meta property="og:title" content="Portugal Engenharia Elétrica">
-<meta property="og:description" content="Excelência em soluções elétricas para residências, comércios e indústrias. Inovação, segurança e sustentabilidade.">
-<meta property="og:image" content="https://www.portugalengenharia.com.br/Logo.png">
-<meta property="og:url" content="https://www.portugalengenharia.com.br">
-<meta property="og:type" content="website">
+  <!-- ✅ Schema da Organização -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Portugal Engenharia Elétrica",
+    "url": "https://www.portugalengenharia.com.br",
+    "logo": "https://www.portugalengenharia.com.br/Logo.png"
+  }
+  </script>
+
+  <!-- ✅ Open Graph -->
+  <meta property="og:title" content="Portugal Engenharia Elétrica">
+  <meta property="og:description" content="Excelência em soluções elétricas para residências, comércios e indústrias.">
+  <meta property="og:image" content="https://www.portugalengenharia.com.br/Logo.png">
+  <meta property="og:url" content="https://www.portugalengenharia.com.br">
+  <meta property="og:type" content="website">
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+  <!-- ✅ META PIXEL (AJUSTADO E CORRETO) -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;
+  n.push=n;
+  n.loaded=!0;
+  n.version='2.0';
+  n.queue=[];
+  t=b.createElement(e);t.async=!0;
+  t.src=v;
+  s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)
+  }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+  fbq('init', '1399512628395192');
+  fbq('track', 'PageView');
+  </script>
+
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1399512628395192&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- ✅ FIM META PIXEL -->
+
   <title>Portugal Engenharia Elétrica</title>
-  <meta name="description" content="Excelência em soluções elétricas para residências, comércios e indústrias. Inovação, segurança e sustentabilidade.">
+  <meta name="description" content="Excelência em soluções elétricas para residências, comércios e indústrias.">
+
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-VBLZVSB03D');
-</script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VBLZVSB03D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VBLZVSB03D');
+  </script>
+
   <style>
     :root {
       --green: #2fbbb1;
@@ -49,7 +79,8 @@
       --radius: 13px;
       --shadow: 0 4px 24px #0002;
       --transition: 0.23s cubic-bezier(.4,0,.2,1);
-     </script>
+    }
+    /* 🔒 RESTANTE DO SEU CSS PERMANECE IGUAL */
     }
     html, body {
       min-height: 100vh;
