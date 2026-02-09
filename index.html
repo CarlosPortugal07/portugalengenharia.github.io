@@ -614,33 +614,57 @@
     }
 
     /* ========== CONTATO ========== */
-    #contato {
-      background: var(--darker);
-    }
-
-    #contato .servico-card {
-      max-width: 320px;
-    }
-
-    #contato .servico-card a {
-      color: var(--green);
-      font-weight: 600;
-      transition: color var(--transition);
-    }
-
-    #contato .servico-card a:hover {
-      color: var(--white);
-    }
-
-    #contato .servico-card i {
-      margin-right: 8px;
-    }
-   #contato .servico-card p {          /* ✅ Indentação correta */
+#contato {
+  background: var(--darker);
   display: flex;
+  flex-wrap: wrap;          /* permite que os cards quebrem para a próxima linha */
+  justify-content: center;  /* centraliza os cards horizontalmente */
+  gap: 20px;                /* espaço entre os cards */
+  padding: 60px 20px;       /* espaço interno da seção */
+}
+
+#contato .servico-card {
+  max-width: 320px;         /* largura máxima de cada card */
+  width: 100%;              /* garante responsividade em telas pequenas */
+  background: #1a1a1a;      /* fundo do card (opcional, deixa contraste) */
+  border-radius: 10px;      /* bordas arredondadas */
+  padding: 20px;
+  box-sizing: border-box;   /* garante que padding não estoure a largura */
+  display: flex;
+  flex-direction: column;   /* organiza conteúdo verticalmente */
+  gap: 12px;                /* espaço entre itens internos */
+}
+
+#contato .servico-card a {
+  color: var(--green);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+#contato .servico-card a:hover {
+  color: var(--white);
+}
+
+#contato .servico-card i {
+  margin-right: 8px;
+}
+
+#contato .servico-card p {
+  display: flex;
+  flex-wrap: wrap;          /* permite que o texto quebre sem quebrar o layout */
   align-items: center;
   gap: 8px;
   text-align: left;
   padding: 0;
+  margin: 0;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  #contato .servico-card {
+    max-width: 100%;        /* cards ocupam toda largura disponível */
+  }
 }
     /* ========== LOJA ========== */
     #loja {
