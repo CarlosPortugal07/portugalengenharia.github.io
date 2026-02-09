@@ -1,29 +1,19 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Portugal Engenharia Elétrica | Energia Solar Residencial</title>
-  <meta name="description" content="Reduza sua conta de luz com energia solar. Projetos e instalações elétricas seguras, eficientes e sustentáveis.">
-
-  <!-- Favicon -->
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Portugal Engenharia Elétrica">
-  <meta property="og:description" content="Energia solar residencial com engenharia, segurança e economia real.">
-  <meta property="og:image" content="https://www.portugalengenharia.com.br/Logo.png">
   <meta property="og:url" content="https://www.portugalengenharia.com.br">
   <meta property="og:type" content="website">
 
-  <!-- Fonte -->
+  <title>Portugal Engenharia Elétrica | Energia Solar e Soluções Elétricas</title>
+  <meta name="description" content="Reduza sua conta de energia com energia solar. Engenharia própria, simulação automática e atendimento em Valinhos e região.">
+
+  <!-- FONTS -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- Meta Pixel -->
+  <!-- META PIXEL -->
   <script>
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -37,808 +27,361 @@
   fbq('track', 'PageView');
   </script>
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VBLZVSB03D"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-VBLZVSB03D');
-  </script>
-
 <style>
-:root {
-  --green: #2fbbb1;
-  --green-dark: #25a69c;
-  --black: #0f0f0f;
-  --dark: #1b1b1b;
-  --white: #ffffff;
+:root{
+  --green:#2fbbb1;
+  --green-hover:#25a69c;
+  --dark:#181818;
+  --black:#0f0f0f;
+  --white:#fff;
+  --gray:#cfcfcf;
+  --radius:18px;
+  --shadow:0 6px 28px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Montserrat',sans-serif;
+  background:#111;
+  color:#fff;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+
+/* HEADER */
+.topbar{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:#111;
+  z-index:100;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 28px;
+  box-shadow:var(--shadow);
+}
+.logo-header img{height:46px}
+.menu-desktop{
+  display:flex;
+  gap:22px;
+}
+.menu-desktop a{
+  font-weight:600;
+  opacity:.9;
+}
+.btn-simule{
+  background:var(--green);
+  padding:10px 20px;
+  border-radius:12px;
+  font-weight:700;
+}
+.menu-mobile-trigger{
+  display:none;
+  background:none;
+  border:none;
+  color:#fff;
+  font-size:1.6em;
+}
+.menu-mobile{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:#111;
+  z-index:99;
+}
+.menu-mobile.open{display:block}
+.menu-mobile nav{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:26px;
+  margin-top:120px;
+  font-size:1.2em;
 }
 
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  background: var(--black);
-  color: var(--white);
+/* HERO */
+.hero-section{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:140px 20px 80px;
+  background:linear-gradient(160deg,#0d0d0d,#1a1a1a);
+}
+.hero-content{
+  max-width:900px;
+}
+.hero-content h1{
+  font-size:2.4em;
+  font-weight:800;
+  margin-bottom:20px;
+}
+.hero-content p{
+  font-size:1.15em;
+  color:var(--gray);
+  margin-bottom:14px;
+}
+.hero-btn{
+  display:inline-block;
+  margin-top:24px;
+  background:var(--green);
+  padding:16px 34px;
+  border-radius:18px;
+  font-weight:800;
+  font-size:1.1em;
 }
 
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 76px;
-  background: #000;
-  display: flex;
-  align-items: center;
-  padding: 0 5vw;
-  z-index: 999;
+/* SECTIONS */
+section{padding:80px 20px}
+.container{max-width:1100px;margin:auto}
+.section-title{
+  text-align:center;
+  font-size:2em;
+  color:var(--green);
+  margin-bottom:36px;
 }
 
-header img {
-  height: 55px;
+/* SERVIÇOS */
+.cards-row{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:26px;
+}
+.servico-card{
+  background:#1e1e1e;
+  padding:26px;
+  border-radius:var(--radius);
+  width:260px;
+  box-shadow:var(--shadow);
+}
+.servico-card h4{color:var(--green)}
+
+/* BENEFÍCIOS */
+.beneficios-cards{
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+  justify-content:center;
+}
+.beneficio-card{
+  background:#1f1f1f;
+  padding:18px 26px;
+  border-radius:16px;
+  font-weight:600;
 }
 
-section {
-  padding: 80px 6vw;
+/* FORM */
+#formulario-simulacao-bg{
+  background:#181818;
+}
+#formulario-simulacao{
+  background:#fff;
+  color:#111;
+  border-radius:22px;
+  padding:28px 20px;
+  max-width:420px;
+  margin:auto;
+}
+#formulario-simulacao h2{color:var(--green)}
+#formulario-simulacao iframe{
+  width:100%;
+  min-height:360px;
+  border-radius:14px;
+  border:1px solid #ddd;
 }
 
-.hero {
-  margin-top: 76px;
-  min-height: 85vh;
-  background: linear-gradient(#000000aa,#000000cc), url("placa.jpeg") center/cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+/* QUEM SOMOS */
+.mvvp-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:24px;
+  justify-content:center;
+}
+.mvvp-card{
+  background:#1f1f1f;
+  padding:22px;
+  border-radius:16px;
+  width:300px;
 }
 
-.hero h1 {
-  font-size: 2.6em;
-  font-weight: 800;
+/* CONTATO */
+#contato .servico-card{width:320px}
+
+/* LOJA */
+.loja-card{
+  background:#1f1f1f;
+  padding:30px;
+  border-radius:18px;
+  text-align:center;
 }
 
-.hero p {
-  font-size: 1.2em;
-  margin: 20px 0;
+/* WHATS */
+.whatsapp-float{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  background:#25d366;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:2em;
+  box-shadow:0 4px 20px #0006;
+  z-index:200;
 }
 
-.btn {
-  display: inline-block;
-  background: var(--green);
-  color: #000;
-  padding: 18px 38px;
-  font-weight: 800;
-  border-radius: 12px;
-  text-decoration: none;
-  transition: 0.2s;
+/* FOOTER */
+footer{
+  background:#0f0f0f;
+  padding:36px 20px;
+  text-align:center;
+  color:#aaa;
 }
-
-.btn:hover {
-  background: var(--green-dark);
-  transform: scale(1.05);
+.social-links{
+  display:flex;
+  gap:22px;
+  justify-content:center;
+  margin-bottom:16px;
 }
+.social-links a{font-size:1.6em;color:var(--green)}
 
-.benefits {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-  gap: 25px;
-  text-align: center;
-}
-
-.benefit {
-  background: var(--dark);
-  padding: 30px;
-  border-radius: 16px;
-}
-
-.benefit i {
-  font-size: 2.2em;
-  color: var(--green);
-}
-
-.services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  gap: 25px;
-}
-
-.card {
-  background: var(--dark);
-  padding: 28px;
-  border-radius: 18px;
-}
-
-.form-section iframe {
-  width: 100%;
-  height: 700px;
-  border: none;
-  border-radius: 18px;
-}
-
-.whatsapp {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  background: #25d366;
-  color: #fff;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2em;
-  z-index: 999;
-  text-decoration: none;
-}
-
-footer {
-  background: #000;
-  padding: 40px 6vw;
-  text-align: center;
-  font-size: 0.9em;
+@media(max-width:768px){
+  .menu-desktop{display:none}
+  .menu-mobile-trigger{display:block}
+  .hero-content h1{font-size:1.9em}
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <img src="Logo.png" alt="Portugal Engenharia Elétrica">
-</header>
+<!-- HEADER -->
+<div class="topbar">
+  <a href="#home" class="logo-header">
+    <img src="Logo.png" alt="Portugal Engenharia Elétrica">
+  </a>
+  <nav class="menu-desktop">
+    <a href="#servicos">Serviços</a>
+    <a href="#beneficios">Benefícios</a>
+    <a href="#formulario-simulacao-bg" class="btn-simule">Simular</a>
+    <a href="#essencia">Quem Somos</a>
+    <a href="#contato">Contato</a>
+  </nav>
+  <button class="menu-mobile-trigger" id="btnMenuMobile"><i class="fas fa-bars"></i></button>
+</div>
 
-<section class="hero">
-  <div>
-    <h1>Reduza sua conta de luz com energia solar</h1>
-    <p>Soluções residenciais seguras, eficientes e sustentáveis</p>
-    <a href="#formulario" class="btn">Simular orçamento agora</a>
+<div class="menu-mobile" id="menuMobile">
+  <nav>
+    <a href="#servicos">Serviços</a>
+    <a href="#beneficios">Benefícios</a>
+    <a href="#formulario-simulacao-bg">Simular</a>
+    <a href="#essencia">Quem Somos</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section id="home" class="hero-section">
+  <div class="hero-content">
+    <h1>Energia solar para reduzir sua conta de luz e valorizar seu imóvel</h1>
+    <p>Engenharia própria • Simulação automática • Atendimento regional</p>
+    <p>Leva menos de 1 minuto e não gera compromisso</p>
+    <a href="#formulario-simulacao-bg" class="hero-btn">Quero simular agora</a>
   </div>
 </section>
 
-<section>
-  <h2>Por que investir em energia solar?</h2>
-  <div class="benefits">
-    <div class="benefit"><i class="fa-solid fa-sack-dollar"></i><p>Economia imediata</p></div>
-    <div class="benefit"><i class="fa-solid fa-solar-panel"></i><p>Energia limpa</p></div>
-    <div class="benefit"><i class="fa-solid fa-house"></i><p>Valorização do imóvel</p></div>
-    <div class="benefit"><i class="fa-solid fa-shield-halved"></i><p>Projeto com engenharia</p></div>
+<!-- SERVIÇOS -->
+<section id="servicos">
+  <div class="container">
+    <h2 class="section-title">Nossos Serviços</h2>
+    <div class="cards-row">
+      <div class="servico-card"><h4>Energia Solar Residencial</h4><p>Projetos completos com engenharia própria.</p></div>
+      <div class="servico-card"><h4>Projetos Elétricos</h4><p>Residenciais, comerciais e industriais.</p></div>
+      <div class="servico-card"><h4>Laudos e Manutenção</h4><p>Segurança, conformidade e eficiência.</p></div>
+    </div>
   </div>
 </section>
 
-<section>
-  <h2>Serviços</h2>
-  <div class="services">
-    <div class="card"><h3>Energia Solar Residencial</h3><p>Projetos completos com retorno financeiro real.</p></div>
-    <div class="card"><h3>Projetos Elétricos</h3><p>Segurança, norma e eficiência.</p></div>
-    <div class="card"><h3>Manutenção</h3><p>Correções, adequações e melhorias.</p></div>
-    <div class="card"><h3>Comercial e Industrial</h3><p>Soluções escaláveis sob demanda.</p></div>
+<!-- BENEFÍCIOS -->
+<section id="beneficios">
+  <div class="container">
+    <h2 class="section-title">Por que investir em energia solar?</h2>
+    <div class="beneficios-cards">
+      <div class="beneficio-card">💰 Economia imediata</div>
+      <div class="beneficio-card">🌱 Energia limpa</div>
+      <div class="beneficio-card">🏡 Imóvel valorizado</div>
+      <div class="beneficio-card">⚡ Independência energética</div>
+    </div>
   </div>
 </section>
 
-    /* RESTANTE DO CSS DAS OUTRAS SEÇÕES ABAIXO (serviços, formulário, contato, loja, etc.) */
-    #servicos .cards-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 32px;
-      justify-content: center;
-      margin-top: 20px;
-    }
-    .servico-card {
-      background: var(--dark);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 24px 22px;
-      width: 260px;
-      min-width: 200px;
-      color: var(--white);
-      text-align: left;
-      transition: transform .18s, border .18s, box-shadow .2s;
-      opacity: 1;
-      transform: scale(1) translateY(0);
-      box-sizing: border-box;
-      margin-bottom: 12px;
-    }
-    .servico-card h4 {
-      color: var(--green);
-      margin-top: 0;
-      font-size: 1.13em;
-    }
-    .servico-card p {
-      margin-top: 6px;
-      font-size: 1em;
-      line-height: 1.4;
-      color: #eee;
-    }
-.beneficios-section h2 {
-  color: #2fbbb1;
-  font-size: 1.6em;
-  margin-bottom: 32px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 32px;
-  justify-content: center;
-  margin-top: 20px;
-}
-.beneficios-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-.beneficio-card {
-  background: #1f1f1f;
-  color: #f3f3f3;
-  padding: 18px 24px;
-  border-radius: 16px;
-  font-size: 1.12em;
-  font-weight: 500;
-  min-width: 240px;
-  flex: 1 1 280px;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
-}
-.beneficio-card:hover {
-  transform: translateY(-4px);
-  background: #2fbbb1;
-  color: #fff;
-}
-      #funciona img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 14px;
-      box-shadow: var(--shadow);
-      margin: 24px 0 0 0;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    #funciona .legenda {
-      color: var(--gray);
-      font-size: 1em;
-      margin-top: 14px;
-      text-align: center;
-    }
-    #formulario-simulacao-bg {
-      padding: 0;
-      background: #181818;
-      width: 100vw;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 60vh;
-    }
-    #formulario-simulacao {
-      background: #fff;
-      border-radius: 22px;
-      box-shadow: 0 6px 32px #2fbbb133;
-      width: 100%;
-      max-width: 400px;
-      margin: 38px auto 32px auto;
-      padding: 26px 18px 24px 18px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      z-index: 2;
-      overflow: visible;
-      border: 1.5px solid #2fbbb1;
-      position: relative;
-      min-width: 0;
-    }
-    #formulario-simulacao h2 {
-      margin-top: 0;
-      margin-bottom: 8px;
-      font-size: 2em;
-      color: #2fbbb1;
-      font-weight: 900;
-      text-align: center;
-      letter-spacing: 1px;
-    }
-    #formulario-simulacao p {
-      margin-bottom: 16px;
-      font-size: 1.12em;
-      color: #222;
-      text-align: center;
-      font-weight: 500;
-    }
-    #formulario-simulacao iframe {
-      border: 1.5px solid #e0e0e0;
-      width: 96%;
-      min-height: 340px;
-      height: 370px;
-      max-height: 430px;
-      border-radius: 14px;
-      background: #fff;
-      box-sizing: border-box;
-      overflow-x: hidden;
-      display: block;
-      box-shadow: 0 2px 12px #0001;
-      margin-top: 0;
-      margin-bottom: 10px;
-    }
-    #btn-voltar-inicio {
-      margin-top: 18px;
-      font-size: 1.13em;
-      padding: 12px 30px;
-      background: #009688;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      display: block;
-      font-weight: 700;
-      box-shadow: 0 2px 10px #0002;
-      transition: background .18s, transform .12s;
-    }
-    #btn-voltar-inicio:hover,
-    #btn-voltar-inicio:focus {
-      background: #25a69c;
-      transform: scale(1.05);
-    }
-    #contato .cards-row {
-      display: flex;
-      flex-direction: row;
-      gap: 22px;
-      justify-content: center;
-      align-items: stretch;
-      flex-wrap: wrap;
-      margin-top: 16px;
-    }
-    #contato .servico-card {
-      min-width: 210px;
-      max-width: 360px;
-      width: 95vw;
-      box-sizing: border-box;
-      margin: 0 auto 18px auto;
-      padding: 20px 16px;
-      border-radius: 16px;
-      height: auto;
-      word-break: break-word;
-      overflow-wrap: anywhere;
-      background: #222;
-      color: var(--white);
-      box-shadow: 0 2px 24px #2fbbb122;
-      border: 1.5px solid #232323;
-    }
-    .loja-card {
-      width: 95vw;
-      max-width: 340px;
-      min-width: 0;
-      margin: 0 auto 18px auto;
-      padding: 22px 16px;
-      border-radius: 16px;
-      background: #222;
-      color: var(--white);
-      box-shadow: 0 2px 24px #2fbbb122;
-      border: 1.5px solid var(--green);
-      text-align: center;
-    }
-    .loja-card h4 {
-      color: var(--green);
-      font-size: 1.22em;
-      margin-bottom: 16px;
-    }
-    .loja-card p {
-      color: var(--gray);
-      font-size: 1.12em;
-      margin-bottom: 0;
-    }
-    #linktree-section {
-      background: #111;
-      text-align: center;
-      padding: 35px 0 20px 0;
-      width: 100vw;
-      box-sizing: border-box;
-    }
-    #linktree-btn {
-      background: var(--green);
-      color: var(--white);
-      font-size: 1.14em;
-      font-weight: bold;
-      padding: 16px 42px;
-      border-radius: 16px;
-      text-decoration: none;
-      box-shadow: var(--shadow);
-      transition: background .18s;
-      display: inline-block;
-      margin: 0 auto;
-    }
-    #linktree-btn:hover {
-      background: var(--green-hover);
-      color: var(--white);
-    }
-    footer {
-      background: #131313;
-      color: var(--gray);
-      padding: 32px 0 16px 0;
-      text-align: center;
-      font-size: 1.04em;
-      margin-top: 0;
-      letter-spacing: .2px;
-      width: 100vw;
-      box-sizing: border-box;
-    }
-    .social-links {
-      margin-bottom: 18px;
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      align-items: center;
-    }
-    .social-links a {
-      color: var(--green);
-      font-size: 1.7em;
-      transition: color .2s, transform .18s;
-    }
-    .social-links a:hover {
-      color: var(--white);
-      transform: scale(1.18) translateY(-2px);
-    }
-    .linkthread {
-      color: var(--green);
-      text-decoration: underline;
-      font-size: 1em;
-    }
-    .linkthread:hover {
-      color: var(--white);
-    }
-    .whatsapp-float {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      z-index: 120;
-      background: #25d366;
-      color: #fff;
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      box-shadow: 0 4px 18px #0006;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2em;
-      transition: background .2s, transform .2s;
-      cursor: pointer;
-      animation: fadeUp .7s 1s backwards, pulse 1.5s infinite 2s;
-    }
-    .whatsapp-float:hover {
-      background: #128c7e;
-      transform: scale(1.07) translateY(-2px);
-    }
-    @keyframes pulse {
-      0%,100% { box-shadow: 0 0 0 0 #25d36699;}
-      50% { box-shadow: 0 0 0 14px #25d36633;}
-    }
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-40px);}
-      to { opacity: 1; transform: translateY(0);}
-    }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(40px);}
-      to { opacity: 1; transform: translateY(0);}
-    }
-  </style>
-</head>
-<body>
-  <!-- HEADER E MENU -->
-  <div class="topbar">
-    <a href="#home" class="logo-header">
-      <img src="Logo.png" alt="Logotipo da Portugal Engenharia Elétrica, especialista em soluções elétricas inovadoras">
-    </a>
-    <nav class="menu-desktop">
-      <a href="#home">Página Inicial</a>
-      <a href="#essencia">Quem somos</a>
-      <a href="#servicos">Serviços</a>
-      <a href="#funciona">Como funciona</a>
-      <a href="#contato">Contato</a>
-      <a href="#loja">Loja</a>
-      <a href="#formulario-simulacao-bg" class="btn-simule">Simule Agora</a>
-    </nav>
-    <button class="menu-mobile-trigger" aria-label="Abrir menu" id="btnMenuMobile">
-      <i class="fas fa-bars"></i>
-    </button>
-  </div>
-  <div class="menu-mobile" id="menuMobile">
-    <nav>
-      <a href="#home">Página Inicial</a>
-      <a href="#essencia">Quem somos</a>
-      <a href="#servicos">Serviços</a>
-      <a href="#funciona">Como funciona</a>
-      <a href="#contato">Contato</a>
-      <a href="#loja">Loja</a>
-      <a href="#formulario-simulacao-bg" class="btn-simule">Simule Agora</a>
-    </nav>
-  </div>
-
-  <!-- HERO -->
-  <section id="home" class="hero-section">
-    <div class="hero-bg"></div>
-    <div class="hero-content">
-      <h1>Deixe o Sol trabalhar por você. Reduza a sua conta de energia e valorize o seu imóvel com energia solar!</h1>
-      <p>Somos uma empresa de energia solar com engenharia própria.
-      <p> Atendemos Valinhos e toda a região! Faça agora sua simulação gratuita e descubra quanto pode economizar.<p>
-      <p>✳️ Leva menos de 1 minuto
-      <p>✳️ Receba seu orçamento automático por e-mail
-      <p>✳️ Sem compromisso <p> <p><p>
-        
-      <a href="#formulario-simulacao-bg" class="hero-btn">👉 Quero Simular Agora</a>
-    </div>
-  </section>
-
-  <!-- QUEM SOMOS COM ACCORDION MOBILE MELHORADO -->
-  <section id="essencia">
-    <div class="container">
-      <h2 class="section-title">Quem somos:</h2>
-      <p>
-        A Portugal Engenharia Elétrica é uma empresa dedicada à excelência em serviços elétricos, oferecendo soluções inovadoras e seguras para residências, comércios e indústrias.
-      </p>
-      <p style="margin-bottom: 30px;">
-        Nosso compromisso é garantir a satisfação total dos clientes por meio de um atendimento personalizado, transparente e de alta qualidade, sempre buscando superar expectativas e contribuir para um futuro mais eficiente e sustentável.
-      </p>
-      <div class="mvvp-row">
-        <div class="mvvp-card">
-          <h3>
-            Missão:
-            <button class="accordion-btn" aria-label="Expandir Missão"><i class="fas fa-plus"></i></button>
-          </h3>
-          <div class="card-content">
-            <p>
-              Transformar a experiência dos nossos clientes com energia segura e eficiente, garantindo economia e sustentabilidade por meio de soluções elétricas de alta qualidade.
-            </p>
-          </div>
-        </div>
-        <div class="mvvp-card">
-          <h3>
-            Visão:
-            <button class="accordion-btn" aria-label="Expandir Visão"><i class="fas fa-plus"></i></button>
-          </h3>
-          <div class="card-content">
-            <p>
-              Ser a escolha preferida em soluções de energia segura e sustentável no Brasil, reconhecida por transformar a maneira como nossos clientes usam e produzem energia.
-            </p>
-          </div>
-        </div>
-        <div class="mvvp-card">
-          <h3>
-            Valores:
-            <button class="accordion-btn" aria-label="Expandir Valores"><i class="fas fa-plus"></i></button>
-          </h3>
-          <div class="card-content">
-            <ul>
-              <li><b>Segurança:</b> Práticas rigorosas para garantir segurança de todos.</li>
-              <li><b>Excelência:</b> Sucesso dos clientes é prioridade.</li>
-              <li><b>Integridade:</b> Honestidade e respeito em todas as relações.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="mvvp-proposito">
-        <h2>Propósito:</h2>
-        Energizar pessoas e negócios através de soluções elétricas seguras e sustentáveis.
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVIÇOS -->
-  <section id="servicos">
-    <div class="container">
-      <h2 class="section-title">Serviços:</h2>
-      <div class="cards-row">
-        <div class="servico-card">
-          <h4>Projetos Elétricos Residenciais</h4>
-          <p>Planejamento e execução de instalações elétricas seguras e eficientes para residências.</p>
-        </div>
-        <div class="servico-card">
-          <h4>Projetos Comerciais e Industriais</h4>
-          <p>Desenvolvimento de soluções elétricas sob medida para empresas e indústrias.</p>
-        </div>
-        <div class="servico-card">
-          <h4>Energia Solar Fotovoltaica</h4>
-          <p>Implantação de sistemas solares completos para redução de custos e sustentabilidade.</p>
-        </div>
-        <div class="servico-card">
-          <h4>Manutenção e Laudos Técnicos</h4>
-          <p>Serviços de manutenção preventiva, corretiva e emissão de laudos técnicos especializados.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  
- <section class="beneficios-section">
-  <h2>Por que escolher energia solar?</h2>
-  <div class="beneficios-cards">
-    <div class="beneficio-card">💰 Economia na conta de luz</div>
-    <div class="beneficio-card">🌱 Energia limpa e renovável</div>
-    <div class="beneficio-card">🏡 Valorização do imóvel</div>
-    <div class="beneficio-card">⚡ Independência energética</div>
+<!-- FORM -->
+<section id="formulario-simulacao-bg">
+  <div id="formulario-simulacao">
+    <h2>Simule agora</h2>
+    <p>Receba seu orçamento automático por e-mail</p>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfX8lSxuIDL552jsnEnaThOvDtQbiKl_mzKAEraSnB5QgxaSQ/viewform?embedded=true"></iframe>
   </div>
 </section>
 
-  <!-- COMO FUNCIONA -->
-  <section id="funciona">
-    <div class="container">
-      <h2 class="section-title">Como funciona um sistema fotovoltaico?</h2>
-      <img src="sistema_fv.png" alt="Fluxo do sistema fotovoltaico" loading="lazy">
-      <div class="legenda">Exemplo de funcionamento de um sistema fotovoltaico.</div>
+<!-- QUEM SOMOS -->
+<section id="essencia">
+  <div class="container">
+    <h2 class="section-title">Quem Somos</h2>
+    <p>A Portugal Engenharia Elétrica atua com foco em soluções seguras, eficientes e sustentáveis.</p>
+    <p><strong>Propósito:</strong> Energizar pessoas e negócios através de soluções elétricas seguras e sustentáveis.</p>
+    <div class="mvvp-row">
+      <div class="mvvp-card"><h4>Missão</h4><p>Transformar energia em economia.</p></div>
+      <div class="mvvp-card"><h4>Visão</h4><p>Ser referência em energia sustentável.</p></div>
+      <div class="mvvp-card"><h4>Valores</h4><p>Segurança, ética e excelência.</p></div>
     </div>
-  </section>
-
-  <!-- FORMULÁRIO EM DESTAQUE -->
-  <section id="formulario-simulacao-bg">
-    <div id="formulario-simulacao">
-      <h2>Simule Agora!</h2>
-      <p>
-        Descubra agora o investimento necessário para transformar sol em economia!
-      </p>
-      <iframe 
-        id="simulacao-iframe"
-        src="https://docs.google.com/forms/d/e/1FAIpQLSfX8lSxuIDL552jsnEnaThOvDtQbiKl_mzKAEraSnB5QgxaSQ/viewform?embedded=true"
-        width="640" 
-        height="2646" 
-        frameborder="0" 
-        marginheight="0" 
-        marginwidth="0">Carregando…
-        frameborder="0"
-        allowfullscreen
-        loading="lazy">
-      </iframe>
-      <button id="btn-voltar-inicio">Voltar ao Início</button>
-    </div>
-  </section>
+  </div>
+</section>
 
 <!-- CONTATO -->
 <section id="contato">
   <div class="container">
-    <h2 class="section-title">Contato:</h2>
+    <h2 class="section-title">Contato</h2>
     <div class="cards-row">
-      <div class="servico-card">
-        <h4>E-mail:</h4>
-        <p>
-          <a href="mailto:comercial@portugalengenharia.com.br" style="color:var(--green);text-decoration:underline;">
-            vendas@portugalengenharia.com.br
-          </a>
-        </p>
-      </div>
-      <div class="servico-card">
-        <h4>WhatsApp:</h4>
-        <p>
-          <a href="https://wa.me/5519995454370" target="_blank" style="color:var(--green);text-decoration:underline;">
-            <i class="fab fa-whatsapp"></i> (19) 99545-4370
-          </a>
-        </p>
-      </div>
-    </div>
-    <div class="cards-row">
-      <div class="servico-card">
-        <h4>Endereço:</h4>
-        <p>Rua: Lourenço Ferrari, 614 - Valinhos/SP<br>CEP: 13273-071</p>
-      </div>
-      <div class="servico-card">
-        <h4>Razão Social:</h4>
-        <strong>Razão Social:</strong> Carlos Eduardo Silva Portugal Ltda<br>
-        <strong>Nome Fantasia:</strong> Portugal Engenharia Elétrica<br>
-        <strong>CNPJ:</strong> 53.142.037/0001-10<br>
-      </div>
+      <div class="servico-card">📧 vendas@portugalengenharia.com.br</div>
+      <div class="servico-card">📱 (19) 99545-4370</div>
     </div>
   </div>
 </section>
 
-  <!-- LOJA -->
-  <section id="loja">
-    <div class="container">
-      <h2 class="section-title">Loja:</h2>
-      <div class="cards-row" style="justify-content:center;">
-        <div class="loja-card">
-          <h4>Em breve!</h4>
-          <p>
-            Novidades na nossa loja online.<br>
-            Fique atento!
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- LOJA -->
+<section id="loja">
+  <div class="container">
+    <h2 class="section-title">Loja</h2>
+    <div class="loja-card">Em breve: produtos e soluções elétricas</div>
+  </div>
+</section>
 
-  <!-- LINKTREE FINAL -->
-  <section id="linktree-section">
-    <a href="https://linktr.ee/Portugal_Engenharia" target="_blank" id="linktree-btn">
-      Siga nossas redes sociais!
-    </a>
-  </section>
+<!-- WHATS -->
+<a class="whatsapp-float" href="https://wa.me/5519995454370" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
 
-  <!-- WHATSAPP FLUTUANTE -->
-  <a class="whatsapp-float" href="https://wa.me/5519995454370" target="_blank" title="Fale com a gente no WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
+<!-- FOOTER -->
+<footer>
+  <div class="social-links">
+    <a href="https://www.instagram.com/portugal_eng"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/profile.php?id=61561425598667#"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.linkedin.com/company/portugal-engenharia-elétrica"><i class="fab fa-linkedin"></i></a>
+  </div>
+  © 2025 Portugal Engenharia Elétrica
+</footer>
 
-  <!-- FOOTER SOCIAL -->
-  <footer>
-    <div class="social-links">
-      <a href="https://wa.me/5519995454370" target="_blank" title="WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://www.instagram.com/portugal_eng" target="_blank" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.facebook.com/profile.php?id=61561425598667#" target="_blank" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.linkedin.com/company/portugal-engenharia-elétrica" target="_blank" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    </div>
-    <div>
-      <a href="https://linktr.ee/Portugal_Engenharia?utm_source=linktree_profile_share&ltsid=7e87619c-fd97-4115-9694-0c1dad06af65" target="_blank" class="linkthread">
-         Acesse nosso Linktree!
-      </a>
-    </div>
-    <div>
-      &copy; 2025 Portugal Engenharia Elétrica &mdash; Todos os direitos reservados.
-    </div>
-  </footer>
-  <script>
-    // MENU MOBILE
-    const btnMenuMobile = document.getElementById('btnMenuMobile');
-    const menuMobile = document.getElementById('menuMobile');
-    btnMenuMobile.addEventListener('click', function() {
-      menuMobile.classList.toggle('open');
-      if(menuMobile.classList.contains('open')) {
-        btnMenuMobile.innerHTML = '<i class="fas fa-times"></i>';
-        document.body.style.overflow = "hidden";
-      } else {
-        btnMenuMobile.innerHTML = '<i class="fas fa-bars"></i>';
-        document.body.style.overflow = "";
-      }
-    });
-    document.querySelectorAll('.menu-mobile nav a').forEach(link => {
-      link.addEventListener('click', () => {
-        menuMobile.classList.remove('open');
-        btnMenuMobile.innerHTML = '<i class="fas fa-bars"></i>';
-        document.body.style.overflow = "";
-      });
-    });
+<script>
+const btn=document.getElementById('btnMenuMobile');
+const menu=document.getElementById('menuMobile');
+btn.onclick=()=>menu.classList.toggle('open');
+</script>
 
-    // ACCORDION MOBILE PARA CARDS "QUEM SOMOS"
-    function setupAccordion() {
-      if (window.innerWidth <= 700) {
-        document.querySelectorAll('#essencia .mvvp-card').forEach(card => {
-          const btn = card.querySelector('.accordion-btn');
-          if (btn) {
-            btn.onclick = function(e) {
-              e.preventDefault();
-              const isOpen = card.classList.contains('expanded');
-              document.querySelectorAll('#essencia .mvvp-card').forEach(c => {
-                c.classList.remove('expanded');
-                c.querySelector('.accordion-btn i').className = "fas fa-plus";
-              });
-              if (!isOpen) {
-                card.classList.add('expanded');
-                btn.querySelector('i').className = "fas fa-minus";
-              }
-            };
-          }
-        });
-      } else {
-        document.querySelectorAll('#essencia .mvvp-card').forEach(card => {
-          card.classList.add('expanded');
-          const btn = card.querySelector('.accordion-btn');
-          if (btn) btn.querySelector('i').className = "fas fa-minus";
-        });
-      }
-    }
-    window.addEventListener('DOMContentLoaded', setupAccordion);
-    window.addEventListener('resize', setupAccordion);
-
-    // SCROLL SUAVE PARA FORMULÁRIO E VOLTAR AO INÍCIO
-    document.querySelectorAll('a.btn-simule, .hero-btn, .simule-btn').forEach(btn => {
-      btn.addEventListener('click', function(e) {
-        e.preventDefault();
-        const alvo = document.getElementById('formulario-simulacao-bg');
-        if (alvo) {
-          const header = document.querySelector('.topbar');
-          const headerHeight = header ? header.offsetHeight : 0;
-          const y = alvo.getBoundingClientRect().top + window.pageYOffset - headerHeight - 8;
-          window.scrollTo({ top: y, behavior: 'smooth' });
-        }
-      });
-    });
-    document.getElementById('btn-voltar-inicio').onclick = function() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  </script>
 </body>
 </html>
