@@ -127,17 +127,30 @@
       flex-shrink: 0;
     }
 
-    .logo-header img {
-      height: 54px;
-      width: auto;
-      border-radius: 8px;
-      transition: transform var(--transition);
-    }
+    /* Logo responsiva */
+.logo-header img {
+  max-width: 100%;   /* nunca ultrapassa a largura do container */
+  height: auto;      /* mantém proporção */
+  border-radius: 8px;
+  transition: transform var(--transition);
+}
 
-    .logo-header img:hover {
-      transform: scale(1.08);
-    }
+.logo-header img:hover {
+  transform: scale(1.08);
+}
 
+/* Ajuste específico para telas pequenas */
+@media (max-width: 768px) {
+  .logo-header img {
+    max-height: 42px; /* diminui a altura no celular */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-header img {
+    max-height: 36px; /* ainda menor em celulares muito pequenos */
+  }
+}
     nav.menu-desktop {
       display: flex;
       gap: 8px;
