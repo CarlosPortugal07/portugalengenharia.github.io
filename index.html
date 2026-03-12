@@ -7,23 +7,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Energia Solar em Valinhos | Portugal Engenharia</title>
+<title>Portugal Engenharia | Energia Solar em Valinhos</title>
 
-<meta name="description" content="Economize até 90% na conta de luz com energia solar em Valinhos. Projeto, instalação e homologação completa. Simulação gratuita.">
-
-<meta name="keywords" content="energia solar valinhos, painel solar valinhos, instalação energia solar valinhos, engenheiro eletricista valinhos">
-
-<meta name="robots" content="index, follow">
+<meta name="description" content="Simule seu orçamento de energia solar em Valinhos. Projetos elétricos e instalação de sistemas fotovoltaicos.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
 body{
-font-family:Poppins;
 margin:0;
+font-family:Poppins, sans-serif;
 color:#333;
 }
 
@@ -31,7 +26,7 @@ header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 40px;
+padding:18px 40px;
 background:white;
 box-shadow:0 2px 10px rgba(0,0,0,0.1);
 position:fixed;
@@ -41,134 +36,103 @@ z-index:1000;
 
 .logo{
 font-weight:700;
-color:#009688;
 font-size:20px;
+color:#0c8a7a;
 }
 
 nav a{
 margin:0 15px;
 text-decoration:none;
 color:#333;
-}
-
-.cta-topo{
-background:#FFC107;
-padding:10px 20px;
-border-radius:6px;
-text-decoration:none;
-font-weight:600;
+font-weight:500;
 }
 
 .hero{
 height:100vh;
-background:url("https://images.unsplash.com/photo-1509395176047-4a66953fd231");
-background-size:cover;
-background-position:center;
+background:url("https://images.unsplash.com/photo-1509395176047-4a66953fd231") center/cover no-repeat;
 display:flex;
 align-items:center;
 justify-content:center;
+text-align:center;
 }
 
 .hero-overlay{
 background:rgba(0,0,0,0.55);
 padding:50px;
-border-radius:10px;
-text-align:center;
+border-radius:12px;
 color:white;
 }
 
 .hero h1{
-font-size:45px;
+font-size:42px;
+margin-bottom:15px;
 }
 
-.botao-principal{
+.btn{
 background:#FFC107;
-padding:15px 30px;
+padding:14px 30px;
 border-radius:8px;
 text-decoration:none;
 color:black;
 font-weight:600;
 display:inline-block;
-margin-top:20px;
+margin-top:15px;
+}
+
+section{
+padding:80px 20px;
 }
 
 .numeros{
 display:flex;
 justify-content:center;
 gap:80px;
-padding:80px;
-text-align:center;
 background:#f5f5f5;
 flex-wrap:wrap;
+text-align:center;
 }
 
-.grid{
+.card-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:30px;
-padding:50px;
+max-width:1000px;
+margin:auto;
 }
 
 .card{
 background:#f9f9f9;
 padding:30px;
 border-radius:10px;
-box-shadow:0 3px 10px rgba(0,0,0,0.1);
-}
-
-section{
-padding-top:60px;
-}
-
-.simulador{
-background:#fafafa;
-padding:50px;
+box-shadow:0 4px 10px rgba(0,0,0,0.08);
 text-align:center;
 }
 
-.simulador input{
-padding:10px;
-font-size:16px;
-margin:10px;
-width:200px;
+#formulario-simulacao-bg{
+background:#fafafa;
+text-align:center;
 }
 
-.simulador button{
-padding:12px 25px;
-background:#009688;
-color:white;
-border:none;
-border-radius:6px;
-font-size:16px;
-}
-
-.resultado{
-font-size:20px;
-margin-top:20px;
+#formulario-simulacao{
+max-width:900px;
+margin:auto;
 }
 
 iframe{
 width:100%;
-max-width:700px;
-height:700px;
+height:900px;
 border:none;
-display:block;
-margin:auto;
 }
 
-.cta-final{
-background:#009688;
+.btn-voltar{
+margin-top:20px;
+padding:12px 25px;
+background:#0c8a7a;
 color:white;
-text-align:center;
-padding:60px;
-}
-
-.cta-final a{
-background:#FFC107;
-padding:15px 30px;
-border-radius:8px;
-text-decoration:none;
-color:black;
+border:none;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
 }
 
 footer{
@@ -201,15 +165,11 @@ text-decoration:none;
 <div class="logo">Portugal Engenharia</div>
 
 <nav>
-
 <a href="#sobre">Sobre</a>
-<a href="#vantagens">Vantagens</a>
-<a href="#simulador">Simulação</a>
+<a href="#servicos">Serviços</a>
+<a href="#formulario-simulacao-bg">Simular</a>
 <a href="#contato">Contato</a>
-
 </nav>
-
-<a class="cta-topo" href="#simulador">Simular Economia</a>
 
 </header>
 
@@ -219,9 +179,9 @@ text-decoration:none;
 
 <h1>Deixe o Sol Trabalhar Por Você</h1>
 
-<p>Economize até <b>90% na conta de energia</b></p>
+<p>Reduza até 80% da sua conta de energia</p>
 
-<a class="botao-principal" href="#simulador">Simular Grátis</a>
+<a class="btn" href="#formulario-simulacao-bg">Simular Economia</a>
 
 </div>
 
@@ -240,81 +200,73 @@ text-decoration:none;
 </div>
 
 <div>
-<h2>3 anos</h2>
-<p>Payback médio</p>
+<h2>25 anos</h2>
+<p>Vida útil dos painéis</p>
 </div>
 
 </section>
 
-<section id="sobre" style="padding:60px;text-align:center">
+<section id="sobre">
+
+<div style="max-width:800px;margin:auto;text-align:center">
 
 <h2>Energia Solar em Valinhos</h2>
 
 <p>
-
-A Portugal Engenharia é especialista em projetos elétricos e sistemas fotovoltaicos em Valinhos e região.
-
+A Portugal Engenharia é especializada em projetos elétricos e instalação de sistemas de energia solar.
+Atendemos residências e empresas em Valinhos e região com soluções completas.
 </p>
 
-</section>
-
-<section id="vantagens">
-
-<div class="grid">
-
-<div class="card">
-<h3>Economia</h3>
-<p>Redução de até 90% na conta.</p>
-</div>
-
-<div class="card">
-<h3>Valorização</h3>
-<p>Imóvel pode valorizar até 10%.</p>
-</div>
-
-<div class="card">
-<h3>Sustentabilidade</h3>
-<p>Energia limpa e renovável.</p>
-</div>
-
-<div class="card">
-<h3>Garantia</h3>
-<p>Painéis com até 25 anos.</p>
-</div>
-
 </div>
 
 </section>
 
-<section id="simulador" class="simulador">
+<section id="servicos">
 
-<h2>Simule sua economia</h2>
+<h2 style="text-align:center">Nossos Serviços</h2>
 
-<p>Digite sua conta média mensal</p>
+<div class="card-grid">
 
-<input type="number" id="conta" placeholder="Conta de luz R$">
+<div class="card">
+<h3>Energia Solar</h3>
+<p>Projeto e instalação de sistemas fotovoltaicos completos.</p>
+</div>
 
-<br>
+<div class="card">
+<h3>Projetos Elétricos</h3>
+<p>Projetos com ART e conformidade técnica.</p>
+</div>
 
-<button onclick="simular()">Calcular Economia</button>
+<div class="card">
+<h3>Homologação</h3>
+<p>Aprovação do sistema junto à concessionária.</p>
+</div>
 
-<div class="resultado" id="resultado"></div>
+</div>
 
 </section>
 
-<section class="simulador">
+<!-- ========== SIMULADOR ========== -->
 
-<h2>Receba seu orçamento completo</h2>
+<section id="formulario-simulacao-bg">
 
-<iframe src=="https://docs.google.com/forms/d/e/1FAIpQLSfX8lSxuIDL552jsnEnaThOvDtQbiKl_mzKAEraSnB5QgxaSQ/viewform?embedded=true"></iframe>
+<div id="formulario-simulacao">
 
-</section>
+<h2>Simule Seu Orçamento</h2>
 
-<section class="cta-final">
+<p>Descubra quanto você pode economizar com energia solar em 1 minuto</p>
 
-<h2>Comece a economizar hoje</h2>
+<iframe 
+src="https://docs.google.com/forms/d/e/1FAIpQLSfX8lSxuIDL552jsnEnaThOvDtQbiKl_mzKAEraSnB5QgxaSQ/viewform?embedded=true"
+frameborder="0"
+loading="lazy">
+</iframe>
 
-<a href="#simulador">Simular Economia</a>
+<button class="btn-voltar" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+↑ Voltar ao Início
+</button>
+
+</div>
 
 </section>
 
@@ -332,37 +284,18 @@ A Portugal Engenharia é especialista em projetos elétricos e sistemas fotovolt
 
 <script>
 
-function simular(){
-
-var conta=document.getElementById("conta").value;
-
-var economia=conta*0.8;
-
-var economiaAnual=economia*12;
-
-document.getElementById("resultado").innerHTML=
-
-"Economia estimada: <b>R$ "+economia.toFixed(2)+"/mês</b><br>R$ "+economiaAnual.toFixed(2)+" por ano";
-
-}
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-
-anchor.addEventListener("click", function(e){
-
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+anchor.addEventListener("click",function(e){
 e.preventDefault();
-
 document.querySelector(this.getAttribute("href")).scrollIntoView({
 behavior:"smooth"
 });
-
 });
-
 });
 
 </script>
 
 </body>
+
 </html>
 ```
-
