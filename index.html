@@ -1,283 +1,72 @@
-```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Portugal Engenharia | Energia Solar em Valinhos</title>
-
-<meta name="description" content="Simule sua economia com energia solar em Valinhos. Receba seu orçamento automático em menos de 1 minuto.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-body{
-margin:0;
-font-family:Inter,sans-serif;
-color:#1a1a1a;
-}
-
-header{
-position:fixed;
-top:0;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 40px;
-background:white;
-box-shadow:0 2px 15px rgba(0,0,0,0.08);
-z-index:1000;
-}
-
-.logo{
-font-weight:700;
-font-size:20px;
-}
-
-nav a{
-margin:0 15px;
-text-decoration:none;
-color:#333;
-font-weight:500;
-}
-
-/* HERO */
-
-.hero{
-height:100vh;
-background:url("https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6") center/cover no-repeat;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-position:relative;
-}
-
-.hero::after{
-content:"";
-position:absolute;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.55);
-}
-
-.hero-content{
-position:relative;
-color:white;
-max-width:750px;
-padding:20px;
-}
-
-.hero h1{
-font-size:52px;
-margin-bottom:20px;
-}
-
-.hero p{
-font-size:20px;
-margin-bottom:25px;
-}
-
-.btn{
-background:#FFC107;
-padding:16px 35px;
-border-radius:8px;
-text-decoration:none;
-color:black;
-font-weight:600;
-}
-
-/* BENEFÍCIOS */
-
-.beneficios{
-display:flex;
-justify-content:center;
-gap:40px;
-padding:70px 20px;
-background:#f7f7f7;
-flex-wrap:wrap;
-text-align:center;
-}
-
-.beneficios div{
-max-width:200px;
-}
-
-/* SERVIÇOS */
-
-.servicos{
-max-width:1100px;
-margin:auto;
-padding:80px 20px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
-margin-top:40px;
-}
-
-.card{
-background:white;
-padding:35px;
-border-radius:10px;
-box-shadow:0 5px 20px rgba(0,0,0,0.08);
-text-align:center;
-}
-
-/* FORMULÁRIO */
-
-.simulacao{
-background:#fafafa;
-padding:80px 20px;
-text-align:center;
-}
-
-iframe{
-width:100%;
-max-width:900px;
-height:900px;
-border:none;
-margin-top:30px;
-}
-
-/* FOOTER */
-
-footer{
-background:#111;
-color:white;
-text-align:center;
-padding:50px 20px;
-}
-
-/* WHATSAPP */
-
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:16px;
-border-radius:50%;
-font-size:22px;
-text-decoration:none;
-}
-
-</style>
-
-</head>
-
-<body>
-
-<header>
-
-<div class="logo">Portugal Engenharia</div>
-
-<nav>
-<a href="#sobre">Sobre</a>
-<a href="#simulacao">Simular</a>
-<a href="#contato">Contato</a>
-</nav>
-
-</header>
-
-<section class="hero">
-
-<div class="hero-content">
-
-<h1>Deixe o Sol Trabalhar por Você</h1>
-
-<p>Reduza sua conta de energia e valorize seu imóvel com energia solar</p>
-
-<a class="btn" href="#simulacao">Quero Simular Agora</a>
-
-</div>
-
-</section>
-
-<section class="beneficios">
-
-<div>
-<h3>💰 Economia</h3>
-<p>Reduza até 80% da conta de luz</p>
-</div>
-
-<div>
-<h3>⚡ Energia limpa</h3>
-<p>Fonte renovável e sustentável</p>
-</div>
-
-<div>
-<h3>🏡 Valorização</h3>
-<p>Seu imóvel vale mais</p>
-</div>
-
-<div>
-<h3>🔋 Independência</h3>
-<p>Menos dependência da concessionária</p>
-</div>
-
-</section>
-
-<section class="servicos">
-
-<h2 style="text-align:center">Nossos Serviços</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Energia Solar Fotovoltaica</h3>
-<p>Implantação completa de sistemas solares.</p>
-</div>
-
-<div class="card">
-<h3>Projetos Elétricos</h3>
-<p>Projetos técnicos com ART e conformidade.</p>
-</div>
-
-<div class="card">
-<h3>Manutenção e Laudos</h3>
-<p>Serviços técnicos especializados.</p>
-</div>
-
-</div>
-
-</section>
-
-<section id="simulacao" class="simulacao">
-
-<h2>Simule Seu Orçamento</h2>
-
-<p>Leva menos de 1 minuto</p>
-
-<iframe
-src="https://docs.google.com/forms/d/e/1FAIpQLSfX8lSxuIDL552jsnEnaThOvDtQbiKl_mzKAEraSnB5QgxaSQ/viewform?embedded=true">
-</iframe>
-
-</section>
-
-<footer id="contato">
-
-<h3>Portugal Engenharia</h3>
-
-<p>Valinhos - SP</p>
-
-<p>📞 (19) 99545-4370</p>
-
-</footer>
-
-<a class="whatsapp" href="https://wa.me/5519995454370">💬</a>
-
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    
+    <!-- SEO Meta Tags -->
+    <title>Portugal Engenharia Elétrica | Energia Solar em Valinhos - Reduza sua Conta em até 80%</title>
+    <meta name="description" content="Energia solar em Valinhos - Reduza sua conta de energia em até 80%. Simulação grátis em 1 minuto. Engenharia própria, financiamento disponível. 500+ clientes satisfeitos." />
+    <meta name="keywords" content="energia solar Valinhos, painéis solares, engenharia elétrica, economia energia, simulação solar" />
+    <meta name="author" content="Portugal Engenharia Elétrica" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph (Social Media) -->
+    <meta property="og:title" content="Portugal Engenharia Elétrica | Energia Solar em Valinhos" />
+    <meta property="og:description" content="Reduza sua conta de energia em até 80% com energia solar profissional. Simulação grátis em 1 minuto." />
+    <meta property="og:image" content="https://d2xsxph8kpxj0f.cloudfront.net/310519663366225111/P7mSJTDPhmBzwxq3feutqr/hero-solar-panels-P6vuEH8ekJTvK9oNDCEHyN.webp" />
+    <meta property="og:url" content="https://www.portugalengenharia.com.br" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Portugal Engenharia Elétrica | Energia Solar em Valinhos" />
+    <meta name="twitter:description" content="Reduza sua conta de energia em até 80% com energia solar profissional." />
+    <meta name="twitter:image" content="https://d2xsxph8kpxj0f.cloudfront.net/310519663366225111/P7mSJTDPhmBzwxq3feutqr/hero-solar-panels-P6vuEH8ekJTvK9oNDCEHyN.webp" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%232fbbb1'>☀️</text></svg>" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VBLZVSB03D"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VBLZVSB03D');
+    </script>
+    
+    <!-- Meta Pixel (Facebook) -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1399512628395192');
+      fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1399512628395192&ev=PageView&noscript=1"/>
+    </noscript>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script defer src="%VITE_ANALYTICS_ENDPOINT%/umami" data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
+  </body>
 
 </html>
-```
+
 
