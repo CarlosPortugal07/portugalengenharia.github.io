@@ -7,13 +7,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Portugal Engenharia | Energia Solar em Valinhos</title>
+<title>Portugal Engenharia Elétrica | Energia Solar em Valinhos</title>
 
-<meta name="description" content="Energia solar em Valinhos, Campinas e Vinhedo. Simule online sua economia de energia com a Portugal Engenharia.">
+<meta name="description" content="Energia solar em Valinhos, Campinas, Vinhedo e Louveira. Simule seu orçamento online e reduza até 80% da conta de energia com a Portugal Engenharia Elétrica.">
 
-<meta name="keywords" content="energia solar Valinhos, energia solar Campinas, energia solar Vinhedo, instalação placas solares">
+<meta name="keywords" content="energia solar Valinhos, energia solar Campinas, placas solares Vinhedo, instalação energia solar Louveira">
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -25,46 +25,49 @@ font-family:Montserrat,sans-serif;
 }
 
 body{
-color:#333;
+color:#1e293b;
 line-height:1.6;
 }
 
-header{
+.container{
+max-width:1200px;
+margin:auto;
+padding:20px;
+}
 
-position:fixed;
+header{
+position:sticky;
 top:0;
-width:100%;
 background:white;
+border-bottom:1px solid #e5e7eb;
+z-index:100;
+}
+
+.header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px 60px;
-box-shadow:0 2px 10px rgba(0,0,0,0.08);
-z-index:999;
-
 }
 
 .logo{
-font-weight:700;
 font-size:22px;
-color:#0a5c4b;
+font-weight:700;
+color:#0f766e;
 }
 
 nav a{
-
-margin-left:30px;
+margin-left:25px;
 text-decoration:none;
-color:#333;
+color:#1e293b;
 font-weight:500;
-
 }
 
 .hero{
 
-height:100vh;
+min-height:90vh;
 
 background:
-linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.65)),
 url("https://images.unsplash.com/photo-1509395176047-4a66953fd231");
 
 background-size:cover;
@@ -73,12 +76,8 @@ background-position:center;
 display:flex;
 align-items:center;
 justify-content:center;
-
 text-align:center;
-
 color:white;
-
-padding:20px;
 
 }
 
@@ -94,146 +93,91 @@ margin-bottom:30px;
 
 .btn{
 
-background:#f4b400;
-
-padding:16px 36px;
-
-border-radius:6px;
-
-text-decoration:none;
-
+background:#f59e0b;
 color:black;
-
+padding:15px 30px;
+border-radius:6px;
+text-decoration:none;
 font-weight:600;
 
 }
 
-.beneficios{
-
+.metrics{
 display:flex;
-
+gap:30px;
 justify-content:center;
-
+margin-top:40px;
 flex-wrap:wrap;
-
-gap:40px;
-
-padding:80px 20px;
-
-background:#f7f7f7;
-
-text-align:center;
-
 }
 
-.beneficios div{
-
-max-width:230px;
-
+.metric{
+background:rgba(255,255,255,.15);
+padding:15px 25px;
+border-radius:8px;
 }
 
-.servicos{
+.metric h3{
+color:#fbbf24;
+font-size:26px;
+}
 
-padding:80px 20px;
-
-max-width:1100px;
-
-margin:auto;
-
+.section{
+padding:70px 0;
 }
 
 .grid{
-
 display:grid;
-
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
-gap:30px;
-
+gap:25px;
 margin-top:40px;
-
 }
 
 .card{
-
-background:white;
-
+border:1px solid #e5e7eb;
 padding:30px;
-
-border-radius:8px;
-
-box-shadow:0 5px 20px rgba(0,0,0,0.08);
-
+border-radius:10px;
 text-align:center;
-
+background:white;
 }
 
-.simulador{
+.beneficios{
+background:#f8fafc;
+}
 
-background:#fafafa;
-
-padding:80px 20px;
-
-text-align:center;
-
+.steps{
+background:#f1f5f9;
 }
 
 iframe{
-
 width:100%;
-
 max-width:900px;
-
 height:900px;
-
 border:none;
-
 margin-top:30px;
-
-}
-
-.cidades{
-
-padding:70px 20px;
-
-background:#f7f7f7;
-
-text-align:center;
-
+border-radius:10px;
 }
 
 footer{
-
-background:#111;
-
+background:#0f172a;
 color:white;
-
-padding:50px;
-
 text-align:center;
-
+padding:50px 20px;
 }
 
 .whatsapp{
-
 position:fixed;
-
 bottom:20px;
-
 right:20px;
-
-background:#25D366;
-
+background:#25d366;
 color:white;
-
-padding:18px;
-
+width:60px;
+height:60px;
+display:flex;
+align-items:center;
+justify-content:center;
 border-radius:50%;
-
-font-size:24px;
-
+font-size:26px;
 text-decoration:none;
-
 }
 
 </style>
@@ -243,19 +187,20 @@ text-decoration:none;
 <body>
 
 <header>
+<div class="container header">
 
-<div class="logo">Portugal Engenharia</div>
+<div class="logo">Portugal Engenharia Elétrica</div>
 
 <nav>
 
 <a href="#servicos">Serviços</a>
-
-<a href="#simular">Simular</a>
-
-<a href="#contato">Contato</a>
+<a href="#beneficios">Benefícios</a>
+<a href="#como-funciona">Como Funciona</a>
+<a href="#simulacao">Simular</a>
 
 </nav>
 
+</div>
 </header>
 
 <section class="hero">
@@ -264,53 +209,38 @@ text-decoration:none;
 
 <h1>Energia Solar em Valinhos</h1>
 
-<p>Economize até 80% na sua conta de energia com painéis solares.</p>
+<p>Reduza até 80% da sua conta de energia com placas solares.</p>
 
-<a class="btn" href="#simular">Simular Economia</a>
+<a class="btn" href="#simulacao">Simular Economia</a>
+
+<div class="metrics">
+
+<div class="metric">
+<h3>500+</h3>
+<p>Clientes atendidos</p>
+</div>
+
+<div class="metric">
+<h3>60%</h3>
+<p>Economia média</p>
+</div>
+
+<div class="metric">
+<h3>3 anos</h3>
+<p>Retorno médio</p>
+</div>
+
+</div>
 
 </div>
 
 </section>
 
-<section class="beneficios">
+<section id="servicos" class="section">
 
-<div>
+<div class="container">
 
-<h3>💰 Economia</h3>
-
-<p>Redução de até 80% na conta de energia elétrica.</p>
-
-</div>
-
-<div>
-
-<h3>⚡ Energia limpa</h3>
-
-<p>Produção de energia renovável e sustentável.</p>
-
-</div>
-
-<div>
-
-<h3>🏠 Valorização</h3>
-
-<p>Imóvel valorizado com sistema fotovoltaico.</p>
-
-</div>
-
-<div>
-
-<h3>🔧 Engenharia</h3>
-
-<p>Projeto técnico com responsabilidade profissional.</p>
-
-</div>
-
-</section>
-
-<section id="servicos" class="servicos">
-
-<h2 style="text-align:center">Nossos Serviços</h2>
+<h2>Nossos Serviços</h2>
 
 <div class="grid">
 
@@ -326,7 +256,7 @@ text-decoration:none;
 
 <h3>Energia Solar Comercial</h3>
 
-<p>Soluções para empresas reduzirem custos com energia.</p>
+<p>Soluções para empresas reduzirem custos com energia elétrica.</p>
 
 </div>
 
@@ -334,7 +264,17 @@ text-decoration:none;
 
 <h3>Projetos Elétricos</h3>
 
-<p>Projetos técnicos com ART e responsabilidade profissional.</p>
+<p>Projetos elétricos profissionais com responsabilidade técnica.</p>
+
+</div>
+
+<div class="card">
+
+<h3>Laudos Técnicos</h3>
+
+<p>Inspeções, ART e relatórios técnicos para instalações elétricas.</p>
+
+</div>
 
 </div>
 
@@ -342,33 +282,106 @@ text-decoration:none;
 
 </section>
 
-<section id="simular" class="simulador">
+<section id="beneficios" class="section beneficios">
 
-<h2>Simule Seu Orçamento Online</h2>
+<div class="container">
 
-<p>Preencha o formulário e descubra quanto você pode economizar.</p>
+<h2>Benefícios da Energia Solar</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>💰 Economia</h3>
+<p>Redução significativa da conta de energia.</p>
+</div>
+
+<div class="card">
+<h3>🌱 Sustentável</h3>
+<p>Energia limpa e renovável.</p>
+</div>
+
+<div class="card">
+<h3>🏡 Valorização</h3>
+<p>Seu imóvel mais valorizado.</p>
+</div>
+
+<div class="card">
+<h3>⚡ Independência</h3>
+<p>Produza sua própria energia.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="como-funciona" class="section steps">
+
+<div class="container">
+
+<h2>Como funciona a instalação</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>1️⃣ Simulação</h3>
+<p>Analise de consumo e dimensionamento do sistema.</p>
+</div>
+
+<div class="card">
+<h3>2️⃣ Projeto</h3>
+<p>Projeto elétrico com responsabilidade técnica.</p>
+</div>
+
+<div class="card">
+<h3>3️⃣ Instalação</h3>
+<p>Equipe especializada instala o sistema fotovoltaico.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="simulacao" class="section">
+
+<div class="container">
+
+<h2>Simule seu orçamento online</h2>
+
+<p>Preencha o formulário e descubra quanto pode economizar.</p>
 
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfX8lSxuIDL552jsnEnaThOvDtQbiKl_mzKAEraSnB5QgxaSQ/viewform?embedded=true"></iframe>
 
+</div>
+
 </section>
 
-<section class="cidades">
+<section class="section">
+
+<div class="container">
 
 <h2>Atendemos toda a região</h2>
 
-<p>Instalação de energia solar em Valinhos, Campinas, Vinhedo e região.</p>
+<p>Energia solar em Valinhos, Campinas, Vinhedo, Louveira e Região Metropolitana de Campinas.</p>
+
+</div>
 
 </section>
 
-<footer id="contato">
+<footer>
 
-<h3>Portugal Engenharia</h3>
+<h3>Portugal Engenharia Elétrica</h3>
 
-<p>Engenharia Elétrica e Energia Solar</p>
+<p>Engenharia elétrica e energia solar</p>
 
-<p>Valinhos - SP</p>
+<p>Valinhos – SP</p>
 
-<p>WhatsApp: (19) 99545-4370</p>
+<p>WhatsApp: +55 19 99545-4370</p>
+
+<p>© 2026 Portugal Engenharia</p>
 
 </footer>
 
@@ -377,26 +390,17 @@ text-decoration:none;
 <script type="application/ld+json">
 
 {
-
-"@context": "https://schema.org",
-
-"@type": "LocalBusiness",
-
-"name": "Portugal Engenharia",
-
-"areaServed": "Valinhos, Campinas, Vinhedo",
-
-"telephone": "+55 19 99545-4370",
-
-"url": "https://www.portugalengenharia.com.br",
-
-"description": "Empresa de engenharia elétrica especializada em energia solar."
-
+"@context":"https://schema.org",
+"@type":"LocalBusiness",
+"name":"Portugal Engenharia Elétrica",
+"areaServed":"Valinhos, Campinas, Vinhedo, Louveira",
+"telephone":"+55 19 99545-4370",
+"url":"https://www.portugalengenharia.com.br",
+"description":"Empresa de engenharia elétrica especializada em energia solar na região de Valinhos."
 }
 
 </script>
 
 </body>
-
 </html>
 ```
