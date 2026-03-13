@@ -581,18 +581,28 @@
         }
 
         .marca-item {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 1.5rem;
-            color: #94a3b8;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             white-space: nowrap;
-            transition: color 0.3s;
+            transition: all 0.3s;
+            height: 80px;
+            min-width: 150px;
         }
 
-        .marca-item:hover {
-            color: var(--primary);
+        .marca-item img {
+            max-height: 70px;
+            max-width: 140px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            opacity: 1;
+            transition: all 0.3s;
+        }
+
+        .marca-item:hover img {
+            transform: scale(1.1);
+            opacity: 1;
         }
 
         @keyframes scroll {
@@ -1217,29 +1227,29 @@
     <section id="marcas">
         <div class="marcas-slider">
             <!-- Duplicado para efeito infinito -->
-            <div class="marca-item">WEG</div>
-            <div class="marca-item">Solis</div>
-            <div class="marca-item">Sungrow</div>
-            <div class="marca-item">Steck</div>
-            <div class="marca-item">JA Solar</div>
-            <div class="marca-item">Honor Solar</div>
-            <div class="marca-item">Jinko</div>
-            <div class="marca-item">Enphase</div>
-            <div class="marca-item">Hoymiles</div>
-            <div class="marca-item">Huawei</div>
-            <div class="marca-item">Canadian Solar</div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/ZAPlLdhPXqvpSGHb.png" alt="WEG"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/xzDbPNxHffopETtt.png" alt="Solis"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/ikcShDrDCJZIVvSx.png" alt="Sungrow"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/BzeehHSqcwsPhRjW.png" alt="Steck"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/BiBZSPpIzbvHrUqY.png" alt="JA Solar"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/PAwJjRHPqbQfMRWf.jpg" alt="Honor Solar"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/FJTVPKpcPeyqLYRu.png" alt="Jinko Solar"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/WutfnlNbHLQOmIMr.png" alt="Enphase"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/iEFqTAxQOYnyHNfn.png" alt="Hoymiles"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/OBFHnVRKjATWbYGd.png" alt="Huawei"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/wRapZNMHGMGZOtjt.png" alt="Canadian Solar"></div>
             <!-- Duplicado -->
-            <div class="marca-item">WEG</div>
-            <div class="marca-item">Solis</div>
-            <div class="marca-item">Sungrow</div>
-            <div class="marca-item">Steck</div>
-            <div class="marca-item">JA Solar</div>
-            <div class="marca-item">Honor Solar</div>
-            <div class="marca-item">Jinko</div>
-            <div class="marca-item">Enphase</div>
-            <div class="marca-item">Hoymiles</div>
-            <div class="marca-item">Huawei</div>
-            <div class="marca-item">Canadian Solar</div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/ZAPlLdhPXqvpSGHb.png" alt="WEG"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/xzDbPNxHffopETtt.png" alt="Solis"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/ikcShDrDCJZIVvSx.png" alt="Sungrow"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/BzeehHSqcwsPhRjW.png" alt="Steck"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/BiBZSPpIzbvHrUqY.png" alt="JA Solar"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/PAwJjRHPqbQfMRWf.jpg" alt="Honor Solar"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/FJTVPKpcPeyqLYRu.png" alt="Jinko Solar"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/WutfnlNbHLQOmIMr.png" alt="Enphase"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/iEFqTAxQOYnyHNfn.png" alt="Hoymiles"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/OBFHnVRKjATWbYGd.png" alt="Huawei"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/wRapZNMHGMGZOtjt.png" alt="Canadian Solar"></div>
         </div>
     </section>
 
