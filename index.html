@@ -389,7 +389,7 @@
 
         .servicos-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
 
@@ -397,10 +397,33 @@
             background: white;
             border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 2rem;
+            padding: 2rem 1.5rem;
             text-align: center;
             transition: all 0.3s;
             cursor: pointer;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex: 1 1 auto;
+            min-width: 200px;
+        }
+        
+        .servico-card:nth-child(1) {
+            flex: 1.3 1 auto;
+        }
+        
+        .servico-card:nth-child(2) {
+            flex: 0.8 1 auto;
+        }
+        
+        .servico-card:nth-child(3) {
+            flex: 1.2 1 auto;
+        }
+        
+        .servico-card:nth-child(4) {
+            flex: 1.7 1 auto;
         }
 
         .servico-card:hover {
@@ -429,6 +452,7 @@
         .servico-card p {
             color: var(--text-light);
             font-size: 0.95rem;
+            line-height: 1.6;
         }
 
         .servico-card a {
@@ -436,6 +460,10 @@
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s;
+            display: inline-block;
+            max-width: 100%;
+            word-break: break-word;
+            overflow-wrap: break-word;
         }
 
         .servico-card a:hover {
@@ -618,11 +646,12 @@
         }
 
         .contato-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
             gap: 2rem;
-            max-width: 1100px;
+            max-width: 1400px;
             margin: 0 auto;
+            justify-content: center;
         }
 
         .contato-card {
@@ -842,7 +871,15 @@
             }
 
             .contato-grid {
-                grid-template-columns: 1fr;
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .servico-card:nth-child(1),
+            .servico-card:nth-child(2),
+            .servico-card:nth-child(3),
+            .servico-card:nth-child(4) {
+                flex: 1 1 100%;
             }
 
             header {
@@ -1189,8 +1226,8 @@
                 <div class="servico-card">
                     <h4>📧 E-mail</h4>
                     <p>
-                        <a href="mailto:vendas@portugalengenharia.com.br">
-                        vendas@portugalengenharia.com.br
+                        <a href="mailto:vendas@portugalengenharia.com.br" title="Enviar e-mail">
+                            vendas@portugalengenharia.com.br
                         </a>
                     </p>
                 </div>
@@ -1198,7 +1235,7 @@
                 <div class="servico-card">
                     <h4>📱 WhatsApp</h4>
                     <p>
-                        <a href="https://wa.me/5519995454370" target="_blank" rel="noopener noreferrer">
+                        <a href="https://wa.me/5519995454370" target="_blank" rel="noopener noreferrer" title="Abrir WhatsApp">
                             <i class="fab fa-whatsapp"></i> (19) 99545-4370
                         </a>
                     </p>
