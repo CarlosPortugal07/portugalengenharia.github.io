@@ -560,64 +560,106 @@
             box-shadow: 0 8px 16px rgba(47, 187, 177, 0.3);
         }
 
-        /* ========== DEPOIMENTOS ========== */
-        #depoimentos {
-            padding: 5rem 0;
+        /* ========== MARCAS PARCEIRAS ========== */
+        #marcas {
+            padding: 4rem 0;
+            background-color: white;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .marcas-slider {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            animation: scroll 30s linear infinite;
+            width: max-content;
+        }
+
+        .marcas-slider:hover {
+            animation-play-state: paused;
+        }
+
+        .marca-item {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            white-space: nowrap;
+            transition: color 0.3s;
+        }
+
+        .marca-item:hover {
+            color: var(--primary);
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* ========== PROCESSO DE ENGENHARIA ========== */
+        #processo {
+            padding: 6rem 0;
             background-color: #f8fafc;
         }
 
-        .depoimentos-grid {
+        .processo-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 2rem;
+            position: relative;
         }
 
-        .depoimento-card {
+        .processo-item {
             background: white;
-            border-radius: 12px;
-            padding: 2rem;
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            text-align: center;
             border: 1px solid var(--border);
             transition: all 0.3s;
+            position: relative;
+            z-index: 1;
         }
 
-        .depoimento-card:hover {
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        .processo-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(47, 187, 177, 0.1);
+            border-color: var(--primary);
         }
 
-        .stars {
-            color: #fbbf24;
+        .processo-number {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin: 0 auto 1.5rem;
+            font-size: 1.25rem;
+        }
+
+        .processo-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .processo-item h3 {
             font-size: 1.25rem;
             margin-bottom: 1rem;
-        }
-
-        .depoimento-text {
-            color: var(--text-light);
-            font-style: italic;
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-
-        .depoimento-autor {
-            border-top: 1px solid var(--border);
-            padding-top: 1rem;
-        }
-
-        .depoimento-nome {
-            font-weight: bold;
             color: var(--text);
-            margin-bottom: 0.25rem;
         }
 
-        .depoimento-cidade {
-            font-size: 0.875rem;
+        .processo-item p {
+            font-size: 0.9375rem;
             color: var(--text-light);
-            margin-bottom: 0.5rem;
-        }
-
-        .depoimento-economia {
-            font-size: 0.875rem;
-            font-weight: bold;
-            color: var(--primary);
+            line-height: 1.6;
         }
 
         /* ========== CTA SECTION ========== */
@@ -1171,37 +1213,64 @@
         </div>
     </section>
 
-    <!-- ========== DEPOIMENTOS ========== -->
-    <section id="depoimentos">
+    <!-- ========== MARCAS PARCEIRAS ========== -->
+    <section id="marcas">
+        <div class="marcas-slider">
+            <!-- Duplicado para efeito infinito -->
+            <div class="marca-item">WEG</div>
+            <div class="marca-item">Solis</div>
+            <div class="marca-item">Sungrow</div>
+            <div class="marca-item">Steck</div>
+            <div class="marca-item">JA Solar</div>
+            <div class="marca-item">Honor Solar</div>
+            <div class="marca-item">Jinko</div>
+            <div class="marca-item">Enphase</div>
+            <div class="marca-item">Hoymiles</div>
+            <div class="marca-item">Huawei</div>
+            <div class="marca-item">Canadian Solar</div>
+            <!-- Duplicado -->
+            <div class="marca-item">WEG</div>
+            <div class="marca-item">Solis</div>
+            <div class="marca-item">Sungrow</div>
+            <div class="marca-item">Steck</div>
+            <div class="marca-item">JA Solar</div>
+            <div class="marca-item">Honor Solar</div>
+            <div class="marca-item">Jinko</div>
+            <div class="marca-item">Enphase</div>
+            <div class="marca-item">Hoymiles</div>
+            <div class="marca-item">Huawei</div>
+            <div class="marca-item">Canadian Solar</div>
+        </div>
+    </section>
+
+    <!-- ========== PROCESSO DE ENGENHARIA ========== -->
+    <section id="processo">
         <div class="container">
-            <h2 class="section-title">O Que Dizem Nossos Clientes</h2>
-            <div class="depoimentos-grid">
-                <div class="depoimento-card">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p class="depoimento-text">"Excelente atendimento! Processo rápido e transparente. Já estou economizando desde o primeiro mês."</p>
-                    <div class="depoimento-autor">
-                        <div class="depoimento-nome"> </div>
-                        <div class="depoimento-cidade">Valinhos</div>
-                        <div class="depoimento-economia">Economia: R$ 300/mês</div>
-                    </div>
+            <h2 class="section-title">Nosso Processo de Engenharia</h2>
+            <div class="processo-grid">
+                <div class="processo-item">
+                    <div class="processo-number">1</div>
+                    <span class="processo-icon">📋</span>
+                    <h3>Visita Técnica</h3>
+                    <p>Análise detalhada do local, telhado e infraestrutura elétrica para um projeto preciso.</p>
                 </div>
-                <div class="depoimento-card">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p class="depoimento-text">"Melhor investimento que fiz! A equipe foi muito profissional e o resultado superou minhas expectativas."</p>
-                    <div class="depoimento-autor">
-                        <div class="depoimento-nome"> </div>
-                        <div class="depoimento-cidade">Valinhos</div>
-                        <div class="depoimento-economia">Economia: R$ 250/mês</div>
-                    </div>
+                <div class="processo-item">
+                    <div class="processo-number">2</div>
+                    <span class="processo-icon">📐</span>
+                    <h3>Projeto Customizado</h3>
+                    <p>Engenharia própria desenvolvendo a solução ideal para o seu consumo e telhado.</p>
                 </div>
-                <div class="depoimento-card">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p class="depoimento-text">"Recomendo para todos! Portugal Engenharia é confiável, eficiente e oferece ótimo custo-benefício."</p>
-                    <div class="depoimento-autor">
-                        <div class="depoimento-nome"> </div>
-                        <div class="depoimento-cidade">Vinhedo</div>
-                        <div class="depoimento-economia">Economia: R$ 400/mês</div>
-                    </div>
+                <div class="processo-item">
+                    <div class="processo-number">3</div>
+                    <span class="processo-icon">🛠️</span>
+                    <h3>Instalação Profissional</h3>
+                    <p>Equipe técnica qualificada seguindo todas as normas de segurança e qualidade.</p>
+                </div>
+                <div class="processo-item">
+                    <div class="processo-number">4</div>
+                    <span class="processo-icon">📄</span>
+                    <h3>Homologação</h3>
+                    <p>Cuidamos de toda a burocracia junto à concessionária para ativar seu sistema.</p>
                 </div>
             </div>
         </div>
@@ -1407,4 +1476,3 @@
 
 </body>
 </html>
-
