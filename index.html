@@ -11,33 +11,23 @@
     <meta name="author" content="Portugal Engenharia Elétrica">
     <meta name="robots" content="index, follow">
     
-    <!-- Open Graph - Melhorado para compartilhamento -->
+    <!-- Open Graph -->
     <meta property="og:title" content="Portugal Engenharia Elétrica | Energia Solar em Valinhos">
     <meta property="og:description" content="Reduza sua conta de energia em até 90% com energia solar profissional. Simulação grátis em 1 minuto.">
     <meta property="og:image" content="https://raw.githubusercontent.com/CarlosPortugal07/portugalengenharia.github.io/main/Logo%20com%20slogan_Fundo%20Branco%202.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://www.portugalengenharia.com.br">
     <meta property="og:type" content="website">
     
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Portugal Engenharia Elétrica | Energia Solar em Valinhos">
-    <meta name="twitter:description" content="Reduza sua conta de energia em até 90% com energia solar profissional.">
-    
-    <!-- Canonical URL - Evita conteúdo duplicado -->
-    <link rel="canonical" href="https://www.portugalengenharia.com.br">
-    
-    <!-- Favicon -->
+    <!-- Favicon - Usando seu favicon 7PE -->
     <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/CarlosPortugal07/portugalengenharia.github.io/main/favicon.ico">
     
-    <!-- Google Fonts - Preconnect para melhor performance -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome para ícones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-BBSo63PzAzKfZmHjE+VjZQO1N1YGEA1/L7pYqbj2g5dI0A3w5Y7F3Mm5Z+NL9YGEA1/L7pYqbj2g5dI0A3w5Y7F3Mm5Z+NL9" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VBLZVSB03D"></script>
@@ -49,7 +39,6 @@
     </script>
     
     <style>
-        /* ========== RESET E VARIÁVEIS ========== */
         * {
             margin: 0;
             padding: 0;
@@ -66,16 +55,6 @@
             --text: #1e293b;
             --text-light: #64748b;
             --border: #e2e8f0;
-        }
-
-        /* ========== SUPORTE A DARK MODE ========== */
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --text: #f1f5f9;
-                --text-light: #cbd5e1;
-                --border: #334155;
-                --light: #1e293b;
-            }
         }
 
         html {
@@ -128,7 +107,6 @@
         .logo img {
             height: 50px;
             width: auto;
-            display: block;
         }
 
         .logo-text h1 {
@@ -154,13 +132,11 @@
             color: var(--text);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
         }
 
-        nav a:hover,
-        nav a:focus-visible {
+        nav a:hover {
             color: var(--primary);
-            outline: none;
         }
 
         .btn-header {
@@ -171,14 +147,12 @@
             font-weight: bold;
             border: none;
             cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .btn-header:hover,
-        .btn-header:focus-visible {
+        .btn-header:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 16px rgba(47, 187, 177, 0.3);
-            outline: none;
         }
 
         @media (min-width: 768px) {
@@ -210,6 +184,8 @@
             flex-direction: column;
             align-items: center;
         }
+
+
 
         .hero-badge {
             display: inline-block;
@@ -286,16 +262,14 @@
             font-size: 1rem;
             border: none;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
             text-decoration: none;
             display: inline-block;
         }
 
-        .btn-primary:hover,
-        .btn-primary:focus-visible {
+        .btn-primary:hover {
             transform: translateY(-3px);
             box-shadow: 0 12px 24px rgba(245, 158, 11, 0.4);
-            outline: none;
         }
 
         .btn-secondary {
@@ -307,15 +281,13 @@
             font-size: 1rem;
             border: 1px solid rgba(255, 255, 255, 0.3);
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
             text-decoration: none;
             display: inline-block;
         }
 
-        .btn-secondary:hover,
-        .btn-secondary:focus-visible {
+        .btn-secondary:hover {
             background: rgba(255, 255, 255, 0.3);
-            outline: none;
         }
 
         @media (min-width: 768px) {
@@ -427,7 +399,7 @@
             border-radius: 12px;
             padding: 2rem 1.5rem;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
             cursor: pointer;
             min-height: 100%;
             display: flex;
@@ -454,8 +426,7 @@
             flex: 1.7 1 auto;
         }
 
-        .servico-card:hover,
-        .servico-card:focus-within {
+        .servico-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 12px 24px rgba(47, 187, 177, 0.15);
             border-color: var(--primary);
@@ -464,10 +435,6 @@
         .servico-card-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
-            height: 4rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .servico-card h3 {
@@ -492,17 +459,15 @@
             color: var(--primary);
             text-decoration: none;
             font-weight: 600;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
             display: inline-block;
             max-width: 100%;
             word-break: break-word;
             overflow-wrap: break-word;
         }
 
-        .servico-card a:hover,
-        .servico-card a:focus-visible {
+        .servico-card a:hover {
             color: var(--primary-dark);
-            outline: none;
         }
 
         /* ========== BENEFÍCIOS ========== */
@@ -522,7 +487,7 @@
             border-radius: 12px;
             padding: 2rem;
             border: 1px solid var(--border);
-            transition: all 0.3s ease;
+            transition: all 0.3s;
         }
 
         .beneficio-card:hover {
@@ -586,15 +551,13 @@
             font-weight: bold;
             border: none;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
             font-size: 1rem;
         }
 
-        .btn-voltar:hover,
-        .btn-voltar:focus-visible {
+        .btn-voltar:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 16px rgba(47, 187, 177, 0.3);
-            outline: none;
         }
 
         /* ========== MARCAS PARCEIRAS ========== */
@@ -622,7 +585,7 @@
             align-items: center;
             justify-content: center;
             white-space: nowrap;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
             height: 80px;
             min-width: 150px;
         }
@@ -634,8 +597,7 @@
             height: auto;
             object-fit: contain;
             opacity: 1;
-            transition: all 0.3s ease;
-            display: block;
+            transition: all 0.3s;
         }
 
         .marca-item:hover img {
@@ -667,13 +629,12 @@
             border-radius: 16px;
             text-align: center;
             border: 1px solid var(--border);
-            transition: all 0.3s ease;
+            transition: all 0.3s;
             position: relative;
             z-index: 1;
         }
 
-        .processo-item:hover,
-        .processo-item:focus-within {
+        .processo-item:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(47, 187, 177, 0.1);
             border-color: var(--primary);
@@ -751,7 +712,7 @@
             padding: 2rem;
             text-align: center;
             border: 1px solid var(--border);
-            transition: all 0.3s ease;
+            transition: all 0.3s;
         }
 
         .contato-card:hover {
@@ -792,20 +753,18 @@
         }
 
         .contato-card a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-            display: block;
-            max-width: 100%;
-            word-break: normal;
-            overflow-wrap: anywhere;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+    display: block;
+    max-width: 100%;
+    word-break: normal;
+    overflow-wrap: anywhere;
         }
 
-        .contato-card a:hover,
-        .contato-card a:focus-visible {
+        .contato-card a:hover {
             color: var(--primary-dark);
-            outline: none;
         }
 
         /* ========== LINKTREE SECTION ========== */
@@ -824,15 +783,13 @@
             font-weight: bold;
             font-size: 1.0625rem;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
             box-shadow: 0 4px 12px rgba(47, 187, 177, 0.2);
         }
 
-        #linktree-btn:hover,
-        #linktree-btn:focus-visible {
+        #linktree-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(47, 187, 177, 0.4);
-            outline: none;
         }
 
         /* ========== FOOTER ========== */
@@ -860,14 +817,12 @@
             color: #94a3b8;
             font-size: 0.9375rem;
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
             line-height: 1.8;
         }
 
-        .footer-section a:hover,
-        .footer-section a:focus-visible {
+        .footer-section a:hover {
             color: var(--primary);
-            outline: none;
         }
 
         .social-links {
@@ -889,16 +844,14 @@
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             color: var(--primary);
-            transition: all 0.3s ease;
+            transition: all 0.3s;
             font-size: 1.25rem;
         }
 
-        .social-links a:hover,
-        .social-links a:focus-visible {
+        .social-links a:hover {
             background: var(--primary);
             color: white;
             transform: translateY(-3px);
-            outline: none;
         }
 
         .footer-bottom {
@@ -929,12 +882,10 @@
             animation: pulse 2s infinite;
         }
 
-        .whatsapp-btn:hover,
-        .whatsapp-btn:focus-visible {
+        .whatsapp-btn:hover {
             transform: scale(1.15);
             box-shadow: 0 8px 24px rgba(37, 211, 102, 0.5);
             animation: none;
-            outline: none;
         }
 
         @keyframes pulse {
@@ -1051,92 +1002,134 @@
                 height: 36px;
                 font-size: 1rem;
             }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .footer-section h4 {
+                font-size: 0.95rem;
+            }
+
+            .footer-section p,
+            .footer-section a {
+                font-size: 0.875rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero-metrics {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.875rem;
+            }
+
+            #formulario-simulacao iframe {
+                min-height: 500px;
+            }
+
+            .servicos-grid,
+            .beneficios-grid,
+            .depoimentos-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <!-- ========== HEADER ========== -->
-    <header role="banner">
+    <header>
         <div class="container">
             <div class="header-content">
                 <a href="#" class="logo">
-                    <img src="https://raw.githubusercontent.com/CarlosPortugal07/portugalengenharia.github.io/main/Logo%20com%20slogan_Fundo%20Branco%202.png" alt="Logo Portugal Engenharia" loading="lazy">
-                    <div class="logo-text">
-                        <h1>Portugal Engenharia</h1>
-                        <p>ELÉTRICA</p>
-                    </div>
+                    <img src="https://raw.githubusercontent.com/CarlosPortugal07/portugalengenharia.github.io/main/Logo%20com%20slogan_Fundo%20Branco%202.png" alt="Portugal Engenharia Logo">
                 </a>
-                <nav role="navigation" aria-label="Navegação principal">
+                <nav>
                     <a href="#sobre">Sobre</a>
                     <a href="#servicos">Serviços</a>
-                    <a href="#processo">Processo</a>
+                    <a href="#beneficios">Benefícios</a>
+                    <a href="#depoimentos">Depoimentos</a>
                     <a href="#contato">Contato</a>
-                    <button class="btn-header">Simular</button>
+                    <button class="btn-header" onclick="document.getElementById('formulario-simulacao-bg').scrollIntoView({behavior: 'smooth'})">
+                        Simular Grátis
+                    </button>
                 </nav>
             </div>
         </div>
     </header>
 
-    <!-- ========== HERO SECTION ========== -->
-    <section id="hero" role="region" aria-label="Seção Principal">
+    <!-- ========== HERO ========== -->
+    <section id="hero">
         <div class="hero-content">
-            <span class="hero-badge">✨ Tecnologia Solar de Ponta</span>
-            <h1>Energia Solar Profissional para Valinhos</h1>
-            <p>Reduza sua conta em até <span class="highlight">90%</span> com nosso sistema de energia solar personalizado</p>
+            <div class="hero-badge">⚡ Energia Solar em Valinhos</div>
+            <h1>Deixe o Sol Trabalhar Por Você!</h1>
+            <p>Reduza sua conta de energia em até <span class="highlight">90%</span> com energia solar profissional</p>
             
             <div class="hero-metrics">
                 <div class="metric-card">
-                    <h3>30+</h3>
-                    <p>Clientes Satisfeitos</p>
+                    <h3>Projetos de Engenharia</h3>
+                    <p>Homologação Garantida</p>
                 </div>
                 <div class="metric-card">
-                    <h3>500kW</h3>
-                    <p>Potência Instalada</p>
+                    <h3>80%</h3>
+                    <p>Economia Média</p>
                 </div>
                 <div class="metric-card">
-                    <h3>1min</h3>
-                    <p>Simulação Grátis</p>
+                    <h3>3 anos</h3>
+                    <p>Payback Médio</p>
                 </div>
             </div>
 
             <div class="hero-buttons">
                 <button class="btn-primary" onclick="document.getElementById('formulario-simulacao-bg').scrollIntoView({behavior: 'smooth'})">
-                    Simular Agora
+                    ⚡ Simular Grátis em 1 Min
                 </button>
-                <button class="btn-secondary" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">
-                    Falar com Especialista
+                <button class="btn-secondary" onclick="document.getElementById('sobre').scrollIntoView({behavior: 'smooth'})">
+                    Saiba Mais
                 </button>
             </div>
         </div>
     </section>
 
     <!-- ========== SOBRE ========== -->
-    <section id="sobre" role="region" aria-label="Sobre Portugal Engenharia">
+    <section id="sobre">
         <div class="container">
-            <h2 class="section-title">Por que Escolher a Portugal Engenharia?</h2>
             <div class="sobre-grid">
                 <div class="sobre-text">
-                    <h2>Engenharia de Qualidade</h2>
-                    <p>Somos especialistas em energia solar com mais de 10 anos de experiência no mercado. Nossa equipe é certificada e treinada para entregar as melhores soluções.</p>
+                    <h2>Quem Somos</h2>
+                    <p>A <strong>Portugal Engenharia Elétrica</strong> é uma empresa dedicada à excelência em serviços elétricos e energia solar, oferecendo soluções inovadoras e seguras para residências, comércios e indústrias em Valinhos e região.</p>
+                    <p>Com mais de 3 anos de experiência, nossa equipe de engenheiros especializados garante a satisfação total dos clientes por meio de atendimento personalizado, transparente e de alta qualidade.</p>
                     <ul class="sobre-checklist">
-                        <li>Engenharia própria e dedicada</li>
-                        <li>Instalação profissional e garantida</li>
-                        <li>Atendimento 24/7</li>
-                        <li>Financiamento disponível</li>
+                        <li><strong>Engenharia própria</strong> - Projetos customizados</li>
+                        <li><strong>Garantia de 25 anos</strong> - Painéis de qualidade premium</li>
+                        <li><strong>Financiamento disponível</strong> - Viabilizando o investimento</li>
                     </ul>
                 </div>
                 <div class="sobre-box">
                     <div>
-                        <h3>💰 Economia Garantida</h3>
-                        <p>Redução de até 90% na sua conta de energia elétrica com retorno do investimento em 5-7 anos.</p>
+                        <h3>🎯 Missão</h3>
+                        <p>Transformar a experiência dos nossos clientes com energia segura e eficiente, garantindo economia e sustentabilidade.</p>
                     </div>
                     <div>
-                        <h3>🌱 Sustentabilidade</h3>
-                        <p>Contribua com o meio ambiente usando energia renovável e limpa para sua casa ou negócio.</p>
+                        <h3>🌟 Visão</h3>
+                        <p>Ser a escolha preferida em soluções de energia sustentável no Brasil, reconhecida por transformar a maneira como nossos clientes usam energia.</p>
                     </div>
                     <div>
-                        <h3>⚡ Tecnologia</h3>
-                        <p>Painéis de última geração com eficiência superior e garantia de 25 anos.</p>
+                        <h3>💎 Valores</h3>
+                        <p>Segurança, Excelência, Integridade e Inovação em cada projeto.</p>
                     </div>
                 </div>
             </div>
@@ -1144,153 +1137,352 @@
     </section>
 
     <!-- ========== SERVIÇOS ========== -->
-    <section id="servicos" role="region" aria-label="Nossos Serviços">
+    <section id="servicos">
         <div class="container">
             <h2 class="section-title">Nossos Serviços</h2>
             <div class="servicos-grid">
                 <div class="servico-card">
                     <div class="servico-card-icon">☀️</div>
-                    <h3>Instalação Residencial</h3>
-                    <p>Sistemas solar fotovoltaico para casas e pequenos negócios com potência customizada.</p>
+                    <h3>Energia Solar</h3>
+                    <p>Sistemas fotovoltaicos residenciais, comerciais e industriais</p>
                 </div>
                 <div class="servico-card">
                     <div class="servico-card-icon">🏢</div>
-                    <h3>Energia Comercial</h3>
-                    <p>Soluções para empresas com grande consumo de energia e ROI rápido.</p>
+                    <h3>Projetos Comerciais</h3>
+                    <p>Soluções elétricas especializadas para empresas</p>
                 </div>
                 <div class="servico-card">
-                    <div class="servico-card-icon">🔧</div>
-                    <h3>Manutenção</h3>
-                    <p>Serviço de limpeza, monitoramento e manutenção preventiva dos painéis.</p>
+                    <div class="servico-card-icon">🏭</div>
+                    <h3>Projetos Industriais</h3>
+                    <p>Engenharia robusta para fábricas e instalações</p>
                 </div>
                 <div class="servico-card">
-                    <div class="servico-card-icon">📊</div>
-                    <h3>Simulação Grátis</h3>
-                    <p>Análise completa de consumo e proposta personalizada em apenas 1 minuto.</p>
+                    <div class="servico-card-icon">✅</div>
+                    <h3>Laudos e Manutenção</h3>
+                    <p>Inspeção técnica e manutenção preventiva</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ========== BENEFÍCIOS ========== -->
-    <section id="beneficios" role="region" aria-label="Benefícios da Energia Solar">
+    <section id="beneficios">
         <div class="container">
-            <h2 class="section-title">Benefícios da Energia Solar</h2>
+            <h2 class="section-title">Por Que Investir em Energia Solar?</h2>
             <div class="beneficios-grid">
                 <div class="beneficio-card">
-                    <div class="beneficio-card-icon">💡</div>
-                    <h3>Economia de Energia</h3>
-                    <p>Redução significativa na conta de energia com aproveitamento da luz solar.</p>
+                    <div class="beneficio-card-icon">💰</div>
+                    <h3>Economia Imediata</h3>
+                    <p>Reduza sua conta de luz em até 90% desde o primeiro mês</p>
                 </div>
                 <div class="beneficio-card">
-                    <div class="beneficio-card-icon">🌍</div>
-                    <h3>Sustentabilidade</h3>
-                    <p>Contribua para um planeta mais verde com energia 100% renovável.</p>
+                    <div class="beneficio-card-icon">🌱</div>
+                    <h3>Energia Limpa</h3>
+                    <p>Contribua para um planeta mais sustentável e verde</p>
+                </div>
+                <div class="beneficio-card">
+                    <div class="beneficio-card-icon">🏡</div>
+                    <h3>Imóvel Valorizado</h3>
+                    <p>Aumente o valor do seu imóvel em até 10%</p>
+                </div>
+                <div class="beneficio-card">
+                    <div class="beneficio-card-icon">⚡</div>
+                    <h3>Independência Energética</h3>
+                    <p>Produza sua própria energia e seja independente</p>
                 </div>
                 <div class="beneficio-card">
                     <div class="beneficio-card-icon">📈</div>
-                    <h3>Valorização do Imóvel</h3>
-                    <p>Agregue valor ao seu imóvel com um sistema de energia solar moderno.</p>
+                    <h3>Retorno Garantido</h3>
+                    <p>Payback em 2-5 anos com economia contínua</p>
                 </div>
                 <div class="beneficio-card">
-                    <div class="beneficio-card-icon">🔐</div>
-                    <h3>Proteção contra Inflação</h3>
-                    <p>Proteja-se da inflação com energia própria e custos previsíveis.</p>
-                </div>
-                <div class="beneficio-card">
-                    <div class="beneficio-card-icon">⚙️</div>
-                    <h3>Baixa Manutenção</h3>
-                    <p>Sistemas duráveis com manutenção mínima e garantia de 25 anos.</p>
-                </div>
-                <div class="beneficio-card">
-                    <div class="beneficio-card-icon">🏆</div>
-                    <h3>Garantia Total</h3>
-                    <p>Cobertura completa em equipamentos, instalação e atendimento técnico.</p>
+                    <div class="beneficio-card-icon">🌍</div>
+                    <h3>Impacto Ambiental</h3>
+                    <p>Reduza emissões de CO2 em até 45% ao ano</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ========== SIMULADOR ========== -->
-    <section id="formulario-simulacao-bg" role="region" aria-label="Simulador de Energia Solar">
-        <div class="container">
-            <div id="formulario-simulacao">
-                <h2>Simule Sua Economia</h2>
-                <p>Descubra quanto você pode economizar com energia solar. Leva menos de 1 minuto!</p>
-                
-                <noscript>
-                    <p style="background: #ffe0e0; padding: 1rem; border-radius: 8px; color: #c00;">
-                        ⚠️ JavaScript é necessário para acessar o simulador. Por favor, habilite JavaScript no seu navegador.
-                    </p>
-                </noscript>
-            </div>
+    <section id="formulario-simulacao-bg">
+        <div id="formulario-simulacao">
+            <h2>Simule Seu Orçamento</h2>
+            <p>Descubra quanto você pode economizar com energia solar em 1 minuto:</p>
+            <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSfX8lSxuIDL552jsnEnaThOvDtQbiKl_mzKAEraSnB5QgxaSQ/viewform?embedded=true"
+                frameborder="0"
+                marginheight="0"
+                marginwidth="0"
+                allowfullscreen
+                loading="lazy">
+            </iframe>
+            <button class="btn-voltar" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                ↑ Voltar ao Início
+            </button>
         </div>
     </section>
 
     <!-- ========== MARCAS PARCEIRAS ========== -->
-    <section id="marcas" role="region" aria-label="Marcas Parceiras">
-        <div class="container" style="text-align: center; margin-bottom: 2rem;">
-            <h2 class="section-title">Parceiros de Confiança</h2>
-        </div>
+    <section id="marcas">
         <div class="marcas-slider">
-            <div class="marca-item">
-                <img src="https://via.placeholder.com/150x80?text=Marca+1" alt="Marca Parceira 1" loading="lazy">
-            </div>
-            <div class="marca-item">
-                <img src="https://via.placeholder.com/150x80?text=Marca+2" alt="Marca Parceira 2" loading="lazy">
-            </div>
-            <div class="marca-item">
-                <img src="https://via.placeholder.com/150x80?text=Marca+3" alt="Marca Parceira 3" loading="lazy">
-            </div>
-            <div class="marca-item">
-                <img src="https://via.placeholder.com/150x80?text=Marca+4" alt="Marca Parceira 4" loading="lazy">
-            </div>
-            <div class="marca-item">
-                <img src="https://via.placeholder.com/150x80?text=Marca+1" alt="Marca Parceira 1" loading="lazy">
-            </div>
+            <!-- Duplicado para efeito infinito -->
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/ZAPlLdhPXqvpSGHb.png" alt="WEG"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/xzDbPNxHffopETtt.png" alt="Solis"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/ikcShDrDCJZIVvSx.png" alt="Sungrow"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/BzeehHSqcwsPhRjW.png" alt="Steck"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/BiBZSPpIzbvHrUqY.png" alt="JA Solar"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/PAwJjRHPqbQfMRWf.jpg" alt="Honor Solar"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/FJTVPKpcPeyqLYRu.png" alt="Jinko Solar"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/WutfnlNbHLQOmIMr.png" alt="Enphase"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/iEFqTAxQOYnyHNfn.png" alt="Hoymiles"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/OBFHnVRKjATWbYGd.png" alt="Huawei"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/wRapZNMHGMGZOtjt.png" alt="Canadian Solar"></div>
+            <!-- Duplicado -->
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/ZAPlLdhPXqvpSGHb.png" alt="WEG"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/xzDbPNxHffopETtt.png" alt="Solis"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/ikcShDrDCJZIVvSx.png" alt="Sungrow"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/BzeehHSqcwsPhRjW.png" alt="Steck"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/BiBZSPpIzbvHrUqY.png" alt="JA Solar"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/PAwJjRHPqbQfMRWf.jpg" alt="Honor Solar"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/FJTVPKpcPeyqLYRu.png" alt="Jinko Solar"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/WutfnlNbHLQOmIMr.png" alt="Enphase"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/iEFqTAxQOYnyHNfn.png" alt="Hoymiles"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/OBFHnVRKjATWbYGd.png" alt="Huawei"></div>
+            <div class="marca-item"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663360139791/wRapZNMHGMGZOtjt.png" alt="Canadian Solar"></div>
         </div>
     </section>
 
     <!-- ========== PROCESSO DE ENGENHARIA ========== -->
-    <section id="processo" role="region" aria-label="Processo de Engenharia">
+    <section id="processo">
         <div class="container">
-            <h2 class="section-title">Como Funciona</h2>
+            <h2 class="section-title">Nosso Processo de Engenharia</h2>
             <div class="processo-grid">
                 <div class="processo-item">
                     <div class="processo-number">1</div>
                     <span class="processo-icon">📋</span>
-                    <h3>Avaliação</h3>
-                    <p>Analisamos seu consumo e local para dimensionamento correto do sistema.</p>
+                    <h3>Visita Técnica</h3>
+                    <p>Análise detalhada do local, telhado e infraestrutura elétrica para um projeto preciso.</p>
                 </div>
                 <div class="processo-item">
                     <div class="processo-number">2</div>
-                    <span class="processo-icon">🎯</span>
-                    <h3>Proposta</h3>
-                    <p>Apresentamos proposta personalizada com economia estimada.</p>
+                    <span class="processo-icon">📐</span>
+                    <h3>Projeto Customizado</h3>
+                    <p>Engenharia própria desenvolvendo a solução ideal para o seu consumo e telhado.</p>
                 </div>
                 <div class="processo-item">
                     <div class="processo-number">3</div>
-                    <span class="processo-icon">🔌</span>
-                    <h3>Instalação</h3>
-                    <p>Instalação profissional realizada por nossa equipe especializada.</p>
+                    <span class="processo-icon">🛠️</span>
+                    <h3>Instalação Profissional</h3>
+                    <p>Equipe técnica qualificada seguindo todas as normas de segurança e qualidade.</p>
                 </div>
                 <div class="processo-item">
                     <div class="processo-number">4</div>
-                    <span class="processo-icon">⚡</span>
-                    <h3>Monitoramento</h3>
-                    <p>Acompanhamento contínuo de desempenho e manutenção do sistema.</p>
+                    <span class="processo-icon">📄</span>
+                    <h3>Homologação</h3>
+                    <p>Cuidamos de toda a burocracia junto à concessionária para ativar seu sistema.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========== CTA SECTION ========== -->
-    <section id="cta" role="region" aria-label="Chamada para Ação">
+    <!-- ========== CTA ========== -->
+    <section id="cta">
         <div class="container">
             <h2>Pronto para Economizar?</h2>
-            <p>Solicite sua simulação grátis agora mesmo!</p>
-            <button class="btn-primary" style="font-size: 1.125rem; padding: 1.25rem 3rem;" onclick="document.getElementById('formulario-simulacao-bg').scrollIntoView({behavior: 'smooth'})">
-                Simular Agora →
+            <p>Simule sua economia agora e descubra quanto você pode poupar com energia solar</p>
+            <button class="btn-primary" onclick="document.getElementById('formulario-simulacao-bg').scrollIntoView({behavior: 'smooth'})">
+                ⚡ Simular Grátis Agora
             </button>
         </div>
-    </section>*
+    </section>
+
+    <!-- ========== CONTATO ========== -->
+    <section id="contato">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <div class="contato-grid">
+                <div class="servico-card">
+                    <h4>📧 E-mail</h4>
+                    <p>
+                        <a href="mailto:vendas@portugalengenharia.com.br" title="Enviar e-mail">
+                            vendas@portugalengenharia.com.br
+                        </a>
+                    </p>
+                </div>
+         
+                <div class="servico-card">
+                    <h4>📱 WhatsApp</h4>
+                    <p>
+                        <a href="https://wa.me/5519995454370" target="_blank" rel="noopener noreferrer" title="Abrir WhatsApp">
+                            <i class="fab fa-whatsapp"></i> (19) 99545-4370
+                        </a>
+                    </p>
+                </div>
+         
+                <div class="servico-card">
+                    <h4>📍 Endereço</h4>
+                    <p>
+                        Rua Lourenço Ferrari, 614<br>
+                        Valinhos/SP - CEP: 13273-071
+                    </p>
+                </div>
+         
+                <div class="servico-card">
+                    <h4>🏢 Empresa</h4>
+                    <p>
+                        <strong>Razão Social:</strong> Carlos Eduardo Silva Portugal Ltda<br>
+                        <strong>Nome Fantasia:</strong> Portugal Engenharia Elétrica<br>
+                        <strong>CNPJ:</strong> 53.142.037/0001-10
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== LINKTREE ========== -->
+    <section id="linktree-section">
+        <a href="https://linktr.ee/Portugal_Engenharia" target="_blank" rel="noopener noreferrer" id="linktree-btn">
+            🔗 Siga Nossas Redes Sociais
+        </a>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Portugal Engenharia Elétrica</h4>
+                    <p>Soluções de energia solar e engenharia elétrica em Valinhos.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <a href="#sobre">Sobre</a><br>
+                    <a href="#servicos">Serviços</a><br>
+                    <a href="#depoimentos">Depoimentos</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p>(19) 99545-4370<br>
+                    vendas@portugalengenharia.com.br<br>
+                    Valinhos, SP</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <a href="https://linktr.ee/Portugal_Engenharia" target="_blank">Linktree</a><br>
+                    <a href="https://wa.me/5519995454370" target="_blank">WhatsApp</a><br>
+                    <a href="mailto:vendas@portugalengenharia.com.br">Email</a>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="https://wa.me/5519995454370" target="_blank" rel="noopener noreferrer" title="WhatsApp" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://www.instagram.com/portugal_eng" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61561425598667" target="_blank" rel="noopener noreferrer" title="Facebook" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/portugal-engenharia-elétrica" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Portugal Engenharia Elétrica &mdash; Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== WHATSAPP FLUTUANTE ========== -->
+    <a href="https://wa.me/5519995454370" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">💬</a>
+
+    <!-- ========== SCHEMA.ORG STRUCTURED DATA ========== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Portugal Engenharia Elétrica",
+        "image": "https://raw.githubusercontent.com/CarlosPortugal07/portugalengenharia.github.io/main/Logo%20com%20slogan_Fundo%20Branco%202.png",
+        "description": "Soluções de energia solar e engenharia elétrica em Valinhos. Reduza sua conta de energia em até 80% com painéis solares profissionais.",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Rua Lourenço Ferrari, 614",
+            "addressLocality": "Valinhos",
+            "addressRegion": "SP",
+            "postalCode": "13273-071",
+            "addressCountry": "BR"
+        },
+        "telephone": "+55-19-99545-4370",
+        "email": "vendas@portugalengenharia.com.br",
+        "url": "https://www.portugalengenharia.com.br",
+        "areaServed": ["Valinhos", "Vinhedo", "Campinas", "Jaguariúna"],
+        "priceRange": "$$",
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "08:00",
+            "closes": "18:00"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "500"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Quanto custa instalar energia solar?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "O custo varia de R$ 15.000 a R$ 50.000 dependendo do tamanho do sistema. Oferecemos financiamento com juros reduzidos."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Quanto tempo leva para instalar?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Em média 3-5 dias úteis. Começamos a economizar no mês seguinte."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "E se chover? Os painéis funcionam?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sim! Os painéis funcionam mesmo em dias nublados, com 20-30% da capacidade."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Qual é a garantia?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Oferecemos garantia de 25 anos nos painéis e 10 anos no inversor."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Preciso fazer manutenção?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Manutenção mínima. Recomendamos limpeza anual e inspeção técnica a cada 2 anos."
+                }
+            }
+        ]
+    }
+    </script>
+</body>
+</html>
+  
+
+</body>
+</html>
