@@ -91,7 +91,14 @@ h1 em { font-weight: 500; color: var(--amber); }
 .portrait-image {  background-image: linear-gradient(90deg, rgba(11,45,77,.08), rgba(11,45,77,.22)),  url('./assets/carlos-campo-quadrado.webp'); background-position: center 28%;
   background-size: cover;}
 .br386-hero { background-image: linear-gradient(90deg, rgba(11,45,77,.1), rgba(11,45,77,.62)), url('./assets/br386-02.jpg'); }
-.toll-image { background-image: linear-gradient(135deg, rgba(230,184,79,.15), transparent 40%), linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px); background-size: auto, 24px 24px, 24px 24px; }
+.toll-image {
+  background-image:
+    linear-gradient(90deg, rgba(11,45,77,.12), rgba(11,45,77,.22)),
+    url('./assets/praca-de-pedagio.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .network-image { background-image: linear-gradient(135deg, rgba(230,184,79,.16), transparent 45%), radial-gradient(rgba(255,255,255,.22) 1px, transparent 1px); background-size: auto, 14px 14px; }
 .solar-image { background-image: linear-gradient(135deg, rgba(230,184,79,.2), transparent 48%), linear-gradient(45deg, rgba(255,255,255,.06) 25%, transparent 25%, transparent 75%, rgba(255,255,255,.06) 75%); background-size: auto, 28px 28px; }
 .project-photo-grid { display: grid; grid-template-columns: 1.25fr 1fr .72fr; gap: 8px; margin-top: 28px; }
