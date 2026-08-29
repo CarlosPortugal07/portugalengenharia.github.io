@@ -111,12 +111,6 @@ h1 em { font-weight: 500; color: var(--amber); }
 .project-figure small { margin-top: 11px; font-size: 12px; font-weight: 800; letter-spacing: .22em; }
 .project-card-split { display: grid; grid-template-columns: minmax(42%, .9fr) minmax(43%, 1.1fr); }
 .project-card-split .project-image { grid-column: 1; }
-.bridge-case {
-  display: grid;
-  grid-template-columns: minmax(43%, .9fr) minmax(48%, 1.1fr);
-  min-height: 455px;
-}
-
 .bridge-image {
   min-height: 455px;
   background-image:
