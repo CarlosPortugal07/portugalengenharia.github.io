@@ -138,7 +138,7 @@ h1 em { font-weight: 500; color: var(--amber); }
 .experience-header { max-width: 850px; margin: 0 auto 70px; }
 .experience-header h2 { margin-bottom: 0; }
 .timeline { max-width: 1200px; margin: 0 auto; border-top: 1px solid var(--line); }
-.timeline-item { display: grid; grid-template-columns: 130px minmax(240px, 1fr) minmax(220px, .85fr); gap: 30px; padding: 30px 0; border-bottom: 1px solid var(--line); }
+.timeline-item { display: grid; grid-template-columns: 145px minmax(240px, 1fr) minmax(220px, .85fr); gap: 30px; padding: 30px 0; border-bottom: 1px solid var(--line); }
 .timeline-item.current { background: rgba(230,184,79,.14); margin: 0 -18px; padding: 30px 18px; }
 .timeline-year { color: var(--muted); font-size: 11px; font-weight: 800; line-height: 1.5; }
 .timeline-role h3 { margin: 0 0 7px; font-family: "Fraunces", Georgia, serif; font-size: 22px; font-weight: 600; line-height: 1.16; letter-spacing: -.025em; }
