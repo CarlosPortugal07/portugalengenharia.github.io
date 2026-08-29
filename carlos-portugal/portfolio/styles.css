@@ -123,6 +123,14 @@ h1 em { font-weight: 500; color: var(--amber); }
 .project-card-split .project-card-content { grid-column: 2; padding: 91px clamp(25px, 5vw, 80px) 65px; }
 .solar-case .project-card-content { grid-column: 1; padding: 91px clamp(25px, 5vw, 80px) 65px 0; }
 .solar-case .project-image { grid-column: 2; }
+.portugal-image {
+  background-image:
+    linear-gradient(135deg, rgba(11,45,77,.08), rgba(11,45,77,.18)),
+    url('./assets/portugal-7pe.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .experience { background: var(--paper-2); }
 .experience-header { max-width: 850px; margin: 0 auto 70px; }
 .experience-header h2 { margin-bottom: 0; }
