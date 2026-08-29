@@ -129,7 +129,7 @@ h1 em { font-weight: 500; color: var(--amber); }
     url('./assets/portugal-7pe.png');
   background-position: center;
   .experience .timeline {
-  transform: translateX(32px);
+  transform: translateX(64px);
 }
   background-size: cover;
   background-repeat: no-repeat;
