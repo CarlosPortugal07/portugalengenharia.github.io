@@ -291,6 +291,6 @@ h1 em { font-weight: 500; color: var(--amber); }
   .contact-bottom span { display: block; }
   /* Aumenta só o nome no hero, mantendo responsividade */
 .hero .eyebrow.inverse {
-  font-size: clamp(1rem, 1.6vw, 1.6rem);
+  font-size: clamp(1.25rem, 1.6vw, 1.6rem);
 }
 }
