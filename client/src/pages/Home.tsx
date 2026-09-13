@@ -32,7 +32,7 @@ import {
   Zap,
 } from "lucide-react";
 
-const logoUrl = "/assets/portugal-engenharia-logo-transparente-final.png";
+const logoUrl = "/assets/portugal-engenharia-logo-transparente.png";
 const heroUrl = "/assets/portugal-engenharia-hero.jpg";
 const inspectionUrl = "/assets/portugal-engenharia-inspection.jpg";
 const blueprintUrl = "/assets/portugal-engenharia-blueprint.png";
