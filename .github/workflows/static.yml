@@ -39,6 +39,11 @@ jobs:
 
       - name: Build application
         run: pnpm run build
+              
+      - name: Publicar portfólio profissional
+        run: |
+          mkdir -p dist/public/carlos-portugal/portfolio
+          cp -R carlos-portugal/portfolio/. dist/public/carlos-portugal/portfolio/
 
       - name: Preserve custom domain
         run: |
