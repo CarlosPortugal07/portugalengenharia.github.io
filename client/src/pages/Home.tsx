@@ -136,41 +136,47 @@ const faqs = [
   },
 ];
 
-type PropertyType = "residencial" | "comercial" | "rural";
+type PropertyType = "residencial" | "comercial" | "rural" | "industrial";
 
 function estimateSolar(bill: number, propertyType: PropertyType) {
-  // 1. Tarifa dinâmica alinhada com a tabela PROCV da planilha (CPFL 2026)
-  const tariff = propertyType === "comercial" ? 1.08 : 1.05; // Residencial e Rural utilizam R$ 1,05/kWh
-  const productivity = 1450; // Produtividade real em Valinhos (kWh/kWp/ano)
+  // 1. Tarifa dinâmica alinhada à planilha e CPFL 2026
+  const tariff = propertyType === "industrial" ? 0.95 : propertyType === "comercial" ? 1.08 : 1.05;
+  const productivity = 1450;
 
-  // 2. Consumo total e abatimento de taxa mínima (100 kWh trifásico) + Fio B (Lei 14.300)
+  // 2. Consumo e abate de taxa mínima (100 kWh) + Fio B
   const totalKwh = bill / tariff;
   const minimumKwh = 100;
   const compensableKwh = Math.max(0, (totalKwh - minimumKwh) * 0.90);
 
-  // 3. Potência sugerida em kWp
+  // 3. Potência em kWp
   const kwp = Math.max(1.8, Math.min(250, (compensableKwh * 12) / productivity));
 
-  // 4. Preço de venda progressivo e custo fixo de engenharia (ART + Projeto + Homologação CPFL)
+  // 4. Preço de venda progressivo por escala + Custo Fixo de Engenharia (R$ 1.850)
   const fixedCost = 1850;
   let ratePerKwp = 0;
 
-  if (propertyType === "comercial") {
+  if (propertyType === "industrial") {
+    if (kwp <= 6) ratePerKwp = 3950;
+    else if (kwp <= 10) ratePerKwp = 3950;
+    else if (kwp <= 20) ratePerKwp = 3450;
+    else if (kwp <= 50) ratePerKwp = 3100;
+    else ratePerKwp = 2750;
+  } else if (propertyType === "comercial") {
     if (kwp <= 4) ratePerKwp = 4450;
     else if (kwp <= 6) ratePerKwp = 4150;
     else if (kwp <= 10) ratePerKwp = 3950;
     else if (kwp <= 20) ratePerKwp = 3550;
-    else ratePerKwp = 3200;
+    else ratePerKwp = 2950;
   } else {
     // Residencial e Rural
     if (kwp <= 2.5) ratePerKwp = 5200;
     else if (kwp <= 4) ratePerKwp = 4600;
-    else if (kwp <= 6) ratePerKwp = 4441; // Alinhado aos R$ 4.44/Wp da planilha 7PE
+    else if (kwp <= 6) ratePerKwp = 4441;
     else if (kwp <= 10) ratePerKwp = 3900;
     else if (kwp <= 20) ratePerKwp = 3550;
     else ratePerKwp = 3150;
   }
-
+  
   const investment = (kwp * ratePerKwp) + fixedCost;
 
   // 5. Economia Anual Estimada e Payback
